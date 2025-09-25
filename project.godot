@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Super Word Maze"
+run/main_scene="uid://jficyc6eqd7x"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
@@ -18,7 +19,15 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=640
 window/size/viewport_height=400
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
+
+[input_devices]
+
+sensors/enable_accelerometer=true
+sensors/enable_gravity=true
 
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
