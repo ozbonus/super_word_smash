@@ -36,17 +36,13 @@ position = Vector2(413, 317)
 rotation = -1.5707964
 
 [node name="ShortWall7" parent="." instance=ExtResource("4_roa4n")]
-position = Vector2(502, 90)
+position = Vector2(502.00003, 118)
 rotation = -1.5707964
 scale = Vector2(1, 1.0399951)
 
 [node name="ShortWall5" parent="." instance=ExtResource("4_roa4n")]
-position = Vector2(456, 203)
-scale = Vector2(1, 1.9200001)
-
-[node name="ShortWall6" parent="." instance=ExtResource("4_roa4n")]
-position = Vector2(547, 204)
-scale = Vector2(1, 1.9200001)
+position = Vector2(456, 217.00002)
+scale = Vector2(0.98683727, 1.6558169)
 
 [node name="Goal" parent="." instance=ExtResource("5_g141h")]
 position = Vector2(86, 58)

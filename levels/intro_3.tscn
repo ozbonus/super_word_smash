@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://1s3juadaw5ps"]
+
+[ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_g03wv"]
+[ext_resource type="PackedScene" uid="uid://bkto5wvbsr7iq" path="res://components/level_frame.tscn" id="2_ro3nw"]
+[ext_resource type="PackedScene" uid="uid://chrnt4k6me32v" path="res://components/ball.tscn" id="3_o1gyf"]
+[ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="4_qgvka"]
+
+[node name="Level01" type="Node2D" node_paths=PackedStringArray("goal")]
+script = ExtResource("1_g03wv")
+goal = NodePath("Goal")
+
+[node name="LevelFrame" parent="." instance=ExtResource("2_ro3nw")]
+
+[node name="Ball" parent="." instance=ExtResource("3_o1gyf")]
+position = Vector2(300, 193)
+
+[node name="Goal" parent="." instance=ExtResource("4_qgvka")]
+position = Vector2(48, 202)
+
+[node name="Goal2" parent="." instance=ExtResource("4_qgvka")]
+position = Vector2(593, 199)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 30.0
+offset_top = 188.0
+offset_right = 70.0
+offset_bottom = 211.0
+text = "yes"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 579.0
+offset_top = 188.0
+offset_right = 619.0
+offset_bottom = 211.0
+text = "no"
+horizontal_alignment = 1
+
+[connection signal="entered" from="Goal" to="." method="_on_goal_entered"]

@@ -1,15 +1,6 @@
 extends Node
 
-
-var levels: Array[PackedScene] = [
-	preload("res://levels/title.tscn"),
-	preload("res://levels/level_01.tscn"),
-	preload("res://levels/level_02.tscn"),
-	preload("res://levels/level_03.tscn"),
-	preload("res://levels/level_04.tscn"),
-	preload("res://levels/level_end.tscn"),
-]
-
+@export var levels: Array[PackedScene]
 
 var current_level_index: int = 0
 var current_level_instance: Node
@@ -45,8 +36,10 @@ func next_level():
 	else:
 		print("All levels completed!")
 
+
 func start_game():
 	next_level()
+
 
 func play_again():
 	current_level_index = 0
