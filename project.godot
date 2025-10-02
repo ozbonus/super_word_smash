@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Super Word Maze"
-run/main_scene="uid://jficyc6eqd7x"
+run/main_scene="uid://bd7optlxeqn7j"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 

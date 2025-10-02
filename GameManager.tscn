@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd7optlxeqn7j"]
+
+[ext_resource type="Script" uid="uid://bt7hnmw6h3nsl" path="res://game_manager.gd" id="1_p13vs"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_p13vs")
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

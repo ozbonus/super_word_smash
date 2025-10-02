@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bchmyybjx35e2"]
+
+[ext_resource type="PackedScene" uid="uid://bkto5wvbsr7iq" path="res://components/level_frame.tscn" id="1_85vqe"]
+[ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_ngl01"]
+[ext_resource type="PackedScene" uid="uid://chrnt4k6me32v" path="res://components/ball.tscn" id="2_p0vsl"]
+[ext_resource type="PackedScene" uid="uid://c05tki6uthh8n" path="res://components/short_wall.tscn" id="3_ngl01"]
+[ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="4_p0vsl"]
+
+[node name="Level02" type="Node2D" node_paths=PackedStringArray("goal")]
+script = ExtResource("1_ngl01")
+goal = NodePath("Goal")
+
+[node name="LevelFrame" parent="." instance=ExtResource("1_85vqe")]
+
+[node name="Ball" parent="." instance=ExtResource("2_p0vsl")]
+position = Vector2(311, 201)
+
+[node name="ShortWall3" parent="." instance=ExtResource("3_ngl01")]
+position = Vector2(488, 236)
+rotation = -0.81735075
+
+[node name="ShortWall" parent="." instance=ExtResource("3_ngl01")]
+position = Vector2(151, 235)
+rotation = -0.64675844
+
+[node name="ShortWall2" parent="." instance=ExtResource("3_ngl01")]
+position = Vector2(326, 310)
+rotation = 0.92230594
+
+[node name="Goal" parent="." instance=ExtResource("4_p0vsl")]
+position = Vector2(173, 351)
+rotation = -1.5707964
