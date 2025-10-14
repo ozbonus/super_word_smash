@@ -4,6 +4,7 @@
 
 [node name="TimerService" type="Node"]
 script = ExtResource("1_6vd8t")
+update_interval = 0.2
 
 [node name="GameTimer" type="Timer" parent="."]
 one_shot = true
@@ -11,5 +12,8 @@ one_shot = true
 [node name="HurryUpTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="UpdateTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="HurryUpTimer" to="." method="_on_hurry_up_timer_timeout"]
+[connection signal="timeout" from="UpdateTimer" to="." method="_on_update_timer_timeout"]
