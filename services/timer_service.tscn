@@ -4,6 +4,9 @@
 
 [node name="TimerService" type="Node"]
 script = ExtResource("1_6vd8t")
+short_time = 60.0
+medium_time = 120.0
+long_time = 180.0
 update_interval = 0.2
 
 [node name="GameTimer" type="Timer" parent="."]
