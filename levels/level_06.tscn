@@ -16,18 +16,20 @@ goal = NodePath("Goal")
 position = Vector2(305, 208)
 
 [node name="ShortWall5" parent="." instance=ExtResource("4_nox4o")]
-position = Vector2(305.00003, 137)
-rotation = -1.5707964
+position = Vector2(302.99997, 275.99997)
+rotation = 1.5707964
 scale = Vector2(0.98683727, 1.6558169)
 
 [node name="ShortWall6" parent="." instance=ExtResource("4_nox4o")]
-position = Vector2(204, 214.00003)
+position = Vector2(404, 198.99995)
+rotation = -3.1415925
 scale = Vector2(0.98683727, 1.6558169)
 
 [node name="ShortWall7" parent="." instance=ExtResource("4_nox4o")]
-position = Vector2(404, 214.00003)
+position = Vector2(204.00003, 198.99994)
+rotation = -3.1415925
 scale = Vector2(0.98683727, 1.6558169)
 
 [node name="Goal" parent="." instance=ExtResource("5_qadnc")]
-position = Vector2(305, 58)
-rotation = -1.5707964
+position = Vector2(303, 354.99997)
+rotation = 1.5707964
