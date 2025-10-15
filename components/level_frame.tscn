@@ -12,7 +12,7 @@ size = Vector2(660, 20)
 [node name="LevelFrame" type="Node2D"]
 
 [node name="OnScreenTimer" parent="." instance=ExtResource("2_r7g7t")]
-position = Vector2(217, 117)
+position = Vector2(246, 148)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
