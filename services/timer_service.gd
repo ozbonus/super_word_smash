@@ -38,7 +38,9 @@ func _start_timers(seconds: float) -> void:
 		var hurry_up_time = seconds - hurry_up_threshold
 		hurry_up_timer.start(hurry_up_time)
 	elif hurry_up_threshold > seconds:
-		push_warning("Hurry up threshold is larger than game timer duration!")
+		push_warning("Hurry up threshold is larger than game timer duration!\n
+			Hurry up threshold: %.1fs\n
+			Game duration: %.1fs" % [hurry_up_threshold, seconds])
 
 
 ## Stop all timers.
