@@ -33,6 +33,7 @@ func _ready() -> void:
 func _start_timers(seconds: float) -> void:
 	game_timer.start(seconds)
 	update_timer.start(update_interval)
+	_on_update_timer_timeout()
 	if hurry_up_threshold > 0.0 and hurry_up_threshold < seconds:
 		var hurry_up_time = seconds - hurry_up_threshold
 		hurry_up_timer.start(hurry_up_time)
