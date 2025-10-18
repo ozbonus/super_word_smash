@@ -63,6 +63,8 @@ func start_long_timer() -> void:
 
 
 func _on_game_timer_timeout() -> void:
+	update_timer.stop()
+	game_timer.stop()
 	time_up.emit()
 
 
