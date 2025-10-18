@@ -38,9 +38,11 @@ func next_level():
 
 
 func start_game():
+	TimerService.start_short_timer()
 	next_level()
 
 
 func play_again():
+	TimerService.reset()
 	current_level_index = 0
 	load_level(current_level_index)
