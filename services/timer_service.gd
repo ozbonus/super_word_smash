@@ -3,7 +3,7 @@ extends Node
 
 signal time_up
 signal hurry_up
-signal time_left(seconds: float)
+signal time_left(seconds: float, proportion: float)
 
 
 ## The duration of a short length game, in seconds.
@@ -71,4 +71,6 @@ func _on_hurry_up_timer_timeout() -> void:
 
 
 func _on_update_timer_timeout() -> void:
-	time_left.emit(game_timer.time_left)
+	var seconds: float = game_timer.time_left
+	var proportion: float = game_timer.time_left / max(game_timer.wait_time, 0.01)
+	time_left.emit(seconds, proportion)
