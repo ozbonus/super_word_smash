@@ -12,11 +12,30 @@ offset_right = 400.0
 offset_bottom = 70.0
 text = "Super Word Smash!"
 
-[node name="Button" type="Button" parent="."]
-offset_left = 301.0
-offset_top = 184.0
-offset_right = 347.0
-offset_bottom = 215.0
-text = "Start"
+[node name="ShortGameButton" type="Button" parent="."]
+offset_left = 208.0
+offset_top = 173.0
+offset_right = 262.0
+offset_bottom = 227.0
+text = "Short
+Game"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="MediumGameButton" type="Button" parent="."]
+offset_left = 292.0
+offset_top = 173.0
+offset_right = 364.0
+offset_bottom = 227.0
+text = "Medium
+Game"
+
+[node name="LongGameButton" type="Button" parent="."]
+offset_left = 403.0
+offset_top = 173.0
+offset_right = 457.0
+offset_bottom = 227.0
+text = "Long
+Game"
+
+[connection signal="pressed" from="ShortGameButton" to="." method="_on_short_game_button_pressed"]
+[connection signal="pressed" from="MediumGameButton" to="." method="_on_medium_game_button_pressed"]
+[connection signal="pressed" from="LongGameButton" to="." method="_on_long_game_button_pressed"]
