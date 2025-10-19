@@ -1,3 +1,4 @@
+class_name Ball
 extends RigidBody2D
 
 @export var tilt_sensitivity: float = 100.0
