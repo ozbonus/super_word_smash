@@ -16,6 +16,7 @@ one_shot = true
 one_shot = true
 
 [node name="UpdateTimer" type="Timer" parent="."]
+wait_time = 0.1
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="HurryUpTimer" to="." method="_on_hurry_up_timer_timeout"]

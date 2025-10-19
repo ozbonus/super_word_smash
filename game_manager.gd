@@ -25,7 +25,6 @@ func load_level(index: int):
 		current_level_instance.play_again.connect(play_again)
 	
 	if current_level_instance.has_signal("success"):
-		print_debug("Connected to success")
 		current_level_instance.success.connect(next_level)
 
 
@@ -34,11 +33,17 @@ func next_level():
 	if current_level_index < levels.size():
 		load_level(current_level_index)
 	else:
-		print("All levels completed!")
+		print_debug("All levels have been completed.")
 
 
-func start_game():
-	TimerService.start_short_timer()
+func start_game(game_length: Constants.GameLength):
+	match game_length:
+		Constants.GameLength.SHORT:
+			TimerService.start_short_timer()
+		Constants.GameLength.MEDIUM:
+			TimerService.start_medium_timer()
+		Constants.GameLength.LONG:
+			TimerService.start_long_timer()
 	next_level()
 
 
