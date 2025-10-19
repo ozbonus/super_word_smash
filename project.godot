@@ -32,6 +32,10 @@ window/stretch/scale_mode="integer"
 sensors/enable_accelerometer=true
 sensors/enable_gravity=true
 
+[physics]
+
+2d/default_gravity_vector=Vector2(0, 0)
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
