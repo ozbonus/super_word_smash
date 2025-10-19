@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://g3exsxmqksw"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/ball.gd" id="1_7rne0"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_5s2nb"]
+[ext_resource type="Texture2D" uid="uid://1fyi2cyslm8a" path="res://components/balls/cat08_moyou_sabatora.png" id="3_7rne0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_53su8"]
+shader = ExtResource("2_5s2nb")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 10.000000149012
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Banana" type="RigidBody2D"]
+script = ExtResource("1_7rne0")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_53su8")
+scale = Vector2(0.1590906, 0.15887581)
+texture = ExtResource("3_7rne0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.15887581, 0.15887581)
+polygon = PackedVector2Array(-262.49603, -212.49678, -254.16281, -304.16205, -220.82999, -312.49527, -20.833017, -308.32867, 179.16396, -233.3298, 245.8296, -208.33018, 283.32904, -145.83113, 279.16245, -33.33283, 258.3294, 154.16434, 237.4964, 308.32867, 195.83037, 324.9951, -116.6649, 312.49527, -295.82886, -54.165848, -291.66226, -166.66414)

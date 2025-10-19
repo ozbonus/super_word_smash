@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://04qyba4etl4s"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/ball.gd" id="1_uk0m1"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_f6e3h"]
+[ext_resource type="Texture2D" uid="uid://c25188b3x5elw" path="res://components/balls/car_yellow.png" id="3_uk0m1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_53su8"]
+shader = ExtResource("2_f6e3h")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 10.000000149012
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Banana" type="RigidBody2D"]
+script = ExtResource("1_uk0m1")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_53su8")
+scale = Vector2(0.11427092, 0.11427092)
+texture = ExtResource("3_uk0m1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.11427092, 0.11427092)
+polygon = PackedVector2Array(70.00906, -236.2806, 245.03172, -218.77832, 297.5385, -113.764725, 315.04077, -26.253399, 358.79645, 17.502266, 358.79645, 122.51586, 288.78738, 218.77832, -227.52945, 218.77832, -358.79645, 148.76926, -358.79645, 0, -245.03172, -96.26247, -166.27153, -218.77832, -52.506798, -236.2806)
