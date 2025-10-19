@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://rj2ld1nmrofw"]
+[gd_scene load_steps=9 format=3 uid="uid://rj2ld1nmrofw"]
 
 [ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_lau3u"]
 [ext_resource type="PackedScene" uid="uid://bkto5wvbsr7iq" path="res://components/level_frame.tscn" id="2_4ufbd"]
-[ext_resource type="PackedScene" uid="uid://chrnt4k6me32v" path="res://components/ball.tscn" id="3_g6pop"]
 [ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="4_5brif"]
+[ext_resource type="PackedScene" uid="uid://cgc1eiqe5j4ky" path="res://components/balls/cat1.tscn" id="4_tsmgk"]
+[ext_resource type="PackedScene" uid="uid://6jfcypo4gnr3" path="res://components/balls/cat2.tscn" id="5_wsmxw"]
+[ext_resource type="PackedScene" uid="uid://co2be5aoxjv01" path="res://components/balls/cat3.tscn" id="6_bdedl"]
+[ext_resource type="PackedScene" uid="uid://g3exsxmqksw" path="res://components/balls/cat4.tscn" id="7_8k4nx"]
+[ext_resource type="PackedScene" uid="uid://c7wh7jfrov836" path="res://components/balls/cat5.tscn" id="8_lo1wc"]
 
 [node name="Level01" type="Node2D" node_paths=PackedStringArray("goal")]
 script = ExtResource("1_lau3u")
@@ -11,10 +15,22 @@ goal = NodePath("Goal")
 
 [node name="LevelFrame" parent="." instance=ExtResource("2_4ufbd")]
 
-[node name="Ball" parent="." instance=ExtResource("3_g6pop")]
-position = Vector2(300, 193)
-
 [node name="Goal" parent="." instance=ExtResource("4_5brif")]
 position = Vector2(590, 202)
+
+[node name="Banana" parent="." instance=ExtResource("4_tsmgk")]
+position = Vector2(208, 200)
+
+[node name="Banana2" parent="." instance=ExtResource("5_wsmxw")]
+position = Vector2(119, 277)
+
+[node name="Banana3" parent="." instance=ExtResource("6_bdedl")]
+position = Vector2(98, 118)
+
+[node name="Banana4" parent="." instance=ExtResource("7_8k4nx")]
+position = Vector2(301, 324)
+
+[node name="Banana5" parent="." instance=ExtResource("8_lo1wc")]
+position = Vector2(263, 107)
 
 [connection signal="entered" from="Goal" to="." method="_on_goal_entered"]
