@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkto5wvbsr7iq"]
+[gd_scene load_steps=6 format=3 uid="uid://bkto5wvbsr7iq"]
 
 [ext_resource type="Texture2D" uid="uid://ba050dm6op475" path="res://icon.svg" id="1_41tqr"]
 [ext_resource type="PackedScene" uid="uid://c7k8x62jmyhfw" path="res://components/on_screen_timer.tscn" id="2_r7g7t"]
@@ -8,6 +8,8 @@ size = Vector2(20, 400)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ic6ei"]
 size = Vector2(660, 20)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r7g7t"]
 
 [node name="LevelFrame" type="Node2D"]
 
@@ -57,3 +59,22 @@ shape = SubResource("RectangleShape2D_ic6ei")
 position = Vector2(320, 10.0000305)
 scale = Vector2(5.156249, 0.15624979)
 texture = ExtResource("1_41tqr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(320, 390)
+shape = SubResource("WorldBoundaryShape2D_r7g7t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(320, 20)
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_r7g7t")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(630, 192)
+rotation = 4.712389
+shape = SubResource("WorldBoundaryShape2D_r7g7t")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(10, 193)
+rotation = 7.853982
+shape = SubResource("WorldBoundaryShape2D_r7g7t")
