@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://ba050dm6op475" path="res://icon.svg" id="1_wtcfe"]
 
 [node name="Ball" type="Node2D"]
+z_index = 2
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 scale = Vector2(0.9987066, 1)
 script = ExtResource("1_0e48y")
-tilt_sensitivity = 400.0
 
 [node name="Icon" type="Sprite2D" parent="RigidBody2D"]
 position = Vector2(1.4210855e-14, 2.3841858e-07)
