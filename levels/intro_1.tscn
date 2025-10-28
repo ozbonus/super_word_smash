@@ -1,22 +1,21 @@
-[gd_scene load_steps=7 format=4 uid="uid://63xyumvsc0c8"]
+[gd_scene load_steps=8 format=4 uid="uid://63xyumvsc0c8"]
 
 [ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_gg43x"]
 [ext_resource type="PackedScene" uid="uid://bkto5wvbsr7iq" path="res://components/level_frame.tscn" id="1_ty3hu"]
-[ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="3_81a5f"]
+[ext_resource type="Script" uid="uid://cccj8h6n48v7r" path="res://components/goal.gd" id="5_imeec"]
 [ext_resource type="PackedScene" uid="uid://cmqclu0oeqmpq" path="res://components/level_base_layers/camping_grass.tscn" id="5_k74dq"]
-[ext_resource type="PackedScene" uid="uid://6jfcypo4gnr3" path="res://components/balls/cat2.tscn" id="6_imeec"]
+[ext_resource type="PackedScene" uid="uid://d24f5pl4mh7jv" path="res://components/balls/cat1.tscn" id="6_imeec"]
 [ext_resource type="TileSet" uid="uid://b1aj11yqv45ok" path="res://components/tile_maps/camping.tres" id="6_k74dq"]
 
-[node name="Level01" type="Node2D" node_paths=PackedStringArray("goal")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k74dq"]
+size = Vector2(66, 102)
+
+[node name="Level01" type="Node2D"]
 script = ExtResource("1_gg43x")
-goal = NodePath("Goal")
 
 [node name="LevelFrame" parent="." instance=ExtResource("1_ty3hu")]
 
 [node name="CampingGrass" parent="." instance=ExtResource("5_k74dq")]
-
-[node name="Goal" parent="." instance=ExtResource("3_81a5f")]
-position = Vector2(-169, 210)
 
 [node name="TopDecorations" type="TileMapLayer" parent="."]
 z_index = 99
@@ -36,7 +35,27 @@ tile_set = ExtResource("6_k74dq")
 tile_map_data = PackedByteArray("AAAKAP//AQALAJcAAAASAP//AQALAJcAAAACAP//AQALAJcAAAANAA0AAQALAJcAAAAVAA0AAQALAJcAAAAFAA0AAQALAJcAAAD9/w0AAQALAJcAAAAaAP//AQALAJcAAAD6////AQALAJcAAAATAAMAAQAHAJcAAAASAAgAAQAHAJcAAAAUAA0AAQAHAJcAAAAUAAkAAQAHAJcAAAA=")
 tile_set = ExtResource("6_k74dq")
 
+[node name="Goal" type="Node2D" parent="."]
+position = Vector2(29, 149)
+script = ExtResource("5_imeec")
+goal_type = 1
+
+[node name="Area2D" type="Area2D" parent="Goal"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal/Area2D"]
+position = Vector2(35, 59)
+shape = SubResource("RectangleShape2D_k74dq")
+
+[node name="Label" type="Label" parent="Goal"]
+offset_left = 22.0
+offset_top = 72.0
+offset_right = 62.0
+offset_bottom = 95.0
+rotation = -1.5707964
+text = "cat"
+
 [node name="Banana" parent="." instance=ExtResource("6_imeec")]
-position = Vector2(104, 205)
+position = Vector2(468, 210.99998)
 
 [connection signal="entered" from="Goal" to="." method="_on_goal_entered"]
+[connection signal="body_entered" from="Goal/Area2D" to="Goal" method="_on_area_2d_body_entered"]

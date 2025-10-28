@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://g3exsxmqksw"]
 
-[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/ball.gd" id="1_7rne0"]
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_7rne0"]
 [ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_5s2nb"]
 [ext_resource type="Texture2D" uid="uid://1fyi2cyslm8a" path="res://components/balls/cat08_moyou_sabatora.png" id="3_7rne0"]
 
@@ -12,7 +12,7 @@ shader_parameter/alpha_threshold = 0.0999999977648
 shader_parameter/outline_samples = 8
 shader_parameter/shade_color = Color(1, 1, 1, 0)
 
-[node name="Banana" type="RigidBody2D"]
+[node name="Cat4" type="RigidBody2D"]
 script = ExtResource("1_7rne0")
 metadata/_custom_type_script = "uid://bs1skkkypsyrc"
 

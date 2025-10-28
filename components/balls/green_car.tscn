@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bhgljrhiuvjw1"]
 
-[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/ball.gd" id="1_pb8wq"]
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_pb8wq"]
 [ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_0i50p"]
 [ext_resource type="Texture2D" uid="uid://d4msagwr1h121" path="res://components/balls/car_green.png" id="3_pb8wq"]
 
