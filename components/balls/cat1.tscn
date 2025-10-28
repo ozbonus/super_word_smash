@@ -1,26 +1,24 @@
 [gd_scene load_steps=5 format=3 uid="uid://cgc1eiqe5j4ky"]
 
-[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/ball.gd" id="1_ognml"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_m2t2y"]
-[ext_resource type="Texture2D" uid="uid://40q3ac4ax0w" path="res://components/balls/cat14_moyou_buchi.png" id="3_ognml"]
+[ext_resource type="PackedScene" uid="uid://chrnt4k6me32v" path="res://components/ball.tscn" id="1_6fxyq"]
+[ext_resource type="Texture2D" uid="uid://cfhh7yhny182t" path="res://components/balls/cat12_moyou_mike.png" id="2_ho23s"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_53su8"]
-shader = ExtResource("2_m2t2y")
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 10.000000149012
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6fxyq"]
 
-[node name="Banana" type="RigidBody2D"]
-script = ExtResource("1_ognml")
-metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ho23s"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_53su8")
-scale = Vector2(0.1590906, 0.15887581)
-texture = ExtResource("3_ognml")
+[node name="Node2D" type="Node2D"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2(0.15887581, 0.15887581)
-polygon = PackedVector2Array(-262.49603, -212.49678, -254.16281, -304.16205, -220.82999, -312.49527, -20.833017, -308.32867, 179.16396, -233.3298, 245.8296, -208.33018, 283.32904, -145.83113, 279.16245, -33.33283, 258.3294, 154.16434, 237.4964, 308.32867, 195.83037, 324.9951, -116.6649, 312.49527, -295.82886, -54.165848, -291.66226, -166.66414)
+[node name="Ball" parent="." instance=ExtResource("1_6fxyq")]
+material = SubResource("CanvasItemMaterial_6fxyq")
+
+[node name="Icon" parent="Ball/RigidBody2D" index="0"]
+material = SubResource("ShaderMaterial_ho23s")
+scale = Vector2(0.07901144, 0.07901144)
+texture = ExtResource("2_ho23s")
+
+[node name="CollisionPolygon2D" parent="Ball/RigidBody2D" index="1"]
+scale = Vector2(1.0065306, 1.0496747)
+polygon = PackedVector2Array(-30.828457, -9.52676, -29.833658, -1.9053521, -20.880474, 7.6214085, -16.90128, 22.864225, 6.973882, 23.816902, 10.953077, 19.05352, 13.937471, 4.76338, 11.947876, -15.242817, 4.984286, -16.195494, -9.937691, -21.911549, -26.849264, -22.864225)
+
+[editable path="Ball"]

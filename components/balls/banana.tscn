@@ -13,14 +13,17 @@ shader_parameter/outline_samples = 8
 shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Banana" type="RigidBody2D"]
+z_index = 3
 script = ExtResource("1_r3oon")
 metadata/_custom_type_script = "uid://bs1skkkypsyrc"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 material = SubResource("ShaderMaterial_53su8")
 scale = Vector2(0.11427092, 0.11427092)
 texture = ExtResource("2_d2lfu")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+z_index = 1
 scale = Vector2(0.11427092, 0.11427092)
 polygon = PackedVector2Array(27, -33, 65, -91, 91, -156, 106, -185, 123, -192, 143, -181, 158, -131, 150, -56, 123, 4, 101, 38, 107, 59, 107, 93, 102, 123, 101, 162, 105, 187, 95, 191, -79, 165, -171, 118, -173, 97, -147, 19, -130, -11, -102, -29, -62, -39, -20, -32, 10, -16)
