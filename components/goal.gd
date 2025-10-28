@@ -2,14 +2,17 @@ class_name Goal extends Node2D
 
 signal entered
 
-# Called when the node enters the scene tree for the first time.
+enum GoalType { UNSET, REAL, DECOY }
+
+## Whether this is a real goal (which can trigger the next level) or a decoy
+## goal. This setting is required or else and error will be thrown.
+@export var goal_type: GoalType
+
 func _ready():
-	pass # Replace with function body.
+	if goal_type == GoalType.UNSET:
+		push_error("You must define a goal type.")
+		return
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
-func _on_area_2d_body_entered(body: Node2D):
-	print("Success!")
+func _on_area_2d_body_entered():
 	entered.emit()
