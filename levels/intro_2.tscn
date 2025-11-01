@@ -1,9 +1,61 @@
-[gd_scene load_steps=3 format=3 uid="uid://rj2ld1nmrofw"]
+[gd_scene load_steps=8 format=4 uid="uid://rj2ld1nmrofw"]
 
 [ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_lau3u"]
 [ext_resource type="PackedScene" uid="uid://bkto5wvbsr7iq" path="res://components/level_frame.tscn" id="2_4ufbd"]
+[ext_resource type="PackedScene" uid="uid://cmqclu0oeqmpq" path="res://components/level_base_layers/camping_grass.tscn" id="3_d4dcw"]
+[ext_resource type="TileSet" uid="uid://b1aj11yqv45ok" path="res://components/tile_maps/camping.tres" id="4_ci23s"]
+[ext_resource type="PackedScene" uid="uid://bbpnhxblurnl1" path="res://components/balls/big_banana.tscn" id="5_d4dcw"]
+[ext_resource type="Script" uid="uid://cccj8h6n48v7r" path="res://components/goal.gd" id="5_wsmxw"]
 
-[node name="Level01" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdedl"]
+size = Vector2(66, 102)
+
+[node name="Level02" type="Node2D"]
 script = ExtResource("1_lau3u")
 
 [node name="LevelFrame" parent="." instance=ExtResource("2_4ufbd")]
+
+[node name="CampingGrass" parent="." instance=ExtResource("3_d4dcw")]
+
+[node name="TopDecorations" type="TileMapLayer" parent="."]
+z_index = 99
+position = Vector2(51, 210)
+tile_map_data = PackedByteArray("AAAIAPz/AQAWACUAAAAQAPz/AQAYACUAAAADAAMAAQAWACgAAAAFAAMAAQAWACYAAAAJAAMAAQAWACgAAAAMAAMAAQAXACUAAAANAAMAAQAWACYAAAAOAAMAAQAXACUAAAD7/wMAAQAWACcAAAD8/wMAAQAWACcAAAD9/wMAAQAXACYAAAD+/wMAAQAXACcAAAABAAMAAQAWACUAAAANAPz/AQAWACgAAAA=")
+tile_set = ExtResource("4_ci23s")
+
+[node name="BaseLayerDecorations" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAEAAgAAQAWACYAAAAGAAIAAQAXACYAAAAFAAQAAQAXACYAAAAPAAQAAQAWAAEAAAAPAAUAAQAWAAIAAAAPAAYAAQAWAAIAAAAPAAcAAQAWAAIAAAAPAAgAAQAWAAQAAAAQAAQAAQAYAAEAAAAQAAUAAQAYAAMAAAAQAAYAAQAYAAMAAAAQAAcAAQAYAAMAAAAQAAgAAQAYAAQAAAARAAQAAQAYAAEAAAARAAUAAQAXAAMAAAARAAYAAQAYAAIAAAARAAcAAQAYAAMAAAARAAgAAQAYAAQAAAASAAQAAQAZAAEAAAASAAUAAQAZAAMAAAASAAYAAQAZAAIAAAASAAcAAQAZAAIAAAASAAgAAQAZAAQAAAA=")
+tile_set = ExtResource("4_ci23s")
+
+[node name="RockGuides" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAMAAQAUACYAAAACAAMAAQAVACUAAAADAAMAAQATACYAAAAEAAMAAQAUACYAAAAFAAMAAQATACcAAAAGAAMAAQATACYAAAAHAAMAAQAVACUAAAAIAAMAAQAVACYAAAAJAAMAAQAUACcAAAAKAAMAAQAUACUAAAALAAMAAQATACcAAAAMAAMAAQAVACUAAAANAAMAAQATACYAAAAOAAMAAQATACcAAAAPAAMAAQAVACcAAAAQAAMAAQAVACUAAAD7/wkAAQATACUAAAABAAkAAQATACYAAAACAAkAAQATACUAAAADAAkAAQAUACcAAAAEAAkAAQAUACYAAAAFAAkAAQATACUAAAAGAAkAAQAVACYAAAAHAAkAAQATACYAAAAIAAkAAQATACcAAAAJAAkAAQAVACcAAAAKAAkAAQAUACcAAAALAAkAAQAVACcAAAAMAAkAAQAUACcAAAANAAkAAQATACUAAAAOAAkAAQATACUAAAAPAAkAAQATACcAAAAQAAkAAQATACUAAAARAAMAAQATACUAAAARAAkAAQATACYAAAASAAMAAQATACcAAAASAAkAAQATACcAAAATAAMAAQAVACYAAAATAAkAAQATACcAAAAUAAMAAQAUACcAAAAUAAkAAQAVACcAAAAVAAMAAQAUACUAAAAVAAkAAQAVACcAAAABAAQAAQAUACYAAAABAAUAAQAVACUAAAABAAYAAQAUACcAAAABAAcAAQAVACYAAAABAAgAAQAVACcAAAAWAAMAAQAUACUAAAAWAAkAAQAVACUAAAA=")
+tile_set = ExtResource("4_ci23s")
+
+[node name="Trees" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAKAP//AQALAJcAAAASAP//AQALAJcAAAACAP//AQALAJcAAAANAA0AAQALAJcAAAAVAA0AAQALAJcAAAAFAA0AAQALAJcAAAD9/w0AAQALAJcAAAAaAP//AQALAJcAAAD6////AQALAJcAAAAUAA0AAQAHAJcAAAD//wMAAQAHAJcAABD+/wYAAQAHAJcAABD//wkAAQAHAJcAABAAAAcAAQAHAJcAABA=")
+tile_set = ExtResource("4_ci23s")
+
+[node name="Goal" type="Node2D" parent="."]
+position = Vector2(509, 149)
+script = ExtResource("5_wsmxw")
+goal_type = 1
+
+[node name="Area2D" type="Area2D" parent="Goal"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal/Area2D"]
+position = Vector2(35, 59)
+shape = SubResource("RectangleShape2D_bdedl")
+
+[node name="Label" type="Label" parent="Goal"]
+offset_left = 46.0
+offset_top = 30.0
+offset_right = 105.0
+offset_bottom = 53.0
+rotation = 1.5707964
+text = "banana"
+
+[node name="BigBanana" parent="." instance=ExtResource("5_d4dcw")]
+position = Vector2(136, 207)
+
+[connection signal="entered" from="Goal" to="." method="_on_goal_entered"]
+[connection signal="body_entered" from="Goal/Area2D" to="Goal" method="_on_area_2d_body_entered"]
