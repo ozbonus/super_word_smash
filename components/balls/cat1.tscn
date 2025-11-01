@@ -12,7 +12,7 @@ shader_parameter/alpha_threshold = 0.0999999977648
 shader_parameter/outline_samples = 8
 shader_parameter/shade_color = Color(1, 1, 1, 0)
 
-[node name="Banana" type="RigidBody2D"]
+[node name="Cat1" type="RigidBody2D"]
 script = ExtResource("1_ho23s")
 metadata/_custom_type_script = "uid://bs1skkkypsyrc"
 
