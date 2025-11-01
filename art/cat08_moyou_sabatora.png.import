@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4msagwr1h121"
-path="res://.godot/imported/car_green.png-4270dc40cb3432f1446181e09cdc64c0.ctex"
+uid="uid://1fyi2cyslm8a"
+path="res://.godot/imported/cat08_moyou_sabatora.png-04c1110e45c2da77eee0520f93228b85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://components/balls/car_green.png"
-dest_files=["res://.godot/imported/car_green.png-4270dc40cb3432f1446181e09cdc64c0.ctex"]
+source_file="res://art/cat08_moyou_sabatora.png"
+dest_files=["res://.godot/imported/cat08_moyou_sabatora.png-04c1110e45c2da77eee0520f93228b85.ctex"]
 
 [params]
 

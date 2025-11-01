@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg0n7mk2c4fgo"
-path="res://.godot/imported/car_red.png-d2a836d4fd0f5e9d66988df598140aaf.ctex"
+uid="uid://bd7nt0x66ui5o"
+path="res://.godot/imported/cat09_moyou_chatora_moyou_white.png-6ff70630f4c1e1da59654826e02ef263.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://components/balls/car_red.png"
-dest_files=["res://.godot/imported/car_red.png-d2a836d4fd0f5e9d66988df598140aaf.ctex"]
+source_file="res://art/cat09_moyou_chatora_moyou_white.png"
+dest_files=["res://.godot/imported/cat09_moyou_chatora_moyou_white.png-6ff70630f4c1e1da59654826e02ef263.ctex"]
 
 [params]
 

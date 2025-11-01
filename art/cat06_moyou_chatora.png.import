@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://40q3ac4ax0w"
-path="res://.godot/imported/cat14_moyou_buchi.png-a08ebfb1e24620640a37db29a2a3796b.ctex"
+uid="uid://uxmdd324ie2t"
+path="res://.godot/imported/cat06_moyou_chatora.png-76962a44e8fd16accfd706234f5fbedc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://components/balls/cat14_moyou_buchi.png"
-dest_files=["res://.godot/imported/cat14_moyou_buchi.png-a08ebfb1e24620640a37db29a2a3796b.ctex"]
+source_file="res://art/cat06_moyou_chatora.png"
+dest_files=["res://.godot/imported/cat06_moyou_chatora.png-76962a44e8fd16accfd706234f5fbedc.ctex"]
 
 [params]
 

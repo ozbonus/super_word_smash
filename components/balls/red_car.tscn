@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_27wb2"]
 [ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_g4xhm"]
-[ext_resource type="Texture2D" uid="uid://dg0n7mk2c4fgo" path="res://components/balls/car_red.png" id="3_27wb2"]
+[ext_resource type="Texture2D" uid="uid://dg0n7mk2c4fgo" path="res://art/car_red.png" id="3_27wb2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_53su8"]
 shader = ExtResource("2_g4xhm")
