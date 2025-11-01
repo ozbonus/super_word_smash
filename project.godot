@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Constants="*res://constants/constants.tscn"
+GameStateService="*res://services/game_state_service.tscn"
 TimerService="*res://services/timer_service.tscn"
 
 [display]

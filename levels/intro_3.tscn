@@ -105,5 +105,8 @@ vertical_alignment = 1
 position = Vector2(512, 158.99998)
 rotation = -2.0679853
 
+[node name="Focus" type="Node2D" parent="."]
+position = Vector2(496, 322)
+
 [connection signal="entered" from="Goal" to="." method="_on_goal_entered"]
 [connection signal="body_entered" from="Goal/Area2D" to="Goal" method="_on_area_2d_body_entered"]

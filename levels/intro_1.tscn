@@ -54,5 +54,8 @@ text = "cat"
 [node name="Cat1" parent="." instance=ExtResource("6_imeec")]
 position = Vector2(482, 206)
 
+[node name="Focus" type="Node2D" parent="."]
+position = Vector2(65, 207)
+
 [connection signal="entered" from="Goal" to="." method="_on_goal_entered"]
 [connection signal="body_entered" from="Goal/Area2D" to="Goal" method="_on_area_2d_body_entered"]

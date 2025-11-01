@@ -13,8 +13,18 @@ script = ExtResource("1_p13vs")
 levels = Array[PackedScene]([ExtResource("2_au0an"), ExtResource("3_0145d"), ExtResource("3_108xg"), ExtResource("4_dxunw"), ExtResource("8_5me18")])
 
 [node name="GameCamera" type="Camera2D" parent="."]
-anchor_mode = 0
+position = Vector2(320, 200)
+limit_enabled = false
+limit_left = 0
+limit_top = 0
+limit_right = 640
+limit_bottom = 400
 script = ExtResource("16_uyu88")
+success_zoom_level = 2.8
+
+[node name="SuccessTimer" type="Timer" parent="."]
+one_shot = true
+ignore_time_scale = true
 
 [node name="Level" type="Node2D" parent="."]
 
