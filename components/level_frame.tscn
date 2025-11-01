@@ -1,13 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkto5wvbsr7iq"]
-
-[ext_resource type="PackedScene" uid="uid://c7k8x62jmyhfw" path="res://components/on_screen_timer.tscn" id="2_r7g7t"]
+[gd_scene load_steps=2 format=3 uid="uid://bkto5wvbsr7iq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r7g7t"]
 
 [node name="LevelFrame" type="Node2D"]
-
-[node name="OnScreenTimer" parent="." instance=ExtResource("2_r7g7t")]
-position = Vector2(246, 148)
 
 [node name="Area2D" type="Area2D" parent="."]
 
