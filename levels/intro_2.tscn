@@ -10,7 +10,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bdedl"]
 size = Vector2(66, 102)
 
-[node name="Level02" type="Node2D"]
+[node name="Intro2" type="Node2D"]
 script = ExtResource("1_lau3u")
 
 [node name="LevelFrame" parent="." instance=ExtResource("2_4ufbd")]

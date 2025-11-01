@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://x2aht16oixgb"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_im67r"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_8rm6m"]
+[ext_resource type="Texture2D" uid="uid://bvawhvjc0apdk" path="res://art/dog_akitainu.png" id="3_im67r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_8rm6m")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 10.000000149012
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="AkitaInu" type="RigidBody2D"]
+script = ExtResource("1_im67r")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.12607838, 0.12453821)
+texture = ExtResource("3_im67r")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-2, -37, 4, -50, 14, -50, 18, -46, 25, -45, 32, -50, 40, -50, 41, -36, 45, -19, 41, -8, 35, -3, 32, 29, 30, 39, 31, 48, -4, 50, -8, 46, -34, 46, -35, 4, -43, -1, -42, -17, -37, -24, -26, -27, -15, -25, -6, -30)

@@ -1,39 +1,112 @@
-[gd_scene load_steps=5 format=3 uid="uid://1s3juadaw5ps"]
+[gd_scene load_steps=9 format=4 uid="uid://1s3juadaw5ps"]
 
 [ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_g03wv"]
 [ext_resource type="PackedScene" uid="uid://bkto5wvbsr7iq" path="res://components/level_frame.tscn" id="2_ro3nw"]
-[ext_resource type="PackedScene" uid="uid://chrnt4k6me32v" path="res://components/ball.tscn" id="3_o1gyf"]
-[ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="4_qgvka"]
+[ext_resource type="PackedScene" uid="uid://cmqclu0oeqmpq" path="res://components/level_base_layers/camping_grass.tscn" id="3_02seu"]
+[ext_resource type="TileSet" uid="uid://b1aj11yqv45ok" path="res://components/tile_maps/camping.tres" id="4_g03wv"]
+[ext_resource type="PackedScene" uid="uid://x2aht16oixgb" path="res://components/balls/akita_inu.tscn" id="5_ro3nw"]
+[ext_resource type="Script" uid="uid://cccj8h6n48v7r" path="res://components/goal.gd" id="6_o1gyf"]
 
-[node name="Level01" type="Node2D" node_paths=PackedStringArray("goal")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1gyf"]
+size = Vector2(92, 64)
+
+[sub_resource type="Theme" id="Theme_o1gyf"]
+default_font_size = 36
+
+[node name="Intro3" type="Node2D"]
 script = ExtResource("1_g03wv")
-goal = NodePath("Goal")
+metadata/_edit_horizontal_guides_ = [0.0, 400.0]
+metadata/_edit_vertical_guides_ = [0.0, 640.0]
 
 [node name="LevelFrame" parent="." instance=ExtResource("2_ro3nw")]
 
-[node name="Ball" parent="." instance=ExtResource("3_o1gyf")]
-position = Vector2(300, 193)
+[node name="CampingGrass" parent="." instance=ExtResource("3_02seu")]
 
-[node name="Goal" parent="." instance=ExtResource("4_qgvka")]
-position = Vector2(48, 202)
+[node name="Walls" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAsAAQAUAKoAAAABAAsAAQAUAKoAAAACAAsAAQAXAKkAAAADAAsAAQAUAKkAAAAEAAsAAQAUAKkAAAAFAAsAAQAUAKkAAAAGAAsAAQAUAKkAAAAHAAsAAQAUAKkAAAALAAsAAQAXAKkAAAAMAAsAAQAUAKkAAAANAAsAAQAUAKkAAAAOAAsAAQAUAKkAAAAPAAsAAQAUAKkAAAAQAAsAAQAUAKkAAAARAAsAAQAUAKkAAAASAAsAAQAUAKkAAAATAAsAAQAWAKkAAAAUAAsAAQAUAKoAAAAVAAsAAQAUAKoAAAAWAAsAAQAUAKoAAAAXAAsAAQAUAKoAAAATAAoAAQATAKoAAAATAAkAAQATAKoAAAATAAgAAQATAKoAAAATAAcAAQATAKoAAAATAAYAAQATAKoAAAATAAUAAQATAKoAAAATAAQAAQATAKoAAAATAAMAAQATAKoAAAATAAIAAQATAKoAAAAAAAEAAQAUAKoAAAABAAEAAQAXAKoAAAACAAEAAQAUAKsAAAADAAEAAQAVAKsAAAAEAAEAAQAUAK0AAAAFAAEAAQAUAK0AAAAGAAEAAQAUAK0AAAAHAAEAAQAUAK0AAAAIAAEAAQAUAK0AAAAJAAEAAQAUAK0AAAAKAAEAAQAUAK0AAAALAAEAAQATAKsAAAAMAAEAAQAUAKsAAAANAAEAAQAVAKsAAAAOAAEAAQAUAK0AAAAPAAEAAQAUAK0AAAAQAAEAAQAUAK0AAAARAAEAAQAUAK0AAAASAAEAAQAUAK0AAAAAAAAAAQAUAKoAAAABAAAAAQAUAKoAAAACAAAAAQAUAKoAAAAEAAAAAQAUAKsAAAAFAAAAAQAUAKsAAAAGAAAAAQAUAKsAAAAHAAAAAQAUAKsAAAAIAAAAAQAUAKsAAAAJAAAAAQAUAKsAAAAKAAAAAQAUAKsAAAALAAAAAQAWAKoAAAAMAAAAAQAUAKoAAAANAAAAAQAXAKoAAAAOAAAAAQAUAKsAAAAPAAAAAQAUAKsAAAAQAAAAAQAUAKsAAAARAAAAAQAUAKsAAAASAAAAAQAUAKsAAAATAAEAAQATAKoAAAATAAAAAQAWAKoAAAAAAAoAAQAXAKkAAAAAAAkAAQAVAKoAAAAAAAgAAQAVAKoAAAAAAAcAAQAVAKoAAAAAAAYAAQAVAKoAAAAAAAUAAQAVAKoAAAAAAAQAAQAVAKoAAAAAAAMAAQAVAKoAAAAAAAIAAQAXAKoAAAALAAIAAQATAK0AAAAMAAIAAQAUAK0AAAANAAIAAQAVAK0AAAABAAoAAQAUAKkAAAACAAoAAQAVAKkAAAAJAAkAAQAUAKkAAAAKAAkAAQAVAKkAAAAKAAoAAQAXAKkAAAALAAoAAQAXAKgAAAAIAAsAAQAWAKkAAAAIAAkAAQATAKkAAAAIAAoAAQATAKoAAAACAAIAAQAUAK0AAAABAAIAAQAVAKsAAAADAAAAAQAXAKoAAAADAAIAAQAVAK0AAAABAAMAAQAVAK0AAAA=")
+tile_set = ExtResource("4_g03wv")
 
-[node name="Goal2" parent="." instance=ExtResource("4_qgvka")]
-position = Vector2(593, 199)
+[node name="BaseDecoration" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAGAAoAAQAYAAMAAAAGAAkAAQAYAAMAAAAFAAoAAQAbAAIAAAAFAAkAAQAXAAIAAAAEAAoAAQAYAAMAAAAEAAkAAQAbAAIAAAADAAoAAQAdAAUAAAADAAkAAQAaAAMAAAADAAgAAQAaAAEAAAAEAAgAAQAdAAEAAAAFAAgAAQAYAAEAAAAFAAsAAQAdAAMAAAAEAAsAAQAbAAQAAAADAAsAAQAdAAYAAAAGAAgAAQAdAAEAAAAGAAsAAQAYAAQAAAAHAAkAAQAZAAMAAAAHAAoAAQAZAAMAAAAHAAgAAQAcAAEAAAAHAAsAAQAeAAMAAAAKAAIAAQAVALEAAAACAAMAAQAWALMAAAAPAAQAAQAYAAMAAAAPAAUAAQAeAAUAAAAQAAQAAQAYAAIAAAAQAAUAAQAbAAIAAAAOAAUAAQAaAAIAAAAOAAQAAQAaAAIAAAAOAAMAAQAaAAEAAAAPAAMAAQAYAAEAAAAQAAMAAQAeAAQAAAAQAAYAAQAYAAQAAAAPAAYAAQAbAAQAAAAOAAYAAQAaAAQAAAARAAUAAQAcAAMAAAARAAYAAQAcAAQAAAARAAQAAQAZAAMAAAARAAMAAQAcAAEAAAAEAAIAAQAdAAQAAAAEAAMAAQAdAAUAAAAEAAQAAQAaAAIAAAAEAAUAAQAaAAQAAAAFAAIAAQAXAAEAAAAFAAMAAQAbAAMAAAAFAAQAAQAdAAIAAAAFAAUAAQAdAAMAAAAGAAIAAQAXAAEAAAAGAAMAAQAXAAIAAAAGAAQAAQAeAAUAAAAGAAUAAQAdAAMAAAAHAAIAAQAeAAQAAAAHAAMAAQAXAAIAAAAHAAQAAQAYAAIAAAAHAAUAAQAeAAYAAAAIAAIAAQAcAAEAAAAIAAMAAQAZAAMAAAAIAAQAAQAZAAIAAAAIAAUAAQAeAAMAAAA=")
+tile_set = ExtResource("4_g03wv")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 30.0
-offset_top = 188.0
-offset_right = 70.0
-offset_bottom = 211.0
-text = "yes"
+[node name="BaseDecoration2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAGAAoAAQAYAAMAAAAGAAkAAQAYAAMAAAAFAAoAAQAbAAIAAAAFAAkAAQAXAAIAAAAEAAoAAQAYAAMAAAAEAAkAAQAbAAIAAAADAAoAAQAdAAUAAAADAAkAAQAaAAMAAAADAAgAAQAaAAEAAAAEAAgAAQAdAAEAAAAFAAgAAQAYAAEAAAAFAAsAAQAdAAMAAAAEAAsAAQAbAAQAAAADAAsAAQAdAAYAAAAGAAgAAQAdAAEAAAAGAAsAAQAYAAQAAAAHAAkAAQAZAAMAAAAHAAoAAQAZAAMAAAAHAAgAAQAcAAEAAAAHAAsAAQAeAAMAAAAKAAIAAQAVALEAAAACAAMAAQAWALMAAAAPAAQAAQAYAAMAAAAPAAUAAQAeAAUAAAAQAAQAAQAYAAIAAAAQAAUAAQAbAAIAAAAOAAUAAQAaAAIAAAAOAAQAAQAaAAIAAAAOAAMAAQAaAAEAAAAPAAMAAQAYAAEAAAAQAAMAAQAeAAQAAAAQAAYAAQAYAAQAAAAPAAYAAQAbAAQAAAAOAAYAAQAaAAQAAAARAAUAAQAcAAMAAAARAAYAAQAcAAQAAAARAAQAAQAZAAMAAAARAAMAAQAcAAEAAAANAAgAAQAdAAQAAAANAAkAAQAdAAUAAAANAAoAAQAaAAIAAAANAAsAAQAaAAQAAAAOAAgAAQAXAAEAAAAOAAkAAQAbAAMAAAAOAAoAAQAdAAIAAAAOAAsAAQAdAAMAAAAPAAgAAQAXAAEAAAAPAAkAAQAXAAIAAAAPAAoAAQAeAAUAAAAPAAsAAQAdAAMAAAAQAAgAAQAeAAQAAAAQAAkAAQAXAAIAAAAQAAoAAQAYAAIAAAAQAAsAAQAeAAYAAAARAAgAAQAcAAEAAAARAAkAAQAZAAMAAAARAAoAAQAZAAIAAAARAAsAAQAeAAMAAAA=")
+tile_set = ExtResource("4_g03wv")
+
+[node name="Decorations" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAFAAYAAQATACUAAAAGAAYAAQAVACcAAAAHAAYAAQAUACUAAAAIAAYAAQATACYAAAAJAAYAAQAVACcAAAAKAAYAAQATACUAAAALAAYAAQATACYAAAAMAAYAAQAUACcAAAANAAcAAQATACYAAAAOAAcAAQAVACYAAAAPAAcAAQATACYAAAAQAAcAAQAVACcAAAARAAcAAQAUACcAAAASAAcAAQAUACUAAAA=")
+tile_set = ExtResource("4_g03wv")
+
+[node name="Decoy" type="Node2D" parent="."]
+script = ExtResource("6_o1gyf")
+goal_type = 2
+
+[node name="Area2D" type="Area2D" parent="Decoy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decoy/Area2D"]
+position = Vector2(207, 129)
+shape = SubResource("RectangleShape2D_o1gyf")
+
+[node name="Label" type="Label" parent="Decoy"]
+offset_left = 162.0
+offset_top = 98.0
+offset_right = 253.0
+offset_bottom = 160.0
+rotation = 2.5488617
+pivot_offset = Vector2(45, 32)
+text = "cat"
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
-offset_left = 579.0
-offset_top = 188.0
-offset_right = 619.0
-offset_bottom = 211.0
-text = "no"
+[node name="Decoy2" type="Node2D" parent="."]
+position = Vector2(-32, 190)
+script = ExtResource("6_o1gyf")
+goal_type = 2
+
+[node name="Area2D" type="Area2D" parent="Decoy2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decoy2/Area2D"]
+position = Vector2(207, 129)
+shape = SubResource("RectangleShape2D_o1gyf")
+
+[node name="Label" type="Label" parent="Decoy2"]
+offset_left = 162.0
+offset_top = 98.0
+offset_right = 253.0
+offset_bottom = 160.0
+rotation = -0.50880456
+pivot_offset = Vector2(45, 32)
+text = "pig"
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Goal" type="Node2D" parent="."]
+position = Vector2(289, 190)
+script = ExtResource("6_o1gyf")
+goal_type = 1
+
+[node name="Area2D" type="Area2D" parent="Goal"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal/Area2D"]
+position = Vector2(207, 129)
+shape = SubResource("RectangleShape2D_o1gyf")
+
+[node name="Label" type="Label" parent="Goal"]
+offset_left = 162.0
+offset_top = 98.0
+offset_right = 252.0
+offset_bottom = 159.0
+rotation = 0.7058377
+pivot_offset = Vector2(44, 32)
+theme = SubResource("Theme_o1gyf")
+text = "dog"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AkitaInu" parent="." instance=ExtResource("5_ro3nw")]
+position = Vector2(512, 158.99998)
+rotation = -2.0679853
 
 [connection signal="entered" from="Goal" to="." method="_on_goal_entered"]
+[connection signal="body_entered" from="Goal/Area2D" to="Goal" method="_on_area_2d_body_entered"]
