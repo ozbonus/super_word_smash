@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://rj2ld1nmrofw"]
+[gd_scene load_steps=7 format=4 uid="uid://rj2ld1nmrofw"]
 
 [ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_lau3u"]
-[ext_resource type="PackedScene" uid="uid://bkto5wvbsr7iq" path="res://components/level_frame.tscn" id="2_4ufbd"]
 [ext_resource type="PackedScene" uid="uid://cmqclu0oeqmpq" path="res://components/level_base_layers/camping_grass.tscn" id="3_d4dcw"]
 [ext_resource type="TileSet" uid="uid://b1aj11yqv45ok" path="res://components/tile_maps/camping.tres" id="4_ci23s"]
 [ext_resource type="PackedScene" uid="uid://bbpnhxblurnl1" path="res://components/balls/big_banana.tscn" id="5_d4dcw"]
@@ -12,8 +11,6 @@ size = Vector2(66, 102)
 
 [node name="Intro2" type="Node2D"]
 script = ExtResource("1_lau3u")
-
-[node name="LevelFrame" parent="." instance=ExtResource("2_4ufbd")]
 
 [node name="CampingGrass" parent="." instance=ExtResource("3_d4dcw")]
 

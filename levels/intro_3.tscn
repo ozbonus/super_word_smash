@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=4 uid="uid://1s3juadaw5ps"]
+[gd_scene load_steps=8 format=4 uid="uid://1s3juadaw5ps"]
 
 [ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_g03wv"]
-[ext_resource type="PackedScene" uid="uid://bkto5wvbsr7iq" path="res://components/level_frame.tscn" id="2_ro3nw"]
 [ext_resource type="PackedScene" uid="uid://cmqclu0oeqmpq" path="res://components/level_base_layers/camping_grass.tscn" id="3_02seu"]
 [ext_resource type="TileSet" uid="uid://b1aj11yqv45ok" path="res://components/tile_maps/camping.tres" id="4_g03wv"]
 [ext_resource type="PackedScene" uid="uid://x2aht16oixgb" path="res://components/balls/akita_inu.tscn" id="5_ro3nw"]
@@ -17,8 +16,6 @@ default_font_size = 36
 script = ExtResource("1_g03wv")
 metadata/_edit_horizontal_guides_ = [0.0, 400.0]
 metadata/_edit_vertical_guides_ = [0.0, 640.0]
-
-[node name="LevelFrame" parent="." instance=ExtResource("2_ro3nw")]
 
 [node name="CampingGrass" parent="." instance=ExtResource("3_02seu")]
 
