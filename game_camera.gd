@@ -57,14 +57,12 @@ func juicy_camera(delta) -> void:
 func zoom_to_focus() -> void:
     var focus_node: Node2D = get_tree().current_scene.find_child("Focus", true, false)
     if focus_node:
-        var viewport_center = get_viewport_rect().size / 2.0
-        var relative_position = focus_node.global_position - viewport_center
         var tween := create_tween()
         tween.set_parallel(true)
         tween.set_ignore_time_scale(true)
         tween.set_trans(zoom_transition)
         tween.set_ease(zoom_ease)
-        tween.tween_property(self, "offset", relative_position, zoom_duration)
+        tween.tween_property(self, "position", focus_node.global_position, zoom_duration)
         tween.tween_property(self, "zoom", Vector2.ONE * success_zoom_level, zoom_duration)
     else:
         print_debug("Focus node not found")
