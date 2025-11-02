@@ -21,11 +21,12 @@ var camera_state := CameraState.FIXED
 @export var zoom_ease: Tween.EaseType = Tween.EASE_IN_OUT ## Ease type for animation
 
 
-var target_offset: Vector2 = Vector2.ZERO
+var initial_position: Vector2
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+    initial_position = position
     GameStateService.game_state.connect(_handle_game_state_changes)
     # Enable accelerometer input.
     Input.set_accelerometer(Vector3.ZERO)
@@ -50,6 +51,7 @@ func juicy_camera(delta) -> void:
     # Convert gravity to camera offset.
     # X and Y are swapped/inverted depending on device orientation.
     # Adjust these multipliers based on the game's orientation.
+    var target_offset: Vector2 = Vector2.ZERO
     target_offset.x = adjusted_gravity.x * tilt_sensitivity
     target_offset.y = -adjusted_gravity.y * tilt_sensitivity
     
@@ -73,7 +75,7 @@ func zoom_to_focus() -> void:
 
 func reset() -> void:
     offset = Vector2.ZERO
-    position = Vector2(320.0, 200.0)
+    position = initial_position
     zoom = Vector2.ONE
 
 
@@ -85,7 +87,5 @@ func _handle_game_state_changes(state) -> void:
         Constants.GameState.PLAYING:
             camera_state = CameraState.JUICY
         Constants.GameState.SUCCESS:
-            zoom_to_focus()
-            camera_state = CameraState.JUICY
-        Constants.GameState.FINISHED:
             camera_state = CameraState.FIXED
+            zoom_to_focus()
