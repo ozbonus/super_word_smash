@@ -23,15 +23,18 @@ var camera_state := CameraState.FIXED
 
 var target_offset: Vector2 = Vector2.ZERO
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
     GameStateService.game_state.connect(_handle_game_state_changes)
     # Enable accelerometer input.
     Input.set_accelerometer(Vector3.ZERO)
 
+
 func _process(delta):
     if camera_state == CameraState.JUICY:
         juicy_camera(delta)
+
 
 func juicy_camera(delta) -> void:
     # Get device gravity (accelerometer data).
@@ -75,14 +78,14 @@ func reset() -> void:
 
 
 func _handle_game_state_changes(state) -> void:
+    reset()
     match state:
         Constants.GameState.TITLE, Constants.GameState.FINISHED:
             camera_state = CameraState.FIXED
         Constants.GameState.PLAYING:
-            reset()
             camera_state = CameraState.JUICY
         Constants.GameState.SUCCESS:
             zoom_to_focus()
+            camera_state = CameraState.JUICY
         Constants.GameState.FINISHED:
-            reset()
             camera_state = CameraState.FIXED
