@@ -32,9 +32,9 @@ func _ready():
     Input.set_accelerometer(Vector3.ZERO)
 
 
-func _process(delta):
+func _process(_delta):
     if camera_state == CameraState.JUICY:
-        juicy_camera(delta)
+        juicy_camera(get_process_delta_time())
 
 
 func juicy_camera(delta) -> void:
