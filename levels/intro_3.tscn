@@ -3,14 +3,12 @@
 [ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_g03wv"]
 [ext_resource type="PackedScene" uid="uid://cmqclu0oeqmpq" path="res://components/level_base_layers/camping_grass.tscn" id="3_02seu"]
 [ext_resource type="TileSet" uid="uid://b1aj11yqv45ok" path="res://components/tile_maps/camping.tres" id="4_g03wv"]
+[ext_resource type="PackedScene" uid="uid://s5r602eso5vw" path="res://components/goal_label.tscn" id="5_o1gyf"]
 [ext_resource type="PackedScene" uid="uid://x2aht16oixgb" path="res://components/balls/akita_inu.tscn" id="5_ro3nw"]
 [ext_resource type="Script" uid="uid://cccj8h6n48v7r" path="res://components/goal.gd" id="6_o1gyf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1gyf"]
 size = Vector2(92, 64)
-
-[sub_resource type="Theme" id="Theme_o1gyf"]
-default_font_size = 36
 
 [node name="Intro3" type="Node2D"]
 script = ExtResource("1_g03wv")
@@ -45,16 +43,11 @@ goal_type = 2
 position = Vector2(207, 129)
 shape = SubResource("RectangleShape2D_o1gyf")
 
-[node name="Label" type="Label" parent="Decoy"]
-offset_left = 162.0
-offset_top = 98.0
-offset_right = 253.0
-offset_bottom = 160.0
-rotation = 2.5488617
-pivot_offset = Vector2(45, 32)
-text = "cat"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="GoalLabel" parent="Decoy" instance=ExtResource("5_o1gyf")]
+position = Vector2(308, 114)
+rotation = 2.6072507
+word = "big"
+emission_rect = Vector2(24, 20)
 
 [node name="Decoy2" type="Node2D" parent="."]
 position = Vector2(-32, 190)
@@ -67,16 +60,11 @@ goal_type = 2
 position = Vector2(207, 129)
 shape = SubResource("RectangleShape2D_o1gyf")
 
-[node name="Label" type="Label" parent="Decoy2"]
-offset_left = 162.0
-offset_top = 98.0
-offset_right = 253.0
-offset_bottom = 160.0
-rotation = -0.50880456
-pivot_offset = Vector2(45, 32)
-text = "pig"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="GoalLabel" parent="Decoy2" instance=ExtResource("5_o1gyf")]
+position = Vector2(144, 39.000015)
+rotation = 0.62482786
+word = "pig"
+emission_rect = Vector2(24, 20)
 
 [node name="Goal" type="Node2D" parent="."]
 position = Vector2(289, 190)
@@ -89,17 +77,11 @@ goal_type = 1
 position = Vector2(207, 129)
 shape = SubResource("RectangleShape2D_o1gyf")
 
-[node name="Label" type="Label" parent="Goal"]
-offset_left = 162.0
-offset_top = 98.0
-offset_right = 252.0
-offset_bottom = 159.0
-rotation = 0.7058377
-pivot_offset = Vector2(44, 32)
-theme = SubResource("Theme_o1gyf")
-text = "dog"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="GoalLabel" parent="Goal" instance=ExtResource("5_o1gyf")]
+position = Vector2(100, 164)
+rotation = -0.69464105
+word = "dog"
+emission_rect = Vector2(24, 20)
 
 [node name="AkitaInu" parent="." instance=ExtResource("5_ro3nw")]
 position = Vector2(512, 158.99998)

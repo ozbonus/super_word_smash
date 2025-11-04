@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://63xyumvsc0c8"]
+[gd_scene load_steps=8 format=4 uid="uid://63xyumvsc0c8"]
 
 [ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_gg43x"]
 [ext_resource type="Script" uid="uid://cccj8h6n48v7r" path="res://components/goal.gd" id="5_imeec"]
 [ext_resource type="PackedScene" uid="uid://cmqclu0oeqmpq" path="res://components/level_base_layers/camping_grass.tscn" id="5_k74dq"]
+[ext_resource type="PackedScene" uid="uid://s5r602eso5vw" path="res://components/goal_label.tscn" id="6_5mdax"]
 [ext_resource type="PackedScene" uid="uid://d24f5pl4mh7jv" path="res://components/balls/cat1.tscn" id="6_imeec"]
 [ext_resource type="TileSet" uid="uid://b1aj11yqv45ok" path="res://components/tile_maps/camping.tres" id="6_k74dq"]
 
@@ -43,13 +44,11 @@ goal_type = 1
 position = Vector2(35, 59)
 shape = SubResource("RectangleShape2D_k74dq")
 
-[node name="Label" type="Label" parent="Goal"]
-offset_left = 22.0
-offset_top = 72.0
-offset_right = 62.0
-offset_bottom = 95.0
+[node name="GoalLabel" parent="Goal" instance=ExtResource("6_5mdax")]
+position = Vector2(-6, 158)
 rotation = -1.5707964
-text = "cat"
+word = "cats"
+emission_rect = Vector2(36, 20)
 
 [node name="Cat1" parent="." instance=ExtResource("6_imeec")]
 position = Vector2(482, 206)
