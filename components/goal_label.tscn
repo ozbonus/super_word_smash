@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://s5r602eso5vw"]
+
+[ext_resource type="Theme" uid="uid://blaewqud6ryi7" path="res://fonts/goal_label_theme.tres" id="1_7wm6q"]
+
+[node name="GoalLabel" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 194.0
+offset_bottom = 65.0
+theme = ExtResource("1_7wm6q")
+text = "fnord"
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
