@@ -44,23 +44,17 @@ goal_type = 1
 position = Vector2(35, 59)
 shape = SubResource("RectangleShape2D_k74dq")
 
-[node name="Label" type="Label" parent="Goal"]
-offset_left = 22.0
-offset_top = 72.0
-offset_right = 62.0
-offset_bottom = 95.0
+[node name="GoalLabel" parent="Goal" instance=ExtResource("6_5mdax")]
+position = Vector2(-6, 158)
 rotation = -1.5707964
-text = "cat"
+word = "cats"
+emission_rect = Vector2(36, 20)
 
 [node name="Cat1" parent="." instance=ExtResource("6_imeec")]
 position = Vector2(482, 206)
 
 [node name="Focus" type="Node2D" parent="."]
 position = Vector2(65, 207)
-
-[node name="GoalLabel" parent="." instance=ExtResource("6_5mdax")]
-position = Vector2(29, 306)
-rotation = -1.5707964
 
 [connection signal="entered" from="Goal" to="." method="_on_goal_entered"]
 [connection signal="body_entered" from="Goal/Area2D" to="Goal" method="_on_area_2d_body_entered"]
