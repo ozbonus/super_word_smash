@@ -20,7 +20,6 @@ extends Node2D
 func _ready():
 	if label:
 		label.text = word
-	particles.emission_rect_extents = Vector2(200,200)
 	
 	# This won't run in the editor.
 	if not Engine.is_editor_hint():
