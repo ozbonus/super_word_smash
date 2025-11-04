@@ -1,14 +1,44 @@
-[gd_scene load_steps=2 format=3 uid="uid://s5r602eso5vw"]
+[gd_scene load_steps=6 format=3 uid="uid://s5r602eso5vw"]
 
 [ext_resource type="Theme" uid="uid://blaewqud6ryi7" path="res://fonts/goal_label_theme.tres" id="1_7wm6q"]
+[ext_resource type="Texture2D" uid="uid://d22j5i77jl01" path="res://art/particle.png" id="1_52t1r"]
+[ext_resource type="Script" uid="uid://buu5lw03joyoc" path="res://components/goal_label.gd" id="1_s41m1"]
+
+[sub_resource type="Curve" id="Curve_52t1r"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.29457366), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_52t1r"]
+colors = PackedColorArray(0.14901961, 0, 0, 1, 0.14901961, 0, 0, 0)
 
 [node name="GoalLabel" type="Node2D"]
+script = ExtResource("1_s41m1")
+
+[node name="Particles" type="CPUParticles2D" parent="."]
+position = Vector2(96, 39)
+amount = 256
+texture = ExtResource("1_52t1r")
+emission_shape = 3
+emission_rect_extents = Vector2(48, 16)
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 8.0
+initial_velocity_max = 10.0
+orbit_velocity_min = -0.1
+orbit_velocity_max = 0.1
+scale_amount_min = 0.2
+scale_amount_max = 0.4
+scale_amount_curve = SubResource("Curve_52t1r")
+color = Color(0.14901961, 0, 0, 1)
+color_ramp = SubResource("Gradient_52t1r")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_right = 194.0
+offset_right = 199.0
 offset_bottom = 65.0
 theme = ExtResource("1_7wm6q")
-text = "fnord"
+text = "debug"
 autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_lock_ = true
