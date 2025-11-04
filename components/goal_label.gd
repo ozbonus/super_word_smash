@@ -1,25 +1,31 @@
 @tool
-extends Node2D
+class_name GoalLabel extends Node2D
 @onready var label: RichTextLabel = $RichTextLabel
 @onready var particles: CPUParticles2D = $Particles
 @export var word: String = "debug":
 	set(value):
 		word = value
-		label.text = word
-		particles.amount = particles_per_letter * word.length()
+		if label:
+			label.text = word
+			particles.amount = particles_per_letter * word.length()
 @export var emission_rect: Vector2 = Vector2(12.0, 20.0):
 	set(value):
 		emission_rect = value
-		particles.emission_rect_extents = emission_rect
+		if particles:
+			particles.emission_rect_extents = emission_rect
 @export var particles_per_letter: int = 16:
 	set(value):
 		particles_per_letter = value
-		particles.amount = particles_per_letter * word.length()
+		if particles:
+			particles.amount = particles_per_letter * word.length()
 
 
 func _ready():
 	if label:
 		label.text = word
+	if particles:
+			particles.emission_rect_extents = emission_rect
+			particles.amount = particles_per_letter * word.length()
 	
 	# This won't run in the editor.
 	if not Engine.is_editor_hint():

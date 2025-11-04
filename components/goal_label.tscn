@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://buu5lw03joyoc" path="res://components/goal_label.gd" id="1_s41m1"]
 
 [sub_resource type="Curve" id="Curve_52t1r"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.29457366), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_52t1r"]
@@ -13,22 +13,23 @@ colors = PackedColorArray(0.14901961, 0, 0, 1, 0.14901961, 0, 0, 0)
 
 [node name="GoalLabel" type="Node2D"]
 script = ExtResource("1_s41m1")
+particles_per_letter = 17
 
 [node name="Particles" type="CPUParticles2D" parent="."]
-position = Vector2(96, 38)
-amount = 80
+position = Vector2(97, 38)
+amount = 85
 texture = ExtResource("1_52t1r")
 emission_shape = 3
 emission_rect_extents = Vector2(12, 20)
 direction = Vector2(0, 0)
-spread = 180.0
+spread = 0.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 4.0
-initial_velocity_max = 4.0
-orbit_velocity_min = -0.1
-orbit_velocity_max = 0.1
-scale_amount_min = 0.2
-scale_amount_max = 0.4
+initial_velocity_min = 0.01
+initial_velocity_max = 0.01
+radial_accel_min = 20.0
+radial_accel_max = 20.0
+scale_amount_min = 0.1
+scale_amount_max = 0.5
 scale_amount_curve = SubResource("Curve_52t1r")
 color = Color(0.14901961, 0, 0, 1)
 color_ramp = SubResource("Gradient_52t1r")
