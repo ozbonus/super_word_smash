@@ -1,13 +1,19 @@
 extends Node2D
-
 @onready var particles: CPUParticles2D = $Particles
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	$Particles.process_mode = Node.PROCESS_MODE_ALWAYS
+	GameStateService.game_state.connect(_on_game_state_change)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _on_game_state_change(state) -> void:
+	# I don't want the particles to be affected by the engine time scale slowdown
+	# during the success state, so this method adjusts the sprite emitter's speed
+	# to compensate. It's necessary to wait for a frame ensure that the engine
+	# time scale already been set to the slower speed.
+	match state:
+		Constants.GameState.SUCCESS:
+			await get_tree().process_frame
+			particles.speed_scale = 1.0 / Engine.time_scale
+		_:
+			particles.speed_scale = 1.0
