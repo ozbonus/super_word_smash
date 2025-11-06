@@ -6,6 +6,8 @@ signal success_ended
 
 @export var levels: Array[PackedScene]
 
+@onready var transition_screen: ColorRect = $CanvasLayer/TransitionScreen
+
 var current_level_index: int = 0
 var current_level_instance: Node
 
@@ -64,8 +66,31 @@ func play_again():
 func handle_success() -> void:
 	success_began.emit()
 	Engine.time_scale = 0.05
+	var transition_shader_material = transition_screen.material as ShaderMaterial
+	if transition_shader_material:
+		transition_shader_material.set_shader_parameter("invert", true)
+		var tween := create_tween()
+		tween.set_ignore_time_scale(true)
+		tween.set_trans(Tween.TRANS_CUBIC)
+		tween.tween_interval(1.0)
+		tween.tween_method(
+			func(value): transition_shader_material.set_shader_parameter("progress", value),
+			0.0,
+			6.0,
+			1.0,
+		)
 	$SuccessTimer.start()
 	await $SuccessTimer.timeout
 	Engine.time_scale = 1.0
 	success_ended.emit()
 	next_level()
+	if transition_shader_material:
+		var tween := create_tween()
+		tween.set_ignore_time_scale(true)
+		tween.set_trans(Tween.TRANS_CUBIC)
+		tween.tween_method(
+			func(value): transition_shader_material.set_shader_parameter("progress", value),
+			6.0,
+			0.0,
+			Constants.TRANSITION_DURATION_SECONDS * 0.3,
+		)

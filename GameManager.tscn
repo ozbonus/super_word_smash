@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bd7optlxeqn7j"]
+[gd_scene load_steps=10 format=3 uid="uid://bd7optlxeqn7j"]
 
 [ext_resource type="Script" uid="uid://bt7hnmw6h3nsl" path="res://game_manager.gd" id="1_p13vs"]
 [ext_resource type="PackedScene" uid="uid://cwmqdvpygwf8x" path="res://levels/title.tscn" id="2_au0an"]
@@ -6,7 +6,30 @@
 [ext_resource type="PackedScene" uid="uid://63xyumvsc0c8" path="res://levels/intro_1.tscn" id="3_0145d"]
 [ext_resource type="PackedScene" uid="uid://1s3juadaw5ps" path="res://levels/intro_3.tscn" id="4_dxunw"]
 [ext_resource type="PackedScene" uid="uid://c3jnqpoa4hb6y" path="res://levels/level_end.tscn" id="8_5me18"]
+[ext_resource type="Shader" uid="uid://bchiik2bxt53l" path="res://shaders/transition.gdshader" id="8_k24m2"]
 [ext_resource type="Script" uid="uid://cb7rotq8xm3i" path="res://game_camera.gd" id="16_uyu88"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0145d"]
+shader = ExtResource("8_k24m2")
+shader_parameter/use_sprite_alpha = true
+shader_parameter/use_transition_texture = false
+shader_parameter/transition_type = 2
+shader_parameter/position = Vector2(0, 0)
+shader_parameter/invert = true
+shader_parameter/grid_size = Vector2(24, 15)
+shader_parameter/rotation_angle = 0.0
+shader_parameter/stagger = Vector2(0, 0)
+shader_parameter/stagger_frequency = Vector2i(2, 2)
+shader_parameter/flip_frequency = Vector2i(1, 1)
+shader_parameter/basic_feather = 0.0
+shader_parameter/use_mask_size = false
+shader_parameter/mask_size = Vector2(100, 100)
+shader_parameter/edges = 7
+shader_parameter/shape_feather = 0.0
+shader_parameter/sectors = 1
+shader_parameter/clock_feather = 0.0
+shader_parameter/progress = 0.0
+shader_parameter/progress_bias = Vector2(1.3, 0)
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_p13vs")
@@ -27,6 +50,20 @@ one_shot = true
 ignore_time_scale = true
 
 [node name="Level" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TransitionScreen" type="ColorRect" parent="CanvasLayer"]
+z_index = 99
+z_as_relative = false
+material = SubResource("ShaderMaterial_0145d")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.8860799, 0.43363965, 0.90340924, 1)
 
 [node name="GUI" type="Control" parent="."]
 layout_mode = 3
