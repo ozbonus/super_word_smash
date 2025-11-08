@@ -20,7 +20,8 @@ signal real_goal_entered()
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready():
-	label.text = word
+	if label:
+		label.text = word
 
 func _get_configuration_warnings():
 	var warnings = []
@@ -29,8 +30,8 @@ func _get_configuration_warnings():
 	return warnings
 
 func _on_area_2d_body_entered(_body: Node2D):
-	print_debug("Goal entered. Label: %s" % label.text)
 	if goal_type == 1:
+		print_debug("Real goal entered: %s" % label.text)
 		real_goal_entered.emit()
 	if goal_type == 2:
-		print_debug("Goal type: Decoy")
+		print_debug("Decoy goal entered: %s" % label.text)
