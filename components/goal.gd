@@ -16,6 +16,10 @@ enum GoalType { UNSET, REAL, DECOY }
 	set(value):
 		word = value
 		$Label.text = word
+	
+@onready var label: RichTextLabel = $Control/RichTextLabel
+@onready var particles: CPUParticles2D = $Particles
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _get_configuration_warnings():
 	var warnings = []
