@@ -30,6 +30,7 @@ func _get_configuration_warnings():
 	return warnings
 
 func fade_out() -> void:
+	particles.emitting = false
 	animation_player.play("fade")
 	pass
 
