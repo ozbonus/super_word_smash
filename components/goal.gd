@@ -2,7 +2,7 @@
 class_name Goal
 extends Node2D
 
-signal entered()
+signal real_goal_entered()
 
 ## Whether this is a real goal (which can trigger the next level) or a decoy
 ## goal. This setting is required or else and error will be thrown.
@@ -31,4 +31,4 @@ func _ready():
 
 func _on_area_2d_body_entered(_body: Node2D):
 	if goal_type == 1:
-		entered.emit(goal_type)
+		real_goal_entered.emit()
