@@ -45,6 +45,7 @@ color_ramp = SubResource("Gradient_xp41m")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
+anchors_preset = 0
 offset_left = -76.0
 offset_top = -32.0
 offset_right = 76.0
