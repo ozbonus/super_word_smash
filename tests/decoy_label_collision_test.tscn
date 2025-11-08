@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5olbonfwbiut"]
+
+[ext_resource type="PackedScene" uid="uid://c05tki6uthh8n" path="res://components/test_block.tscn" id="1_dccr2"]
+
+[node name="DecoyLabelCollisionTest" type="Node2D"]
+
+[node name="Floor" type="Node2D" parent="."]
+
+[node name="TestBlock" parent="Floor" instance=ExtResource("1_dccr2")]
+position = Vector2(32, 368)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="TestBlock2" parent="Floor" instance=ExtResource("1_dccr2")]
+position = Vector2(96, 368)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="TestBlock3" parent="Floor" instance=ExtResource("1_dccr2")]
+position = Vector2(160, 368)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="TestBlock4" parent="Floor" instance=ExtResource("1_dccr2")]
+position = Vector2(224, 368)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="TestBlock5" parent="Floor" instance=ExtResource("1_dccr2")]
+position = Vector2(288, 368)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="TestBlock6" parent="Floor" instance=ExtResource("1_dccr2")]
+position = Vector2(352, 368)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="TestBlock7" parent="Floor" instance=ExtResource("1_dccr2")]
+position = Vector2(416, 368)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="TestBlock8" parent="Floor" instance=ExtResource("1_dccr2")]
+position = Vector2(480, 368)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="TestBlock9" parent="Floor" instance=ExtResource("1_dccr2")]
+position = Vector2(544, 368)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="TestBlock10" parent="Floor" instance=ExtResource("1_dccr2")]
+position = Vector2(608, 367)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
