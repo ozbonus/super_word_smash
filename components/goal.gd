@@ -19,15 +19,14 @@ signal real_goal_entered()
 @onready var particles: CPUParticles2D = $Particles
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+func _ready():
+	pass
+
 func _get_configuration_warnings():
 	var warnings = []
 	if goal_type == 0:
 		warnings.append("You must set a goal type.")
 	return warnings
-
-
-func _ready():
-	pass
 
 func _on_area_2d_body_entered(_body: Node2D):
 	if goal_type == 1:
