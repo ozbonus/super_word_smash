@@ -7,6 +7,9 @@ signal real_goal_entered()
 ## Whether this is a real goal (which can trigger the next level) or a decoy
 ## goal. This setting is required or else and error will be thrown.
 @export_enum("Unset:0", "Real Goal:1", "Decoy Goal:2") var goal_type: int
+const UNSET = 0
+const REAL = 1
+const DECOY = 2
 
 ## The word that will appear in the game and which is intended to match the ball
 ## of that level. Fingers crossed that it updates automatically in the editor.
