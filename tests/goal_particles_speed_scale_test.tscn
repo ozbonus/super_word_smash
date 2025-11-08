@@ -70,4 +70,11 @@ offset_right = 249.0
 offset_bottom = 46.0
 text = "Slow engine speed scale"
 
+[node name="Label" type="Label" parent="."]
+offset_left = 25.0
+offset_top = 62.0
+offset_right = 186.0
+offset_bottom = 85.0
+text = "Engine time scale: 00"
+
 [connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]

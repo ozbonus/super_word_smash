@@ -22,6 +22,8 @@ signal real_goal_entered()
 func _ready():
 	if label:
 		label.text = word
+	if not Engine.is_editor_hint():
+		GameStateService.game_state.connect(_on_game_state_change)
 
 func _get_configuration_warnings():
 	var warnings = []
@@ -41,3 +43,15 @@ func _on_area_2d_body_entered(_body: Node2D):
 	if goal_type == 2:
 		print_debug("Decoy goal entered: %s" % label.text)
 		fade_out()
+
+func _on_game_state_change(state) -> void:
+	# I don't want the particles to be affected by the engine time scale slowdown
+	# during the success state, so this method adjusts the sprite emitter's speed
+	# to compensate. It's necessary to wait for a frame ensure that the engine
+	# time scale already been set to the slower speed.
+	match state:
+		Constants.GameState.SUCCESS:
+			await get_tree().process_frame
+			particles.speed_scale = 1.0 / Engine.time_scale
+		_:
+			particles.speed_scale = 1.0
