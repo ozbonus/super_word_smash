@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkln4hex2ine1"]
+[gd_scene load_steps=9 format=3 uid="uid://bkln4hex2ine1"]
 
 [ext_resource type="Script" uid="uid://cccj8h6n48v7r" path="res://components/goal.gd" id="1_bga2f"]
 [ext_resource type="Theme" uid="uid://blaewqud6ryi7" path="res://fonts/goal_label_theme.tres" id="2_sd8c4"]
@@ -14,6 +14,14 @@ point_count = 2
 [sub_resource type="Gradient" id="Gradient_xp41m"]
 offsets = PackedFloat32Array(0.08695652, 0.6614907, 1)
 colors = PackedColorArray(0.14901961, 0, 0, 1, 0.37149775, 0.06927545, 0.46950716, 0.81960785, 0.14901961, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_ymhr6"]
+resource_name = "fade"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kd5cd"]
+_data = {
+&"fade": SubResource("Animation_ymhr6")
+}
 
 [node name="Goal" type="Node2D"]
 script = ExtResource("1_bga2f")
@@ -67,5 +75,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kd5cd")
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered" flags=6]
