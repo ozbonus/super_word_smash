@@ -1,6 +1,28 @@
+@tool
+
 extends Node2D
 
 signal success
 
-func _on_goal_entered():
-	success.emit()
+func _ready():
+	if not Engine.is_editor_hint():
+		for child in get_children():
+			if child is Goal:
+				var goal := child as Goal
+				if goal.goal_type == Goal.REAL:
+					goal.real_goal_entered.connect(success.emit)
+
+func _get_configuration_warnings():
+	var real_goals_count: int = 0
+	var warnings = []
+
+	for child in get_children():
+		if child is Goal:
+			var goal := child as Goal
+			if goal.goal_type == Goal.REAL:
+				real_goals_count += 1
+
+	if real_goals_count != 1:
+		warnings.append("There must be exactly one real goal in this level.")
+
+	return warnings
