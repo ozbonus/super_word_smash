@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5olbonfwbiut"]
+[gd_scene load_steps=5 format=3 uid="uid://b5olbonfwbiut"]
 
 [ext_resource type="PackedScene" uid="uid://c05tki6uthh8n" path="res://components/test_block.tscn" id="1_dccr2"]
+[ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="2_kjflg"]
+[ext_resource type="Texture2D" uid="uid://ba050dm6op475" path="res://icon.svg" id="3_gtdr1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18hm0"]
+size = Vector2(64, 64)
 
 [node name="DecoyLabelCollisionTest" type="Node2D"]
 
@@ -55,3 +60,20 @@ metadata/_edit_lock_ = true
 position = Vector2(608, 367)
 scale = Vector2(0.5, 0.5)
 metadata/_edit_lock_ = true
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(316, 41)
+linear_velocity = Vector2(0, 128)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_18hm0")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+self_modulate = Color(1, 0.56, 0.8313334, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_gtdr1")
+
+[node name="Goal" parent="." instance=ExtResource("2_kjflg")]
+position = Vector2(312, 198)
+goal_type = 2
