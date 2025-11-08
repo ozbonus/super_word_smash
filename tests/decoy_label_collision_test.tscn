@@ -90,3 +90,4 @@ texture = ExtResource("3_gtdr1")
 [node name="Goal" parent="." instance=ExtResource("2_kjflg")]
 position = Vector2(312, 198)
 goal_type = 2
+word = "FNORD"

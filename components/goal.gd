@@ -13,14 +13,14 @@ signal real_goal_entered()
 @export var word: String:
 	set(value):
 		word = value
-		$Label.text = word
+		$Control/RichTextLabel.text = word
 	
 @onready var label: RichTextLabel = $Control/RichTextLabel
 @onready var particles: CPUParticles2D = $Particles
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready():
-	pass
+	label.text = word
 
 func _get_configuration_warnings():
 	var warnings = []
@@ -32,3 +32,5 @@ func _on_area_2d_body_entered(_body: Node2D):
 	print_debug("Goal entered. Label: %s" % label.text)
 	if goal_type == 1:
 		real_goal_entered.emit()
+	if goal_type == 2:
+		print_debug("Goal type: Decoy")
