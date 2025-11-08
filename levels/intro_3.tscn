@@ -1,14 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://1s3juadaw5ps"]
+[gd_scene load_steps=6 format=4 uid="uid://1s3juadaw5ps"]
 
 [ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_g03wv"]
 [ext_resource type="PackedScene" uid="uid://cmqclu0oeqmpq" path="res://components/level_base_layers/camping_grass.tscn" id="3_02seu"]
 [ext_resource type="TileSet" uid="uid://b1aj11yqv45ok" path="res://components/tile_maps/camping.tres" id="4_g03wv"]
-[ext_resource type="PackedScene" uid="uid://s5r602eso5vw" path="res://components/goal_label.tscn" id="5_o1gyf"]
+[ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="4_ro3nw"]
 [ext_resource type="PackedScene" uid="uid://x2aht16oixgb" path="res://components/balls/akita_inu.tscn" id="5_ro3nw"]
-[ext_resource type="Script" uid="uid://cccj8h6n48v7r" path="res://components/goal.gd" id="6_o1gyf"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1gyf"]
-size = Vector2(92, 64)
 
 [node name="Intro3" type="Node2D"]
 script = ExtResource("1_g03wv")
@@ -33,55 +29,10 @@ tile_set = ExtResource("4_g03wv")
 tile_map_data = PackedByteArray("AAAFAAYAAQATACUAAAAGAAYAAQAVACcAAAAHAAYAAQAUACUAAAAIAAYAAQATACYAAAAJAAYAAQAVACcAAAAKAAYAAQATACUAAAALAAYAAQATACYAAAAMAAYAAQAUACcAAAANAAcAAQATACYAAAAOAAcAAQAVACYAAAAPAAcAAQATACYAAAAQAAcAAQAVACcAAAARAAcAAQAUACcAAAASAAcAAQAUACUAAAA=")
 tile_set = ExtResource("4_g03wv")
 
-[node name="Decoy" type="Node2D" parent="."]
-script = ExtResource("6_o1gyf")
-goal_type = 2
-
-[node name="Area2D" type="Area2D" parent="Decoy"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Decoy/Area2D"]
-position = Vector2(207, 129)
-shape = SubResource("RectangleShape2D_o1gyf")
-
-[node name="GoalLabel" parent="Decoy" instance=ExtResource("5_o1gyf")]
-position = Vector2(308, 114)
-rotation = 2.6072507
-word = "big"
-emission_rect = Vector2(24, 20)
-
-[node name="Decoy2" type="Node2D" parent="."]
-position = Vector2(-32, 190)
-script = ExtResource("6_o1gyf")
-goal_type = 2
-
-[node name="Area2D" type="Area2D" parent="Decoy2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Decoy2/Area2D"]
-position = Vector2(207, 129)
-shape = SubResource("RectangleShape2D_o1gyf")
-
-[node name="GoalLabel" parent="Decoy2" instance=ExtResource("5_o1gyf")]
-position = Vector2(144, 39.000015)
-rotation = 0.62482786
-word = "pig"
-emission_rect = Vector2(24, 20)
-
-[node name="Goal" type="Node2D" parent="."]
-position = Vector2(289, 190)
-script = ExtResource("6_o1gyf")
+[node name="Goal" parent="." instance=ExtResource("4_ro3nw")]
+position = Vector2(497, 321)
 goal_type = 1
-
-[node name="Area2D" type="Area2D" parent="Goal"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal/Area2D"]
-position = Vector2(207, 129)
-shape = SubResource("RectangleShape2D_o1gyf")
-
-[node name="GoalLabel" parent="Goal" instance=ExtResource("5_o1gyf")]
-position = Vector2(100, 164)
-rotation = -0.69464105
-word = "dog"
-emission_rect = Vector2(24, 20)
+word = "DOG"
 
 [node name="AkitaInu" parent="." instance=ExtResource("5_ro3nw")]
 position = Vector2(512, 158.99998)
@@ -90,5 +41,12 @@ rotation = -2.0679853
 [node name="Focus" type="Node2D" parent="."]
 position = Vector2(496, 322)
 
-[connection signal="entered" from="Goal" to="." method="_on_goal_entered"]
-[connection signal="body_entered" from="Goal/Area2D" to="Goal" method="_on_area_2d_body_entered"]
+[node name="Goal2" parent="." instance=ExtResource("4_ro3nw")]
+position = Vector2(206, 128)
+goal_type = 2
+word = "BIG"
+
+[node name="Goal3" parent="." instance=ExtResource("4_ro3nw")]
+position = Vector2(175, 319)
+goal_type = 2
+word = "LOG"

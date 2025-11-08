@@ -1,14 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://63xyumvsc0c8"]
+[gd_scene load_steps=6 format=4 uid="uid://63xyumvsc0c8"]
 
 [ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_gg43x"]
-[ext_resource type="Script" uid="uid://cccj8h6n48v7r" path="res://components/goal.gd" id="5_imeec"]
 [ext_resource type="PackedScene" uid="uid://cmqclu0oeqmpq" path="res://components/level_base_layers/camping_grass.tscn" id="5_k74dq"]
-[ext_resource type="PackedScene" uid="uid://s5r602eso5vw" path="res://components/goal_label.tscn" id="6_5mdax"]
+[ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="5_l1eo3"]
 [ext_resource type="PackedScene" uid="uid://d24f5pl4mh7jv" path="res://components/balls/cat1.tscn" id="6_imeec"]
 [ext_resource type="TileSet" uid="uid://b1aj11yqv45ok" path="res://components/tile_maps/camping.tres" id="6_k74dq"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k74dq"]
-size = Vector2(66, 102)
 
 [node name="Level01" type="Node2D"]
 script = ExtResource("1_gg43x")
@@ -33,28 +29,14 @@ tile_set = ExtResource("6_k74dq")
 tile_map_data = PackedByteArray("AAAKAP//AQALAJcAAAASAP//AQALAJcAAAACAP//AQALAJcAAAANAA0AAQALAJcAAAAVAA0AAQALAJcAAAAFAA0AAQALAJcAAAD9/w0AAQALAJcAAAAaAP//AQALAJcAAAD6////AQALAJcAAAATAAMAAQAHAJcAAAASAAgAAQAHAJcAAAAUAA0AAQAHAJcAAAAUAAkAAQAHAJcAAAA=")
 tile_set = ExtResource("6_k74dq")
 
-[node name="Goal" type="Node2D" parent="."]
-position = Vector2(29, 149)
-script = ExtResource("5_imeec")
-goal_type = 1
-
-[node name="Area2D" type="Area2D" parent="Goal"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal/Area2D"]
-position = Vector2(35, 59)
-shape = SubResource("RectangleShape2D_k74dq")
-
-[node name="GoalLabel" parent="Goal" instance=ExtResource("6_5mdax")]
-position = Vector2(-6, 158)
-rotation = -1.5707964
-word = "cats"
-emission_rect = Vector2(36, 20)
-
 [node name="Cat1" parent="." instance=ExtResource("6_imeec")]
 position = Vector2(482, 206)
 
 [node name="Focus" type="Node2D" parent="."]
 position = Vector2(65, 207)
 
-[connection signal="entered" from="Goal" to="." method="_on_goal_entered"]
-[connection signal="body_entered" from="Goal/Area2D" to="Goal" method="_on_area_2d_body_entered"]
+[node name="Goal" parent="." instance=ExtResource("5_l1eo3")]
+position = Vector2(63, 209)
+rotation = -1.5707964
+goal_type = 1
+word = "CAT"

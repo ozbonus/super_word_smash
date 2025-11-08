@@ -1,14 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://rj2ld1nmrofw"]
+[gd_scene load_steps=6 format=4 uid="uid://rj2ld1nmrofw"]
 
 [ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_lau3u"]
 [ext_resource type="PackedScene" uid="uid://cmqclu0oeqmpq" path="res://components/level_base_layers/camping_grass.tscn" id="3_d4dcw"]
 [ext_resource type="TileSet" uid="uid://b1aj11yqv45ok" path="res://components/tile_maps/camping.tres" id="4_ci23s"]
-[ext_resource type="PackedScene" uid="uid://s5r602eso5vw" path="res://components/goal_label.tscn" id="5_ci23s"]
+[ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="4_oayul"]
 [ext_resource type="PackedScene" uid="uid://bbpnhxblurnl1" path="res://components/balls/big_banana.tscn" id="5_d4dcw"]
-[ext_resource type="Script" uid="uid://cccj8h6n48v7r" path="res://components/goal.gd" id="5_wsmxw"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdedl"]
-size = Vector2(66, 102)
 
 [node name="Intro2" type="Node2D"]
 script = ExtResource("1_lau3u")
@@ -33,28 +29,14 @@ tile_set = ExtResource("4_ci23s")
 tile_map_data = PackedByteArray("AAAKAP//AQALAJcAAAASAP//AQALAJcAAAACAP//AQALAJcAAAANAA0AAQALAJcAAAAVAA0AAQALAJcAAAAFAA0AAQALAJcAAAD9/w0AAQALAJcAAAAaAP//AQALAJcAAAD6////AQALAJcAAAAUAA0AAQAHAJcAAAD//wMAAQAHAJcAABD+/wYAAQAHAJcAABD//wkAAQAHAJcAABAAAAcAAQAHAJcAABA=")
 tile_set = ExtResource("4_ci23s")
 
-[node name="Goal" type="Node2D" parent="."]
-position = Vector2(509, 149)
-script = ExtResource("5_wsmxw")
-goal_type = 1
-
-[node name="Area2D" type="Area2D" parent="Goal"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal/Area2D"]
-position = Vector2(35, 59)
-shape = SubResource("RectangleShape2D_bdedl")
-
-[node name="GoalLabel" parent="Goal" instance=ExtResource("5_ci23s")]
-position = Vector2(70, -41)
+[node name="Goal" parent="." instance=ExtResource("4_oayul")]
+position = Vector2(541, 209)
 rotation = 1.5707964
-word = "banana"
-emission_rect = Vector2(60, 20)
+goal_type = 1
+word = "BANANA"
 
 [node name="BigBanana" parent="." instance=ExtResource("5_d4dcw")]
 position = Vector2(136, 207)
 
 [node name="Focus" type="Node2D" parent="."]
 position = Vector2(544, 210)
-
-[connection signal="entered" from="Goal" to="." method="_on_goal_entered"]
-[connection signal="body_entered" from="Goal/Area2D" to="Goal" method="_on_area_2d_body_entered"]
