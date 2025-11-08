@@ -29,5 +29,6 @@ func _get_configuration_warnings():
 	return warnings
 
 func _on_area_2d_body_entered(_body: Node2D):
+	print_debug("Goal entered. Label: %s" % label.text)
 	if goal_type == 1:
 		real_goal_entered.emit()
