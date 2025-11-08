@@ -21,7 +21,6 @@ metadata/_edit_vertical_guides_ = [-76.0, 76.0]
 metadata/_edit_horizontal_guides_ = [-32.0, 32.0, -36.0]
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_bga2f")

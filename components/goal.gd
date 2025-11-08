@@ -1,7 +1,8 @@
 @tool
-class_name Goal extends Node2D
+class_name Goal
+extends Node2D
 
-signal entered
+signal entered(type: GoalType)
 
 enum GoalType { UNSET, REAL, DECOY }
 
@@ -32,4 +33,4 @@ func _ready():
 
 func _on_area_2d_body_entered(_body: Node2D):
 	if goal_type == GoalType.REAL:
-		entered.emit()
+		entered.emit(goal_type)
