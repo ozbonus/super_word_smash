@@ -21,10 +21,6 @@ func _get_configuration_warnings():
 	var warnings = []
 	if goal_type == GoalType.UNSET:
 		warnings.append("You must set a goal type.")
-	if not has_node("Area2D"):
-		warnings.append("This node requires an Area2D child node.")
-	if not has_node("Label"):
-		warnings.append("This node requires a Label child node.")
 	return warnings
 
 
