@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkln4hex2ine1"]
+[gd_scene load_steps=10 format=3 uid="uid://bkln4hex2ine1"]
 
 [ext_resource type="Script" uid="uid://cccj8h6n48v7r" path="res://components/goal.gd" id="1_bga2f"]
 [ext_resource type="Theme" uid="uid://blaewqud6ryi7" path="res://fonts/goal_label_theme.tres" id="2_sd8c4"]
@@ -17,9 +17,38 @@ colors = PackedColorArray(0.14901961, 0, 0, 1, 0.37149775, 0.06927545, 0.4695071
 
 [sub_resource type="Animation" id="Animation_ymhr6"]
 resource_name = "fade"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/RichTextLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kd5cd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/RichTextLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kd5cd"]
 _data = {
+&"RESET": SubResource("Animation_kd5cd"),
 &"fade": SubResource("Animation_ymhr6")
 }
 
