@@ -29,9 +29,15 @@ func _get_configuration_warnings():
 		warnings.append("You must set a goal type.")
 	return warnings
 
+func fade_out() -> void:
+	particles.emitting = false
+	animation_player.play("fade")
+	pass
+
 func _on_area_2d_body_entered(_body: Node2D):
 	if goal_type == 1:
 		print_debug("Real goal entered: %s" % label.text)
 		real_goal_entered.emit()
 	if goal_type == 2:
 		print_debug("Decoy goal entered: %s" % label.text)
+		fade_out()
