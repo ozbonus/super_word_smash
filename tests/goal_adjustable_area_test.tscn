@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=3 uid="uid://sb84a4vc7hea"]
+
+[ext_resource type="PackedScene" path="res://components/test_block.tscn" id="1_51an3"]
+[ext_resource type="Texture2D" uid="uid://ba050dm6op475" path="res://icon.svg" id="2_07rb1"]
+[ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="3_07rb1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uh6rk"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07rb1"]
+resource_local_to_scene = true
+size = Vector2(565, 64)
+
+[node name="GoalAdjustableAreaTest" type="Node2D"]
+
+[node name="Floor" type="Node2D" parent="."]
+
+[node name="TestBlock" parent="Floor" instance=ExtResource("1_51an3")]
+position = Vector2(32, 368)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="TestBlock2" parent="Floor" instance=ExtResource("1_51an3")]
+position = Vector2(96, 368)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="TestBlock3" parent="Floor" instance=ExtResource("1_51an3")]
+position = Vector2(160, 368)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="TestBlock4" parent="Floor" instance=ExtResource("1_51an3")]
+position = Vector2(224, 368)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="TestBlock5" parent="Floor" instance=ExtResource("1_51an3")]
+position = Vector2(288, 368)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="TestBlock6" parent="Floor" instance=ExtResource("1_51an3")]
+position = Vector2(352, 368)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="TestBlock7" parent="Floor" instance=ExtResource("1_51an3")]
+position = Vector2(416, 368)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="TestBlock8" parent="Floor" instance=ExtResource("1_51an3")]
+position = Vector2(480, 368)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="TestBlock9" parent="Floor" instance=ExtResource("1_51an3")]
+position = Vector2(544, 368)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="TestBlock10" parent="Floor" instance=ExtResource("1_51an3")]
+position = Vector2(608, 367)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="Collider1" type="RigidBody2D" parent="."]
+position = Vector2(61, 41)
+linear_velocity = Vector2(0, 128)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider1"]
+shape = SubResource("RectangleShape2D_uh6rk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Collider1"]
+self_modulate = Color(1, 0.56, 0.8313334, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_07rb1")
+
+[node name="Goal" parent="." instance=ExtResource("3_07rb1")]
+position = Vector2(514, 214)
+goal_type = 2
+word = "DEBUG"
+
+[node name="CollisionShape2D" parent="Goal/Area2D" index="0"]
+position = Vector2(-206.5, 0)
+shape = SubResource("RectangleShape2D_07rb1")
+
+[node name="RichTextLabel" parent="Goal/Control" index="0"]
+text = "DEBUG"
+
+[editable path="Goal"]
