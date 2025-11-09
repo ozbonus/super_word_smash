@@ -48,6 +48,7 @@ func _get_configuration_warnings():
 func fade_out() -> void:
 	particles.emitting = false
 	animation_player.play("fade")
+	SoundEffectsService.play_decoy()
 
 func _scale_particles(word_length: int, node: CPUParticles2D) -> void:
 	var scaler := maxi(1, word_length)

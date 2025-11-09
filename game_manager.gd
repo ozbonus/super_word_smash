@@ -65,6 +65,7 @@ func play_again():
 
 func handle_success() -> void:
 	success_began.emit()
+	SoundEffectsService.play_success()
 	Engine.time_scale = 0.05
 	var transition_shader_material = transition_screen.material as ShaderMaterial
 	if transition_shader_material:
