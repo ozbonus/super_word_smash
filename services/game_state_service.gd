@@ -21,3 +21,6 @@ func _on_success_ended() -> void:
 
 func _on_showing_score() -> void:
 	_state_change(Constants.GameState.FINISHED)
+
+func _on_time_up() -> void:
+	_state_change(Constants.GameState.TIMEUP)

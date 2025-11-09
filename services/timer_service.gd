@@ -29,6 +29,7 @@ func _ready() -> void:
 	update_timer.timeout.connect(_on_update_timer_timeout)
 	game_timer.timeout.connect(_on_game_timer_timeout)
 	hurry_up_timer.timeout.connect(_on_hurry_up_timer_timeout)
+	time_up.connect(GameStateService._on_time_up)
 
 
 func _start_timers(seconds: float) -> void:
