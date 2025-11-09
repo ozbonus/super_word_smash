@@ -17,7 +17,8 @@ signal time_left(seconds: float, proportion: float)
 @export_range(0.0, 60.0, 1.0, "suffix:seconds") var hurry_up_threshold: float
 ## How often the `time_left` signal is emitted, in a portion of a second.
 @export_range(0.1, 1.0, 0.01, "suffix:seconds") var update_interval: float
-
+## Extra time if timeout occurs during a level transition.
+@export_range(1.0, 20.0, 0.1, "suffix:seconds") var success_state_buffer: float
 
 @onready var game_timer: Timer = $GameTimer
 @onready var hurry_up_timer: Timer = $HurryUpTimer
@@ -66,9 +67,15 @@ func start_long_timer() -> void:
 
 
 func _on_game_timer_timeout() -> void:
-	update_timer.stop()
-	game_timer.stop()
-	time_up.emit()
+	# When the game is in the success state it's likely also in the process of
+	# transitioning between levels. Entering into the time up state at this point
+	# would look awkward, so this if-statement restarts the game timer with just
+	# enough time to barely interact with the next level.
+	if GameStateService.current_state == Constants.GameState.SUCCESS:
+		game_timer.start(success_state_buffer)
+	else:
+		update_timer.stop()
+		time_up.emit()
 
 
 func _on_hurry_up_timer_timeout() -> void:

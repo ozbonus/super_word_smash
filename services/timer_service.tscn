@@ -8,6 +8,7 @@ short_time = 60.0
 medium_time = 120.0
 long_time = 180.0
 update_interval = 0.2
+success_state_buffer = 5.0
 
 [node name="GameTimer" type="Timer" parent="."]
 one_shot = true
