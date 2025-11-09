@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://di6jko3p2jjyy"]
+
+[ext_resource type="Script" uid="uid://qrkg60hpk538" path="res://tests/sound_effects_service_board.gd" id="1_mr5ey"]
+
+[node name="SoundEffectsServiceBoard" type="Node2D"]
+script = ExtResource("1_mr5ey")
+
+[node name="Hit" type="Button" parent="."]
+offset_left = 195.0
+offset_top = 59.0
+offset_right = 224.0
+offset_bottom = 90.0
+text = "hit"
+
+[node name="Success" type="Button" parent="."]
+offset_left = 261.0
+offset_top = 63.0
+offset_right = 328.0
+offset_bottom = 94.0
+text = "success"
+
+[node name="Decoy" type="Button" parent="."]
+offset_left = 361.0
+offset_top = 62.0
+offset_right = 415.0
+offset_bottom = 93.0
+text = "decoy"
+
+[connection signal="pressed" from="Hit" to="." method="_on_hit_pressed"]
+[connection signal="pressed" from="Success" to="." method="_on_success_pressed"]
+[connection signal="pressed" from="Decoy" to="." method="_on_decoy_pressed"]
