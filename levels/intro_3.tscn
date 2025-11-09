@@ -1,10 +1,22 @@
-[gd_scene load_steps=6 format=4 uid="uid://1s3juadaw5ps"]
+[gd_scene load_steps=9 format=4 uid="uid://1s3juadaw5ps"]
 
 [ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_g03wv"]
 [ext_resource type="PackedScene" uid="uid://cmqclu0oeqmpq" path="res://components/level_base_layers/camping_grass.tscn" id="3_02seu"]
 [ext_resource type="TileSet" uid="uid://b1aj11yqv45ok" path="res://components/tile_maps/camping.tres" id="4_g03wv"]
 [ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="4_ro3nw"]
 [ext_resource type="PackedScene" uid="uid://x2aht16oixgb" path="res://components/balls/akita_inu.tscn" id="5_ro3nw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ro3nw"]
+resource_local_to_scene = true
+size = Vector2(92, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1gyf"]
+resource_local_to_scene = true
+size = Vector2(93, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgvka"]
+resource_local_to_scene = true
+size = Vector2(94, 64)
 
 [node name="Intro3" type="Node2D"]
 script = ExtResource("1_g03wv")
@@ -34,6 +46,16 @@ position = Vector2(497, 321)
 goal_type = 1
 word = "DOG"
 
+[node name="CollisionShape2D" parent="Goal/Area2D" index="0"]
+shape = SubResource("RectangleShape2D_ro3nw")
+
+[node name="Particles" parent="Goal" index="1"]
+amount = 72
+emission_rect_extents = Vector2(36, 21)
+
+[node name="RichTextLabel" parent="Goal/Control" index="0"]
+text = "DOG"
+
 [node name="AkitaInu" parent="." instance=ExtResource("5_ro3nw")]
 position = Vector2(512, 158.99998)
 rotation = -2.0679853
@@ -46,7 +68,32 @@ position = Vector2(206, 128)
 goal_type = 2
 word = "BIG"
 
+[node name="CollisionShape2D" parent="Goal2/Area2D" index="0"]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_o1gyf")
+
+[node name="Particles" parent="Goal2" index="1"]
+amount = 72
+emission_rect_extents = Vector2(36, 21)
+
+[node name="RichTextLabel" parent="Goal2/Control" index="0"]
+text = "BIG"
+
 [node name="Goal3" parent="." instance=ExtResource("4_ro3nw")]
 position = Vector2(175, 319)
 goal_type = 2
 word = "LOG"
+
+[node name="CollisionShape2D" parent="Goal3/Area2D" index="0"]
+shape = SubResource("RectangleShape2D_qgvka")
+
+[node name="Particles" parent="Goal3" index="1"]
+amount = 72
+emission_rect_extents = Vector2(36, 21)
+
+[node name="RichTextLabel" parent="Goal3/Control" index="0"]
+text = "LOG"
+
+[editable path="Goal"]
+[editable path="Goal2"]
+[editable path="Goal3"]
