@@ -11,6 +11,8 @@ const UNSET = 0
 const REAL = 1
 const DECOY = 2
 
+@export_range(1, 32) var particles_per_letter: int = 16
+
 ## The word that will appear in the game and which is intended to match the ball
 ## of that level. Fingers crossed that it updates automatically in the editor.
 @export var word: String:
