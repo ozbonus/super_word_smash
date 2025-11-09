@@ -57,7 +57,6 @@ func _get_configuration_warnings():
 func fade_out() -> void:
 	particles.emitting = false
 	animation_player.play("fade")
-	pass
 
 func _on_area_2d_body_entered(_body: Node2D):
 	if goal_type == REAL:
