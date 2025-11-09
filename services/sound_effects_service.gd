@@ -1,11 +1,14 @@
 extends Node
 
+@onready var hit: AudioStreamPlayer = $Hit
+@onready var success: AudioStreamPlayer = $Success
+@onready var decoy: AudioStreamPlayer = $Decoy
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func play_hit():
+	hit.play()
 
+func play_success():
+	success.play()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func play_decoy():
+	decoy.play()
