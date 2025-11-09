@@ -9,7 +9,7 @@ func _ready():
 		for child in get_children():
 			if child is Goal:
 				var goal := child as Goal
-				if goal.goal_type == Goal.REAL:
+				if goal.goal_type == Goal.TYPE_REAL:
 					goal.real_goal_entered.connect(success.emit)
 
 func _get_configuration_warnings():
@@ -19,7 +19,7 @@ func _get_configuration_warnings():
 	for child in get_children():
 		if child is Goal:
 			var goal := child as Goal
-			if goal.goal_type == Goal.REAL:
+			if goal.goal_type == Goal.TYPE_REAL:
 				real_goals_count += 1
 
 	if real_goals_count != 1:
