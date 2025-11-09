@@ -1,7 +1,7 @@
 extends Camera2D
 
 
-enum CameraState { FIXED, JUICY }
+enum CameraState {FIXED, JUICY}
 
 
 # var camera_state : CameraState = CameraState.FIXED
@@ -53,7 +53,7 @@ func juicy_camera(delta) -> void:
     # Adjust these multipliers based on the game's orientation.
     var target_offset: Vector2 = Vector2.ZERO
     target_offset.x = adjusted_gravity.x * tilt_sensitivity
-    target_offset.y = -adjusted_gravity.y * tilt_sensitivity
+    target_offset.y = - adjusted_gravity.y * tilt_sensitivity
     
     # Smoothly interpolate to target offset.
     offset = offset.lerp(target_offset, tilt_smoothing * delta)
@@ -82,7 +82,7 @@ func reset() -> void:
 func _handle_game_state_changes(state) -> void:
     reset()
     match state:
-        Constants.GameState.TITLE, Constants.GameState.FINISHED:
+        Constants.GameState.TITLE, Constants.GameState.FINISHED, Constants.GameState.TIMEUP:
             camera_state = CameraState.FIXED
         Constants.GameState.PLAYING:
             camera_state = CameraState.JUICY
