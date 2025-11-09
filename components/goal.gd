@@ -42,6 +42,9 @@ const DECOY = 2
 func _ready():
 	if label:
 		label.text = word
+	if particles:
+		particles.amount = particles_per_letter * word.length()
+		particles.emission_rect_extents = EMISSION_RECT_EXTENTS * Vector2(max(1, word.length()), 1.0)
 	if not Engine.is_editor_hint():
 		GameStateService.game_state.connect(_on_game_state_change)
 
