@@ -16,7 +16,7 @@ const EMISSION_RECT_EXTENTS := Vector2(12, 21)
 @export_range(1, 32) var particles_per_letter: int = 16:
 	set(value):
 		particles_per_letter = value
-		if $Particles:
+		if has_node("Particles"):
 			$Particles.amount = particles_per_letter
 
 ## The word that will appear in the game and which is intended to match the ball
@@ -24,9 +24,9 @@ const EMISSION_RECT_EXTENTS := Vector2(12, 21)
 @export var word: String:
 	set(value):
 		word = value
-		if $Control/RichTextLabel:
+		if has_node("Control/RichTextLabel"):
 			$Control/RichTextLabel.text = word
-		if $Particles:
+		if has_node("Particles"):
 			_scale_particles(word.length(), $Particles)
 	
 @onready var label: RichTextLabel = $Control/RichTextLabel
