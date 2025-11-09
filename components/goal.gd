@@ -4,14 +4,14 @@ extends Node2D
 
 signal real_goal_entered()
 
+const TYPE_UNSET = 0
+const TYPE_REAL = 1
+const TYPE_DECOY = 2
 const EMISSION_RECT_EXTENTS := Vector2(12, 21)
 
 ## Whether this is a real goal (which can trigger the next level) or a decoy
 ## goal. This setting is required or else and error will be thrown.
 @export_enum("Unset:0", "Real Goal:1", "Decoy Goal:2") var goal_type: int
-const UNSET = 0
-const REAL = 1
-const DECOY = 2
 
 @export_range(1, 32) var particles_per_letter: int = 16:
 	set(value):
@@ -50,7 +50,7 @@ func _ready():
 
 func _get_configuration_warnings():
 	var warnings = []
-	if goal_type == UNSET:
+	if goal_type == TYPE_UNSET:
 		warnings.append("You must set a goal type.")
 	return warnings
 
@@ -59,10 +59,10 @@ func fade_out() -> void:
 	animation_player.play("fade")
 
 func _on_area_2d_body_entered(_body: Node2D):
-	if goal_type == REAL:
+	if goal_type == TYPE_REAL:
 		print_debug("Real goal entered: %s" % label.text)
 		real_goal_entered.emit()
-	if goal_type == DECOY:
+	if goal_type == TYPE_DECOY:
 		print_debug("Decoy goal entered: %s" % label.text)
 		fade_out()
 
