@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://sb84a4vc7hea"]
+[gd_scene load_steps=6 format=3 uid="uid://bwp5robkobpa3"]
 
 [ext_resource type="PackedScene" path="res://components/test_block.tscn" id="1_51an3"]
 [ext_resource type="Texture2D" uid="uid://ba050dm6op475" path="res://icon.svg" id="2_07rb1"]
@@ -86,6 +86,10 @@ word = "DEBUG"
 [node name="CollisionShape2D" parent="Goal/Area2D" index="0"]
 position = Vector2(-206.5, 0)
 shape = SubResource("RectangleShape2D_07rb1")
+
+[node name="Particles" parent="Goal" index="1"]
+amount = 120
+emission_rect_extents = Vector2(60, 21)
 
 [node name="RichTextLabel" parent="Goal/Control" index="0"]
 text = "DEBUG"

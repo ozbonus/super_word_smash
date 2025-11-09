@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cyh1spule4vei"]
 
 [ext_resource type="Script" uid="uid://cfg5rpudn2rji" path="res://tests/goal_particles_speed_scale_test.gd" id="1_0gtbv"]
-[ext_resource type="PackedScene" uid="uid://c05tki6uthh8n" path="res://components/test_block.tscn" id="1_0sqxa"]
+[ext_resource type="PackedScene" path="res://components/test_block.tscn" id="1_0sqxa"]
 [ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="2_6k63x"]
 
 [node name="RealGoalParticlesSpeedScaleTest" type="Node2D"]
