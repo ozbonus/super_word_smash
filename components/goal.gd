@@ -18,7 +18,10 @@ const DECOY = 2
 @export var word: String:
 	set(value):
 		word = value
-		$Control/RichTextLabel.text = word
+		label = $Control/RichTextLabel
+		if label:
+			label.text = word
+
 	
 @onready var label: RichTextLabel = $Control/RichTextLabel
 @onready var particles: CPUParticles2D = $Particles
