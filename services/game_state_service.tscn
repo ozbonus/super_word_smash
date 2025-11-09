@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdiisvy8yr4at"]
+[gd_scene load_steps=2 format=3 uid="uid://cd1o2j7k2pxoe"]
 
 [ext_resource type="Script" uid="uid://5bknp4y3e3uj" path="res://services/game_state_service.gd" id="1_bovey"]
 

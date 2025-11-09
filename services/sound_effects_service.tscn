@@ -17,3 +17,4 @@ stream = ExtResource("3_ivh6t")
 
 [node name="Decoy" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_gp1xk")
+volume_db = 12.0
