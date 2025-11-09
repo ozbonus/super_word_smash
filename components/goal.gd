@@ -4,6 +4,8 @@ extends Node2D
 
 signal real_goal_entered()
 
+const EMISSION_RECT_EXTENTS := Vector2(12, 21)
+
 ## Whether this is a real goal (which can trigger the next level) or a decoy
 ## goal. This setting is required or else and error will be thrown.
 @export_enum("Unset:0", "Real Goal:1", "Decoy Goal:2") var goal_type: int
@@ -11,7 +13,12 @@ const UNSET = 0
 const REAL = 1
 const DECOY = 2
 
-@export_range(1, 32) var particles_per_letter: int = 16
+@export_range(1, 32) var particles_per_letter: int = 16:
+	set(value):
+		particles_per_letter = value
+		var particles_node = $Particles
+		if particles_node:
+			particles_node.amount = particles_per_letter
 
 ## The word that will appear in the game and which is intended to match the ball
 ## of that level. Fingers crossed that it updates automatically in the editor.
@@ -19,8 +26,13 @@ const DECOY = 2
 	set(value):
 		word = value
 		var rich_text_label = $Control/RichTextLabel
+		var particle_emitter = $Particles
 		if rich_text_label:
 			rich_text_label.text = word
+		if particle_emitter:
+			var x_scaler: int = max(1, word.length())
+			particle_emitter.emission_rect_extents = EMISSION_RECT_EXTENTS * Vector2(x_scaler, 1.0)
+			particle_emitter.amount = particles_per_letter * x_scaler
 
 	
 @onready var label: RichTextLabel = $Control/RichTextLabel
