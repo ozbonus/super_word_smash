@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d22j5i77jl01" path="res://art/particle.png" id="2_ymhr6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bga2f"]
+resource_local_to_scene = true
 size = Vector2(152, 64)
 
 [sub_resource type="Curve" id="Curve_kd5cd"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b5olbonfwbiut"]
 
-[ext_resource type="PackedScene" uid="uid://c05tki6uthh8n" path="res://components/test_block.tscn" id="1_dccr2"]
+[ext_resource type="PackedScene" path="res://components/test_block.tscn" id="1_dccr2"]
 [ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="2_kjflg"]
 [ext_resource type="Texture2D" uid="uid://ba050dm6op475" path="res://icon.svg" id="3_gtdr1"]
 
@@ -74,6 +74,11 @@ self_modulate = Color(1, 0.56, 0.8313334, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_gtdr1")
 
+[node name="Goal" parent="." instance=ExtResource("2_kjflg")]
+position = Vector2(312, 198)
+goal_type = 2
+word = "DECOY"
+
 [node name="Collider2" type="RigidBody2D" parent="."]
 position = Vector2(352, 41)
 linear_velocity = Vector2(0, 96)
@@ -86,8 +91,3 @@ shape = SubResource("RectangleShape2D_18hm0")
 self_modulate = Color(1, 0.56, 0.8313334, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_gtdr1")
-
-[node name="Goal" parent="." instance=ExtResource("2_kjflg")]
-position = Vector2(312, 198)
-goal_type = 2
-word = "DECOY"
