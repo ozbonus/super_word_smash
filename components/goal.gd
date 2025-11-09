@@ -18,9 +18,9 @@ const DECOY = 2
 @export var word: String:
 	set(value):
 		word = value
-		label = $Control/RichTextLabel
-		if label:
-			label.text = word
+		var rich_text_label = $Control/RichTextLabel
+		if rich_text_label:
+			rich_text_label.text = word
 
 	
 @onready var label: RichTextLabel = $Control/RichTextLabel
