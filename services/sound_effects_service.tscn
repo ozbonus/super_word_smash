@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://mpyqn23y4p00"]
+[gd_scene load_steps=5 format=3 uid="uid://mpyqn23y4p00"]
 
 [ext_resource type="Script" uid="uid://cvv5h74dslar0" path="res://services/sound_effects_service.gd" id="1_81cxh"]
+[ext_resource type="AudioStream" uid="uid://pvdoyb86nda0" path="res://sound_effects/Popup3.wav" id="2_2wjln"]
+[ext_resource type="AudioStream" uid="uid://mjvtrr2fgkrv" path="res://sound_effects/Success7a.wav" id="3_ivh6t"]
+[ext_resource type="AudioStream" uid="uid://dkufxophurua6" path="res://sound_effects/Error5.wav" id="4_gp1xk"]
 
 [node name="SoundEffectsService" type="Node"]
 script = ExtResource("1_81cxh")
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_2wjln")
+
+[node name="Success" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ivh6t")
+
+[node name="Decoy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gp1xk")
