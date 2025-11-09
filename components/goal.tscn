@@ -79,6 +79,7 @@ _data = {
 
 [node name="Goal" type="Node2D"]
 script = ExtResource("1_bga2f")
+particles_per_letter = 24
 metadata/_edit_vertical_guides_ = [-76.0, 76.0]
 metadata/_edit_horizontal_guides_ = [-32.0, 32.0, -36.0]
 
@@ -88,7 +89,7 @@ metadata/_edit_horizontal_guides_ = [-32.0, 32.0, -36.0]
 shape = SubResource("RectangleShape2D_bga2f")
 
 [node name="Particles" type="CPUParticles2D" parent="."]
-amount = 85
+amount = 24
 texture = ExtResource("2_ymhr6")
 emission_shape = 3
 emission_rect_extents = Vector2(12, 21)
