@@ -1,18 +1,23 @@
 extends Node
 
 signal game_state(state: Constants.GameState)
+var current_state: Constants.GameState
+
+func _state_change(state: Constants.GameState) -> void:
+	current_state = state
+	game_state.emit(state)
 
 func _on_showing_title() -> void:
-	game_state.emit(Constants.GameState.TITLE)
+	_state_change(Constants.GameState.TITLE)
 
 func _on_starting_game() -> void:
-	game_state.emit(Constants.GameState.PLAYING)
+	_state_change(Constants.GameState.PLAYING)
 
 func _on_success_began() -> void:
-	game_state.emit(Constants.GameState.SUCCESS)
+	_state_change(Constants.GameState.SUCCESS)
 
 func _on_success_ended() -> void:
-	game_state.emit(Constants.GameState.PLAYING)
+	_state_change(Constants.GameState.PLAYING)
 
 func _on_showing_score() -> void:
-	game_state.emit(Constants.GameState.FINISHED)
+	_state_change(Constants.GameState.FINISHED)
