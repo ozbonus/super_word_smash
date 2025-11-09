@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bd7optlxeqn7j"]
+[gd_scene load_steps=11 format=3 uid="uid://bd7optlxeqn7j"]
 
 [ext_resource type="Script" uid="uid://bt7hnmw6h3nsl" path="res://game_manager.gd" id="1_p13vs"]
 [ext_resource type="PackedScene" uid="uid://cwmqdvpygwf8x" path="res://levels/title.tscn" id="2_au0an"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://63xyumvsc0c8" path="res://levels/intro_1.tscn" id="3_0145d"]
 [ext_resource type="PackedScene" uid="uid://1s3juadaw5ps" path="res://levels/intro_3.tscn" id="4_dxunw"]
 [ext_resource type="PackedScene" uid="uid://c3jnqpoa4hb6y" path="res://levels/level_end.tscn" id="8_5me18"]
+[ext_resource type="PackedScene" uid="uid://cuoiobtnuplgs" path="res://components/time_up_message.tscn" id="8_0145d"]
 [ext_resource type="Shader" uid="uid://bchiik2bxt53l" path="res://shaders/transition.gdshader" id="8_k24m2"]
 [ext_resource type="Script" uid="uid://cb7rotq8xm3i" path="res://game_camera.gd" id="16_uyu88"]
 
@@ -50,6 +51,9 @@ one_shot = true
 ignore_time_scale = true
 
 [node name="Level" type="Node2D" parent="."]
+
+[node name="TimeUpMessage" parent="." instance=ExtResource("8_0145d")]
+mouse_default_cursor_shape = 4
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

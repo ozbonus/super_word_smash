@@ -9,6 +9,7 @@ signal showing_score
 @export var levels: Array[PackedScene]
 
 @onready var transition_screen: ColorRect = $CanvasLayer/TransitionScreen
+@onready var timeup_message: TimeUpMessage = $TimeUpMessage
 
 var current_level_index: int = 0
 var current_level_instance: Node
@@ -19,6 +20,7 @@ func _ready():
 	success_began.connect(GameStateService._on_success_began)
 	success_ended.connect(GameStateService._on_success_ended)
 	showing_score.connect(GameStateService._on_showing_score)
+	TimerService.time_up.connect(_on_timeup)
 	$SuccessTimer.wait_time = Constants.TRANSITION_DURATION_SECONDS
 	load_level(current_level_index)
 	showing_title.emit()
@@ -70,6 +72,9 @@ func play_again():
 	current_level_index = 0
 	load_level(current_level_index)
 	showing_score.emit()
+
+func _on_timeup():
+	timeup_message.appear()
 
 func handle_success() -> void:
 	success_began.emit()

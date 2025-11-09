@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuoiobtnuplgs"]
+[gd_scene load_steps=7 format=3 uid="uid://cuoiobtnuplgs"]
 
+[ext_resource type="Script" uid="uid://cvtslhtm0fr7y" path="res://components/time_up_message.gd" id="1_ppv8p"]
 [ext_resource type="FontFile" uid="uid://dbfmpoiuf1824" path="res://fonts/Caveat_Brush/CaveatBrush-Regular.ttf" id="1_xdbuq"]
 
 [sub_resource type="Theme" id="Theme_ppv8p"]
@@ -68,6 +69,7 @@ _data = {
 }
 
 [node name="TimeUpMessage" type="Control"]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
@@ -77,6 +79,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(320, 200)
 mouse_filter = 2
+script = ExtResource("1_ppv8p")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
