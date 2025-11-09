@@ -27,20 +27,15 @@ const EMISSION_RECT_EXTENTS := Vector2(12, 21)
 		if $Control/RichTextLabel:
 			$Control/RichTextLabel.text = word
 		if $Particles:
-			var x_scaler: int = max(1, word.length())
-			$Particles.emission_rect_extents = EMISSION_RECT_EXTENTS * Vector2(x_scaler, 1.0)
-			$Particles.amount = particles_per_letter * x_scaler
+			_scale_particles(word.length(), $Particles)
 	
 @onready var label: RichTextLabel = $Control/RichTextLabel
 @onready var particles: CPUParticles2D = $Particles
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready():
-	if label:
-		label.text = word
-	if particles:
-		particles.amount = particles_per_letter * word.length()
-		particles.emission_rect_extents = EMISSION_RECT_EXTENTS * Vector2(max(1, word.length()), 1.0)
+	label.text = word
+	_scale_particles(word.length(), particles)
 	if not Engine.is_editor_hint():
 		GameStateService.game_state.connect(_on_game_state_change)
 
@@ -53,6 +48,13 @@ func _get_configuration_warnings():
 func fade_out() -> void:
 	particles.emitting = false
 	animation_player.play("fade")
+
+func _scale_particles(word_length: int, node: CPUParticles2D) -> void:
+	var scaler := maxi(1, word_length)
+	var particles_amount = particles_per_letter * scaler
+	var rect_extents = EMISSION_RECT_EXTENTS * Vector2(scaler, 1.0)
+	node.amount = particles_amount
+	node.emission_rect_extents = rect_extents
 
 func _on_area_2d_body_entered(_body: Node2D):
 	if goal_type == TYPE_REAL:
