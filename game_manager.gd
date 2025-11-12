@@ -6,9 +6,13 @@ signal success_began
 signal success_ended
 signal showing_score
 
+@export_group("Levels")
 @export var title_screen: PackedScene
 @export var levels: Array[PackedScene]
 @export var summary_screen: PackedScene
+
+@export_group("Timers")
+@export_range(0.1, 2.0, 0.1, "suffix:seconds") var transition_duration: float = 0.5
 
 @onready var level: Node2D = $Level
 @onready var transition_screen: ColorRect = $CanvasLayer/TransitionScreen
@@ -117,7 +121,7 @@ func _transition_out() -> void:
 		var tween := create_tween()
 		tween.set_ignore_time_scale(true)
 		tween.set_trans(Tween.TRANS_CUBIC)
-		tween.tween_interval(1.0)
+		tween.tween_interval(transition_duration)
 		tween.tween_method(
 			func(value): transition_shader_material.set_shader_parameter("progress", value),
 			0.0,
@@ -131,6 +135,7 @@ func _transition_in() -> void:
 		var tween := create_tween()
 		tween.set_ignore_time_scale(true)
 		tween.set_trans(Tween.TRANS_CUBIC)
+		tween.tween_interval(transition_duration)
 		tween.tween_method(
 			func(value): transition_shader_material.set_shader_parameter("progress", value),
 			6.0,
