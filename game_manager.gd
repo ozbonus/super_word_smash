@@ -85,8 +85,7 @@ func start_game(game_length: Constants.GameLength):
 func play_again():
 	TimerService.reset()
 	current_level_index = 0
-	load_level(current_level_index)
-	showing_score.emit()
+	_load_title_screen()
 
 
 func _on_timeup():
