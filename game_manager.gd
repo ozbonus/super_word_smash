@@ -6,6 +6,11 @@ signal success_began
 signal success_ended
 signal showing_score
 
+# These just so happen to be the progress values that allow the shader-based
+# transition to complete fully.
+const TRANSITION_PROGRESS_MIN := 0.0
+const TRANSITION_PROGRESS_MAX := 6.0
+
 @export_group("Levels")
 @export var title_screen: PackedScene
 @export var levels: Array[PackedScene]
@@ -124,8 +129,8 @@ func _transition_out() -> void:
 		tween.tween_interval(transition_out_delay)
 		tween.tween_method(
 			func(value): transition_shader_material.set_shader_parameter("progress", value),
-			0.0,
-			6.0,
+			TRANSITION_PROGRESS_MIN,
+			TRANSITION_PROGRESS_MAX,
 			transition_duration,
 		)
 		await tween.finished
@@ -139,8 +144,8 @@ func _transition_in() -> void:
 		tween.set_trans(Tween.TRANS_CUBIC)
 		tween.tween_method(
 			func(value): transition_shader_material.set_shader_parameter("progress", value),
-			6.0,
-			0.0,
+			TRANSITION_PROGRESS_MAX,
+			TRANSITION_PROGRESS_MIN,
 			transition_duration,
 		)
 		await tween.finished
