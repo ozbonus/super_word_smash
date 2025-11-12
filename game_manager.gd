@@ -88,11 +88,15 @@ func play_again():
 	load_level(current_level_index)
 	showing_score.emit()
 
+
 func _on_timeup():
 	game_over_message.show_time_up()
 	game_over_timer.start()
+	_transition_out()
 	await game_over_timer.timeout
-	load_level(levels.size() - 1)
+	game_over_message.visible = false
+	_load_score_screen()
+	_transition_in()
 
 
 func handle_success() -> void:
