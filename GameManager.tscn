@@ -49,9 +49,6 @@ limit_bottom = 400
 script = ExtResource("16_uyu88")
 success_zoom_level = 2.8
 
-[node name="GameOverTimer" type="Timer" parent="."]
-wait_time = 2.0
-
 [node name="Level" type="Node2D" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
