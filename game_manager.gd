@@ -42,7 +42,7 @@ func _clear_current_level() -> void:
 
 
 func _load_title_screen() -> void:
-	_clear_current_level()
+	await _clear_current_level()
 	current_level_instance = title_screen.instantiate()
 	level.add_child(current_level_instance)
 	var title_screen_instance := current_level_instance as TitleScreen
@@ -51,7 +51,7 @@ func _load_title_screen() -> void:
 
 
 func _load_score_screen() -> void:
-	_clear_current_level()
+	await _clear_current_level()
 	current_level_instance = summary_screen.instantiate()
 	level.add_child(current_level_instance)
 	var instance := current_level_instance as ScoreScreen
@@ -60,7 +60,7 @@ func _load_score_screen() -> void:
 
 
 func load_level(index: int):
-	_clear_current_level()
+	await _clear_current_level()
 	current_level_instance = levels[index].instantiate()
 	level.add_child(current_level_instance)
 	var game_level_instance := current_level_instance as GameLevel
@@ -100,7 +100,7 @@ func _on_timeup():
 	await _transition_out()
 	game_over_message.visible = false
 	_load_score_screen()
-	_transition_in()
+	await _transition_in()
 
 
 func handle_success() -> void:
