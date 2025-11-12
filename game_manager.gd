@@ -4,6 +4,7 @@ signal showing_title
 signal starting_game
 signal success_began
 signal success_ended
+signal game_complete
 signal showing_score
 
 # These just so happen to be the progress values that allow the shader-based
@@ -19,10 +20,11 @@ const TRANSITION_PROGRESS_MAX := 6.0
 @export_group("Timers")
 @export_range(0.1, 5.0, 0.1, "suffix:seconds") var transition_out_delay: float = 1.0
 @export_range(0.1, 5.0, 0.1, "suffix:seconds") var transition_duration: float = 0.5
+@export_range(0.1, 5.0, 0.1, "suffix:seconds") var dramatic_pause_duration: float = 1.0
 
 @onready var level: Node2D = $Level
 @onready var transition_screen: ColorRect = $CanvasLayer/TransitionScreen
-@onready var game_over_message: GameOverMessage = $GameOverMessage
+@onready var game_over_message: GameOverMessage = $CanvasLayer/GameOverMessage
 @onready var game_over_timer: Timer = $GameOverTimer
 
 var current_level_index: int = 0
@@ -35,6 +37,7 @@ func _ready():
 	success_began.connect(GameStateService._on_success_began)
 	success_ended.connect(GameStateService._on_success_ended)
 	showing_score.connect(GameStateService._on_showing_score)
+	game_complete.connect(GameStateService._on_game_complete)
 	TimerService.time_up.connect(_on_timeup)
 	_load_title_screen()
 
@@ -77,7 +80,7 @@ func next_level():
 	if current_level_index < levels.size():
 		load_level(current_level_index)
 	else:
-		_load_score_screen()
+		_perfect_game()
 
 
 func start_game(game_length: Constants.GameLength):
@@ -100,8 +103,7 @@ func play_again():
 
 func _on_timeup():
 	game_over_message.show_time_up()
-	game_over_timer.start()
-	await game_over_timer.timeout
+	await _dramatic_pause()
 	await _transition_out()
 	game_over_message.visible = false
 	_load_score_screen()
@@ -109,14 +111,36 @@ func _on_timeup():
 
 
 func handle_success() -> void:
+	if current_level_index == levels.size() - 1:
+		_perfect_game()
+	else:
+		success_began.emit()
+		SoundEffectsService.play_success()
+		Engine.time_scale = 0.05
+		await _transition_out()
+		next_level()
+		success_ended.emit()
+		await _transition_in()
+		Engine.time_scale = 1.0
+
+
+func _perfect_game() -> void:
 	success_began.emit()
 	SoundEffectsService.play_success()
 	Engine.time_scale = 0.05
+	await _dramatic_pause()
+	game_over_message.show_perfect()
 	await _transition_out()
-	next_level()
-	success_ended.emit()
-	await _transition_in()
 	Engine.time_scale = 1.0
+	game_over_message.visible = false
+	success_ended.emit()
+	game_complete.emit()
+	_load_score_screen()
+	await _transition_in()
+
+
+func _dramatic_pause() -> void:
+	await get_tree().create_timer(dramatic_pause_duration, true, false, true).timeout
 
 
 func _transition_out() -> void:
