@@ -129,7 +129,6 @@ func _transition_out() -> void:
 			transition_duration,
 		)
 		await tween.finished
-	return
 
 
 func _transition_in() -> void:
@@ -145,4 +144,3 @@ func _transition_in() -> void:
 			transition_duration,
 		)
 		await tween.finished
-	return
