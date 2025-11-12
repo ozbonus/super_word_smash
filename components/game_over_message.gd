@@ -1,4 +1,4 @@
-class_name TimeUpMessage
+class_name GameOverMessage
 extends Control
 
 const TIME_UP_MESSAGE = "TIME'S UP!"

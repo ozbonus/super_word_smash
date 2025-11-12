@@ -9,7 +9,7 @@ signal showing_score
 @export var levels: Array[PackedScene]
 
 @onready var transition_screen: ColorRect = $CanvasLayer/TransitionScreen
-@onready var timeup_message: TimeUpMessage = $TimeUpMessage
+@onready var game_over_message: GameOverMessage = $GameOverMessage
 
 var current_level_index: int = 0
 var current_level_instance: Node
@@ -74,7 +74,8 @@ func play_again():
 	showing_score.emit()
 
 func _on_timeup():
-	timeup_message.show_time_up()
+	game_over_message.show_time_up()
+
 
 func handle_success() -> void:
 	success_began.emit()

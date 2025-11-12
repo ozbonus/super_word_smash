@@ -50,9 +50,12 @@ success_zoom_level = 2.8
 one_shot = true
 ignore_time_scale = true
 
+[node name="GameOverTimer" type="Timer" parent="."]
+wait_time = 2.0
+
 [node name="Level" type="Node2D" parent="."]
 
-[node name="TimeUpMessage" parent="." instance=ExtResource("8_0145d")]
+[node name="GameOverMessage" parent="." instance=ExtResource("8_0145d")]
 mouse_default_cursor_shape = 4
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
