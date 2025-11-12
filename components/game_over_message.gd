@@ -17,4 +17,4 @@ func show_perfect() -> void:
 
 func _appear() -> void:
 	visible = true
-	animation_player.play("_appear")
+	animation_player.play("appear")
