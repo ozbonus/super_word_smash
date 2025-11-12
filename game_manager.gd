@@ -12,7 +12,8 @@ signal showing_score
 @export var summary_screen: PackedScene
 
 @export_group("Timers")
-@export_range(0.1, 2.0, 0.1, "suffix:seconds") var transition_duration: float = 0.5
+@export_range(0.1, 5.0, 0.1, "suffix:seconds") var transition_out_delay: float = 1.0
+@export_range(0.1, 5.0, 0.1, "suffix:seconds") var transition_duration: float = 0.5
 
 @onready var level: Node2D = $Level
 @onready var transition_screen: ColorRect = $CanvasLayer/TransitionScreen
@@ -121,12 +122,12 @@ func _transition_out() -> void:
 		var tween := create_tween()
 		tween.set_ignore_time_scale(true)
 		tween.set_trans(Tween.TRANS_CUBIC)
-		tween.tween_interval(transition_duration)
+		tween.tween_interval(transition_out_delay)
 		tween.tween_method(
 			func(value): transition_shader_material.set_shader_parameter("progress", value),
 			0.0,
 			6.0,
-			1.0,
+			transition_duration,
 		)
 
 func _transition_in() -> void:
@@ -135,10 +136,9 @@ func _transition_in() -> void:
 		var tween := create_tween()
 		tween.set_ignore_time_scale(true)
 		tween.set_trans(Tween.TRANS_CUBIC)
-		tween.tween_interval(transition_duration)
 		tween.tween_method(
 			func(value): transition_shader_material.set_shader_parameter("progress", value),
 			6.0,
 			0.0,
-			Constants.TRANSITION_DURATION_SECONDS * 0.3,
+			transition_duration,
 		)

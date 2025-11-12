@@ -37,6 +37,7 @@ script = ExtResource("1_p13vs")
 title_screen = ExtResource("2_au0an")
 levels = Array[PackedScene]([ExtResource("3_0145d"), ExtResource("3_108xg"), ExtResource("4_dxunw")])
 summary_screen = ExtResource("8_5me18")
+transition_duration = 1.0
 
 [node name="GameCamera" type="Camera2D" parent="."]
 position = Vector2(320, 200)
