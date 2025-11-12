@@ -30,6 +30,7 @@ func _ready() -> void:
 	game_timer.timeout.connect(_on_game_timer_timeout)
 	hurry_up_timer.timeout.connect(_on_hurry_up_timer_timeout)
 	time_up.connect(GameStateService._on_time_up)
+	GameStateService.game_state.connect(_on_game_state_change)
 
 
 func _start_timers(seconds: float) -> void:
@@ -87,3 +88,7 @@ func _on_update_timer_timeout() -> void:
 	var seconds: float = game_timer.time_left
 	var proportion: float = game_timer.time_left / max(game_timer.wait_time, 0.01)
 	time_left.emit(seconds, proportion)
+
+func _on_game_state_change(state: Constants.GameState) -> void:
+	if state == Constants.GameState.FINISHED:
+		reset()
