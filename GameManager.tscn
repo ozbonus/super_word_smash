@@ -61,7 +61,7 @@ mouse_default_cursor_shape = 4
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TransitionScreen" type="ColorRect" parent="CanvasLayer"]
-z_index = 99
+z_index = 100
 z_as_relative = false
 material = SubResource("ShaderMaterial_0145d")
 anchors_preset = 15
