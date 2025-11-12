@@ -1,4 +1,5 @@
 ## The exact durations of the various game lengths are set in the TimerService.
+class_name TitleScreen
 extends Node2D
 
 

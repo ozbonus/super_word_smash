@@ -1,3 +1,4 @@
+class_name ScoreScreen
 extends Node2D
 
 signal play_again

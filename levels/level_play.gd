@@ -1,5 +1,5 @@
 @tool
-
+class_name GameLevel
 extends Node2D
 
 signal success
