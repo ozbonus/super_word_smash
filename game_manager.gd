@@ -96,8 +96,8 @@ func play_again():
 func _on_timeup():
 	game_over_message.show_time_up()
 	game_over_timer.start()
-	_transition_out()
 	await game_over_timer.timeout
+	await _transition_out()
 	game_over_message.visible = false
 	_load_score_screen()
 	_transition_in()
@@ -114,7 +114,7 @@ func handle_success() -> void:
 	Engine.time_scale = 1.0
 
 
-func _transition_out() -> bool:
+func _transition_out() -> void:
 	var transition_shader_material = transition_screen.material as ShaderMaterial
 	if transition_shader_material:
 		transition_shader_material.set_shader_parameter("invert", true)
@@ -129,10 +129,10 @@ func _transition_out() -> bool:
 			transition_duration,
 		)
 		await tween.finished
-	return true
+	return
 
 
-func _transition_in() -> bool:
+func _transition_in() -> void:
 	var transition_shader_material = transition_screen.material as ShaderMaterial
 	if transition_shader_material:
 		var tween := create_tween()
@@ -145,4 +145,4 @@ func _transition_in() -> bool:
 			transition_duration,
 		)
 		await tween.finished
-	return true
+	return
