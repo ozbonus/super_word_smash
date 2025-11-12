@@ -6,7 +6,9 @@ signal success_began
 signal success_ended
 signal showing_score
 
+@export var title_screen: PackedScene
 @export var levels: Array[PackedScene]
+@export var summary_screen: PackedScene
 
 @onready var transition_screen: ColorRect = $CanvasLayer/TransitionScreen
 @onready var game_over_message: GameOverMessage = $GameOverMessage
