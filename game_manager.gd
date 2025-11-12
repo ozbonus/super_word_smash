@@ -10,6 +10,7 @@ signal showing_score
 @export var levels: Array[PackedScene]
 @export var summary_screen: PackedScene
 
+@onready var level: Node2D = $Level
 @onready var transition_screen: ColorRect = $CanvasLayer/TransitionScreen
 @onready var game_over_message: GameOverMessage = $GameOverMessage
 @onready var game_over_timer: Timer = $GameOverTimer
@@ -28,12 +29,18 @@ func _ready():
 	load_level(current_level_index)
 	showing_title.emit()
 
+## Clear the currently loaded title, gameplay level, or summary screen.
+func _clear_current_level() -> void:
+	for child in level.get_children():
+		child.queue_free()
+	await get_tree().process_frame
+
+func _load_title() -> void:
+	pass
+
 
 func load_level(index: int):
-	for child in $Level.get_children():
-		child.queue_free()
-
-	await get_tree().process_frame
+	_clear_current_level()
 
 	current_level_instance = levels[index].instantiate()
 	$Level.add_child(current_level_instance)
