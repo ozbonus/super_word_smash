@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cuoiobtnuplgs"]
+[gd_scene load_steps=7 format=3 uid="uid://b4cejfobcvbkl"]
 
-[ext_resource type="Script" uid="uid://cvtslhtm0fr7y" path="res://components/game_over_message.gd" id="1_n5avx"]
+[ext_resource type="Script" path="res://components/game_over_message.gd" id="1_n5avx"]
 [ext_resource type="FontFile" uid="uid://dbfmpoiuf1824" path="res://fonts/Caveat_Brush/CaveatBrush-Regular.ttf" id="1_xdbuq"]
 
 [sub_resource type="Theme" id="Theme_ppv8p"]
