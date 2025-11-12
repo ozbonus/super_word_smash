@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://63xyumvsc0c8" path="res://levels/intro_1.tscn" id="3_0145d"]
 [ext_resource type="PackedScene" uid="uid://1s3juadaw5ps" path="res://levels/intro_3.tscn" id="4_dxunw"]
 [ext_resource type="PackedScene" uid="uid://c3jnqpoa4hb6y" path="res://levels/level_end.tscn" id="8_5me18"]
-[ext_resource type="PackedScene" uid="uid://cuoiobtnuplgs" path="res://components/game_over_message.tscn" id="8_0145d"]
+[ext_resource type="PackedScene" uid="uid://b4cejfobcvbkl" path="res://components/game_over_message.tscn" id="8_0145d"]
 [ext_resource type="Shader" uid="uid://bchiik2bxt53l" path="res://shaders/transition.gdshader" id="8_k24m2"]
 [ext_resource type="Script" uid="uid://cb7rotq8xm3i" path="res://game_camera.gd" id="16_uyu88"]
 
@@ -49,15 +49,12 @@ limit_bottom = 400
 script = ExtResource("16_uyu88")
 success_zoom_level = 2.8
 
-[node name="GameOverTimer" type="Timer" parent="."]
-wait_time = 2.0
-
 [node name="Level" type="Node2D" parent="."]
 
-[node name="GameOverMessage" parent="." instance=ExtResource("8_0145d")]
-mouse_default_cursor_shape = 4
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameOverMessage" parent="CanvasLayer" instance=ExtResource("8_0145d")]
+mouse_default_cursor_shape = 4
 
 [node name="TransitionScreen" type="ColorRect" parent="CanvasLayer"]
 z_index = 100

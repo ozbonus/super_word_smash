@@ -17,4 +17,5 @@ func show_perfect() -> void:
 
 func _appear() -> void:
 	visible = true
+	animation_player.speed_scale = 1 / Engine.time_scale
 	animation_player.play("appear")
