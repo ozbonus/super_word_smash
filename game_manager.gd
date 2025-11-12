@@ -56,12 +56,10 @@ func _load_score_screen() -> void:
 
 func load_level(index: int):
 	_clear_current_level()
-
 	current_level_instance = levels[index].instantiate()
 	level.add_child(current_level_instance)
-
-	if current_level_instance.has_signal("success"):
-		current_level_instance.success.connect(handle_success)
+	var game_level_instance := current_level_instance as GameLevel
+	game_level_instance.success.connect(handle_success)
 
 
 func next_level():
