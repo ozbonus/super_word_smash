@@ -13,6 +13,7 @@ signal showing_score
 @onready var level: Node2D = $Level
 @onready var transition_screen: ColorRect = $CanvasLayer/TransitionScreen
 @onready var game_over_message: GameOverMessage = $GameOverMessage
+@onready var success_timer: Timer = $SuccessTimer
 @onready var game_over_timer: Timer = $GameOverTimer
 
 var current_level_index: int = 0
@@ -25,7 +26,7 @@ func _ready():
 	success_ended.connect(GameStateService._on_success_ended)
 	showing_score.connect(GameStateService._on_showing_score)
 	TimerService.time_up.connect(_on_timeup)
-	$SuccessTimer.wait_time = Constants.TRANSITION_DURATION_SECONDS
+	success_timer.wait_time = Constants.TRANSITION_DURATION_SECONDS
 	_load_title_screen()
 
 ## Clear the currently loaded title, gameplay level, or summary screen.
@@ -57,7 +58,7 @@ func load_level(index: int):
 	_clear_current_level()
 
 	current_level_instance = levels[index].instantiate()
-	$Level.add_child(current_level_instance)
+	level.add_child(current_level_instance)
 
 	if current_level_instance.has_signal("success"):
 		current_level_instance.success.connect(handle_success)
@@ -101,8 +102,8 @@ func handle_success() -> void:
 	SoundEffectsService.play_success()
 	Engine.time_scale = 0.05
 	_transition_out()
-	$SuccessTimer.start()
-	await $SuccessTimer.timeout
+	success_timer.start()
+	await success_timer.timeout
 	Engine.time_scale = 1.0
 	success_ended.emit()
 	next_level()
