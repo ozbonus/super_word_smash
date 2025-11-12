@@ -18,11 +18,11 @@ signal showing_score
 @onready var level: Node2D = $Level
 @onready var transition_screen: ColorRect = $CanvasLayer/TransitionScreen
 @onready var game_over_message: GameOverMessage = $GameOverMessage
-@onready var success_timer: Timer = $SuccessTimer
 @onready var game_over_timer: Timer = $GameOverTimer
 
 var current_level_index: int = 0
 var current_level_instance: Node
+
 
 func _ready():
 	showing_title.connect(GameStateService._on_showing_title)
@@ -31,8 +31,8 @@ func _ready():
 	success_ended.connect(GameStateService._on_success_ended)
 	showing_score.connect(GameStateService._on_showing_score)
 	TimerService.time_up.connect(_on_timeup)
-	success_timer.wait_time = Constants.TRANSITION_DURATION_SECONDS
 	_load_title_screen()
+
 
 ## Clear the currently loaded title, gameplay level, or summary screen.
 func _clear_current_level() -> void:
@@ -107,15 +107,14 @@ func handle_success() -> void:
 	success_began.emit()
 	SoundEffectsService.play_success()
 	Engine.time_scale = 0.05
-	_transition_out()
-	success_timer.start()
-	await success_timer.timeout
-	Engine.time_scale = 1.0
-	success_ended.emit()
+	await _transition_out()
 	next_level()
-	_transition_in()
+	success_ended.emit()
+	await _transition_in()
+	Engine.time_scale = 1.0
 
-func _transition_out() -> void:
+
+func _transition_out() -> bool:
 	var transition_shader_material = transition_screen.material as ShaderMaterial
 	if transition_shader_material:
 		transition_shader_material.set_shader_parameter("invert", true)
@@ -129,8 +128,11 @@ func _transition_out() -> void:
 			6.0,
 			transition_duration,
 		)
+		await tween.finished
+	return true
 
-func _transition_in() -> void:
+
+func _transition_in() -> bool:
 	var transition_shader_material = transition_screen.material as ShaderMaterial
 	if transition_shader_material:
 		var tween := create_tween()
@@ -142,3 +144,5 @@ func _transition_in() -> void:
 			0.0,
 			transition_duration,
 		)
+		await tween.finished
+	return true

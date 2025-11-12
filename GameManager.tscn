@@ -49,10 +49,6 @@ limit_bottom = 400
 script = ExtResource("16_uyu88")
 success_zoom_level = 2.8
 
-[node name="SuccessTimer" type="Timer" parent="."]
-one_shot = true
-ignore_time_scale = true
-
 [node name="GameOverTimer" type="Timer" parent="."]
 wait_time = 2.0
 
