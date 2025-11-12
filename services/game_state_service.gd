@@ -24,3 +24,6 @@ func _on_showing_score() -> void:
 
 func _on_time_up() -> void:
 	_state_change(Constants.GameState.TIMEUP)
+
+func _on_game_complete() -> void:
+	_state_change(Constants.GameState.TIMEUP)
