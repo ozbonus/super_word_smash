@@ -26,8 +26,7 @@ func _ready():
 	showing_score.connect(GameStateService._on_showing_score)
 	TimerService.time_up.connect(_on_timeup)
 	$SuccessTimer.wait_time = Constants.TRANSITION_DURATION_SECONDS
-	load_level(current_level_index)
-	showing_title.emit()
+	_load_title_screen()
 
 ## Clear the currently loaded title, gameplay level, or summary screen.
 func _clear_current_level() -> void:
@@ -35,8 +34,23 @@ func _clear_current_level() -> void:
 		child.queue_free()
 	await get_tree().process_frame
 
-func _load_title() -> void:
-	pass
+
+func _load_title_screen() -> void:
+	_clear_current_level()
+	current_level_instance = title_screen.instantiate()
+	level.add_child(current_level_instance)
+	var title_screen_instance := current_level_instance as TitleScreen
+	title_screen_instance.start_game.connect(start_game)
+	showing_title.emit()
+
+
+func _load_score_screen() -> void:
+	_clear_current_level()
+	current_level_instance = summary_screen.instantiate()
+	level.add_child(current_level_instance)
+	var instance := current_level_instance as ScoreScreen
+	instance.play_again.connect(play_again)
+	showing_score.emit()
 
 
 func load_level(index: int):
@@ -45,14 +59,6 @@ func load_level(index: int):
 	current_level_instance = levels[index].instantiate()
 	$Level.add_child(current_level_instance)
 
-	if current_level_instance.has_signal("start_game"):
-		showing_title.emit()
-		current_level_instance.start_game.connect(start_game)
-	
-	if current_level_instance.has_signal("play_again"):
-		showing_score.emit()
-		current_level_instance.play_again.connect(play_again)
-	
 	if current_level_instance.has_signal("success"):
 		current_level_instance.success.connect(handle_success)
 
@@ -62,7 +68,7 @@ func next_level():
 	if current_level_index < levels.size():
 		load_level(current_level_index)
 	else:
-		print_debug("All levels have been completed.")
+		_load_score_screen()
 
 
 func start_game(game_length: Constants.GameLength):
@@ -74,7 +80,7 @@ func start_game(game_length: Constants.GameLength):
 			TimerService.start_medium_timer()
 		Constants.GameLength.LONG:
 			TimerService.start_long_timer()
-	next_level()
+	load_level(0)
 
 
 func play_again():
