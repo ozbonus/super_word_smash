@@ -7,6 +7,33 @@
 default_font = ExtResource("1_xdbuq")
 default_font_size = 144
 
+[sub_resource type="Animation" id="Animation_ppv8p"]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.17351423, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.0464972, 0.33351138), Vector2(1.0061575, 1.4317353), Vector2(1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_xdbuq"]
 resource_name = "appear"
 length = 0.2
@@ -35,33 +62,6 @@ tracks/1/keys = {
 "values": [Vector2(0.968409, 0.55716103), Vector2(1.0705379, 1.2508289), Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_ppv8p"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RichTextLabel:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mh4tx"]
 _data = {
 &"RESET": SubResource("Animation_ppv8p"),
@@ -69,7 +69,6 @@ _data = {
 }
 
 [node name="TimeUpMessage" type="Control"]
-visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
@@ -77,6 +76,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.0464972, 0.33351138)
 pivot_offset = Vector2(320, 200)
 mouse_filter = 2
 script = ExtResource("1_ppv8p")
