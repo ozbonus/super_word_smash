@@ -92,7 +92,7 @@ grow_vertical = 2
 theme = SubResource("Theme_ppv8p")
 theme_override_colors/font_outline_color = Color(0.16557646, 0.012935694, 0.011863364, 1)
 theme_override_constants/outline_size = 50
-text = "TIME'S UP!"
+text = "GAME OVER!"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -74,7 +74,7 @@ func play_again():
 	showing_score.emit()
 
 func _on_timeup():
-	timeup_message.appear()
+	timeup_message.show_time_up()
 
 func handle_success() -> void:
 	success_began.emit()

@@ -53,7 +53,6 @@ ignore_time_scale = true
 [node name="Level" type="Node2D" parent="."]
 
 [node name="TimeUpMessage" parent="." instance=ExtResource("8_0145d")]
-scale = Vector2(1.0464972, 0.33351138)
 mouse_default_cursor_shape = 4
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
