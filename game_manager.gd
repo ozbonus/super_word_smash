@@ -26,7 +26,7 @@ const TRANSITION_PROGRESS_MAX := 6.0
 @onready var game_over_timer: Timer = $GameOverTimer
 
 var current_level_index: int = 0
-var current_level_instance: Node
+var current_level_instance: Node2D
 
 
 func _ready():
