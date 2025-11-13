@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dwwtonfwo613q"]
+
+[node name="MusicService" type="Node"]
+
+[node name="TitleMusic" type="AudioStreamPlayer" parent="."]
+
+[node name="GamePlayMusic" type="AudioStreamPlayer" parent="."]
