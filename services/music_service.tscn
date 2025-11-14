@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwwtonfwo613q"]
+
+[ext_resource type="Script" uid="uid://8tqjr1g66jnd" path="res://services/music_service.gd" id="1_nnqh2"]
+[ext_resource type="AudioStream" uid="uid://07jvm777086i" path="res://music/Digital Lemonade.mp3" id="1_vkvoe"]
+[ext_resource type="AudioStream" uid="uid://wyfw1ilu237q" path="res://music/Pinball Spring 160.mp3" id="2_nnqh2"]
+
+[node name="MusicService" type="Node"]
+script = ExtResource("1_nnqh2")
+fade_duration = 0.0
+
+[node name="TitleMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_vkvoe")
+parameters/looping = true
+
+[node name="GamePlayMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nnqh2")
+parameters/looping = true

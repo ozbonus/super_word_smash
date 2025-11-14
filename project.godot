@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Constants="*res://constants/constants.tscn"
 GameStateService="*res://services/game_state_service.tscn"
+MusicService="*res://services/music_service.tscn"
 SoundEffectsService="*res://services/sound_effects_service.tscn"
 TimerService="*res://services/timer_service.tscn"
 

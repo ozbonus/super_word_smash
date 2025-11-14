@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://07jvm777086i"
+path="res://.godot/imported/Digital Lemonade.mp3-48669f89fc92dfea6127f0133ae25b89.mp3str"
+
+[deps]
+
+source_file="res://music/Digital Lemonade.mp3"
+dest_files=["res://.godot/imported/Digital Lemonade.mp3-48669f89fc92dfea6127f0133ae25b89.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
