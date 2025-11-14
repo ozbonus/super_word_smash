@@ -16,9 +16,7 @@ func _ready():
 ## Play the title music of the game with a brief fade in.
 ## Do nothing if it's already playing, like when returning to the main menu.
 func _play_title_music() -> void:
-	if title_music.playing:
-		return
-	else:
+	if not title_music.playing:
 		title_music.volume_db = SILENT_DB
 		title_music.play()
 		var tween := create_tween()
@@ -26,9 +24,7 @@ func _play_title_music() -> void:
 
 
 func _play_game_play_music() -> void:
-	if game_play_music.playing:
-		return
-	else:
+	if not game_play_music.playing:
 		game_play_music.play()
 
 
