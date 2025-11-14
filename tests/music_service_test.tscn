@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2r16u2tpcdh7"]
+
+[ext_resource type="Script" uid="uid://r6pakme3pqxd" path="res://tests/music_service_test.gd" id="1_kvpxj"]
+
+[node name="MusicServiceTest" type="Node"]
+script = ExtResource("1_kvpxj")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="PlayTitleMusicButton" type="Button" parent="CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "_play_title_music()"
+
+[node name="PlayGamePlayMusicButton" type="Button" parent="CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "_play_game_play_music()"
+
+[node name="StopButton" type="Button" parent="CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "_stop()"
+
+[node name="GameStateTitleButton" type="Button" parent="CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "GameState.TITLE"
+
+[node name="GameStatePlayingButton" type="Button" parent="CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "GameState.PLAYING"
+
+[node name="GameStateSuccessButton" type="Button" parent="CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "GameState.SUCCESS"
+
+[node name="GameStateTimeupButton" type="Button" parent="CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "GameState.TIMEUP"
+
+[node name="GameStateFinishedButton" type="Button" parent="CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "GameState.FINISHED"
