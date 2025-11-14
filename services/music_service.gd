@@ -49,7 +49,7 @@ func _on_game_state_changed(state: Constants.GameState) -> void:
 		Constants.GameState.TITLE:
 			_play_title_music()
 		Constants.GameState.PLAYING:
-			_stop_title_music()
+			await _stop_title_music()
 			_play_game_play_music()
 		Constants.GameState.SUCCESS:
 			return
