@@ -31,11 +31,14 @@ func _play_game_play_music() -> void:
 ## Stop the title music after a brief fade out.
 func _stop_title_music() -> void:
 	if title_music.playing:
-		var tween := create_tween()
-		tween.tween_property(title_music, "volume_db", SILENT_DB, fade_duration)
-		await tween.finished
-		title_music.stop()
-		title_music.volume_db = NORMAL_DB
+		if fade_duration == 0.0:
+			title_music.stop()
+		else:
+			var tween := create_tween()
+			tween.tween_property(title_music, "volume_db", SILENT_DB, fade_duration)
+			await tween.finished
+			title_music.stop()
+			title_music.volume_db = NORMAL_DB
 
 
 ## Stop the game play music abruptly.
