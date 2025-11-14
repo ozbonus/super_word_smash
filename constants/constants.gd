@@ -4,7 +4,7 @@ extends Node
 enum GameLength {SHORT, MEDIUM, LONG}
 enum GameState {
   TITLE, # Only when the title screen is being shown.
-  WARMUP, # During the countdown before play begins.
+  STARTING, # During the countdown before play begins.
   PLAYING, # During normal game play.
   SUCCESS, # When getting a ball onto a valid target.
   TIMEUP, # When time runs out and game play must stop.
