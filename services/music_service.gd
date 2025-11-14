@@ -51,10 +51,11 @@ func _on_game_state_changed(state: Constants.GameState) -> void:
 		Constants.GameState.TITLE:
 			_play_title_music()
 		Constants.GameState.PLAYING:
-			pass
+			await _stop()
+			_play_game_play_music()
 		Constants.GameState.SUCCESS:
 			pass
 		Constants.GameState.TIMEUP:
-			pass
+			_stop()
 		Constants.GameState.FINISHED:
-			pass
+			_play_title_music()
