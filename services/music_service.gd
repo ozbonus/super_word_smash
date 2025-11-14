@@ -32,16 +32,18 @@ func _play_game_play_music() -> void:
 		game_play_music.play()
 
 
-## Stop any music currently playing.
-## Title music will stop after a brief fade out.
-## Game play music will stop abruptly.
-func _stop() -> void:
+## Stop the title music after a brief fade out.
+func _stop_title_music() -> void:
 	if title_music.playing:
 		var tween := create_tween()
 		tween.tween_property(title_music, "volume_db", SILENT_DB, fade_duration)
 		await tween.finished
 		title_music.stop()
 		title_music.volume_db = NORMAL_DB
+
+
+## Stop the game play music abruptly.
+func _stop_game_play_music() -> void:
 	if game_play_music.playing:
 		game_play_music.stop()
 
@@ -51,11 +53,12 @@ func _on_game_state_changed(state: Constants.GameState) -> void:
 		Constants.GameState.TITLE:
 			_play_title_music()
 		Constants.GameState.PLAYING:
-			await _stop()
+			_stop_title_music()
 			_play_game_play_music()
 		Constants.GameState.SUCCESS:
-			pass
+			return
 		Constants.GameState.TIMEUP:
-			_stop()
+			_stop_title_music()
+			_stop_game_play_music()
 		Constants.GameState.FINISHED:
 			_play_title_music()
