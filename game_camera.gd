@@ -84,7 +84,7 @@ func _on_game_state(state) -> void:
     match state:
         Constants.GameState.PLAYING:
             camera_state = CameraState.JUICY
-        Constants.GameState.SUCCESS:
+        Constants.GameState.SUCCESS, Constants.GameState.PERFECT:
             camera_state = CameraState.FIXED
             zoom_to_focus()
         _:

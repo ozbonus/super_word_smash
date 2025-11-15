@@ -134,7 +134,7 @@ func handle_success() -> void:
 
 
 func _perfect_game() -> void:
-	success_began.emit()
+	perfect_clear.emit()
 	SoundEffectsService.play_success()
 	Engine.time_scale = 0.05
 	await _dramatic_pause()
@@ -142,7 +142,7 @@ func _perfect_game() -> void:
 	await _transition_out()
 	Engine.time_scale = 1.0
 	game_over_message.visible = false
-	success_ended.emit()
+	showing_score.emit()
 	# game_complete.emit()
 	_load_score_screen()
 	await _transition_in()
