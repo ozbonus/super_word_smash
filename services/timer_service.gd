@@ -21,7 +21,7 @@ func _ready() -> void:
 	update_timer.timeout.connect(_on_update_timer_timeout)
 	game_timer.timeout.connect(_on_game_timer_timeout)
 	hurry_up_timer.timeout.connect(_on_hurry_up_timer_timeout)
-	GameStateService.game_state.connect(_on_game_state_change)
+	GameStateService.game_state.connect(_on_game_state)
 
 
 func start(seconds: float) -> void:
@@ -65,6 +65,8 @@ func _on_update_timer_timeout() -> void:
 	var proportion: float = game_timer.time_left / max(game_timer.wait_time, 0.01)
 	time_left.emit(seconds, proportion)
 
-func _on_game_state_change(state: Constants.GameState) -> void:
-	if state == Constants.GameState.FINISHED:
-		reset()
+
+func _on_game_state(state: Constants.GameState) -> void:
+	match state:
+		Constants.GameState.PERFECT, Constants.GameState.FINISHED:
+			reset()
