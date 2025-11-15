@@ -57,24 +57,18 @@ func _load_title_screen() -> void:
 	current_level_instance = title_screen.instantiate()
 	level.add_child(current_level_instance)
 	var title_screen_instance := current_level_instance as TitleScreen
-	title_screen_instance.start_game.connect(_start_new_game)
+	title_screen_instance.start_new_game.connect(_start_new_game)
 	showing_title.emit()
 
 
-func _start_new_game(game_length: Constants.GameLength) -> void:
+func _start_new_game(game_length: float) -> void:
 	await _transition_out()
 	counting_down.emit()
 	await _load_level(0)
 	await _transition_in()
 	#TODO: Create a big countdown display before starting normal game play.
 	await get_tree().create_timer(dramatic_pause_duration).timeout
-	match game_length:
-		Constants.GameLength.SHORT:
-			TimerService.start_short_timer()
-		Constants.GameLength.MEDIUM:
-			TimerService.start_medium_timer()
-		Constants.GameLength.LONG:
-			TimerService.start_long_timer()
+	TimerService.start(game_length)
 	word_smashing.emit()
 
 

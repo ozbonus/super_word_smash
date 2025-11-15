@@ -45,6 +45,10 @@ func _start_timers(seconds: float) -> void:
 			Game duration: %.1fs" % [hurry_up_threshold, seconds])
 
 
+func start(seconds: float) -> void:
+	_start_timers(seconds)
+
+
 ## Stop all timers.
 func reset() -> void:
 	update_timer.stop()
