@@ -77,4 +77,6 @@ text = "Mute"
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/ShortGameButton" to="." method="_on_short_game_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/MediumGameButton" to="." method="_on_medium_game_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/LongGameButton" to="." method="_on_long_game_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/LessTimeButton" to="." method="_on_less_time_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/MoreTimeButton" to="." method="_on_more_time_button_pressed"]
 [connection signal="toggled" from="CanvasLayer/CenterContainer/VBoxContainer/MuteToggle" to="." method="_on_mute_toggle_toggled"]
