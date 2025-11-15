@@ -47,17 +47,27 @@ func _stop_game_play_music() -> void:
 		game_play_music.stop()
 
 
+## Stop all track immediately.
+func _stop() -> void:
+	if title_music.playing:
+		title_music.stop()
+	if game_play_music.playing:
+		game_play_music.stop()
+
+
 func _on_game_state_changed(state: Constants.GameState) -> void:
 	match state:
 		Constants.GameState.TITLE:
 			_play_title_music()
+		Constants.GameState.COUNTING:
+			_stop_title_music()
 		Constants.GameState.PLAYING:
-			await _stop_title_music()
 			_play_game_play_music()
 		Constants.GameState.SUCCESS:
 			pass
 		Constants.GameState.TIMEUP:
-			_stop_title_music()
+			_stop_game_play_music()
+		Constants.GameState.PERFECT:
 			_stop_game_play_music()
 		Constants.GameState.FINISHED:
 			_play_title_music()
