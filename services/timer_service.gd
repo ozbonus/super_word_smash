@@ -70,3 +70,5 @@ func _on_game_state(state: Constants.GameState) -> void:
 	match state:
 		Constants.GameState.PERFECT, Constants.GameState.FINISHED:
 			reset()
+		_:
+			pass
