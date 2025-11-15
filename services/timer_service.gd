@@ -1,17 +1,9 @@
 extends Node
 
-
 signal time_up
 signal hurry_up
 signal time_left(seconds: float, proportion: float)
 
-
-## The duration of a short length game, in seconds.
-@export_range(0.0, 180.0, 1.0, "suffix:seconds") var short_time: float
-## The duration of a medium length game, in seconds.
-@export_range(0.0, 180.0, 1.0, "suffix:seconds") var medium_time: float
-## The duration of a long length game, in seconds.
-@export_range(0.0, 180.0, 1.0, "suffix:seconds") var long_time: float
 ## The hurry up signal is emitted when this many seconds remain in the game.
 ## Setting to 0.0 seconds will safely deactivate the hurry up logic.
 @export_range(0.0, 60.0, 1.0, "suffix:seconds") var hurry_up_threshold: float
@@ -29,10 +21,10 @@ func _ready() -> void:
 	update_timer.timeout.connect(_on_update_timer_timeout)
 	game_timer.timeout.connect(_on_game_timer_timeout)
 	hurry_up_timer.timeout.connect(_on_hurry_up_timer_timeout)
-	GameStateService.game_state.connect(_on_game_state_change)
+	GameStateService.game_state.connect(_on_game_state)
 
 
-func _start_timers(seconds: float) -> void:
+func start(seconds: float) -> void:
 	game_timer.start(seconds)
 	update_timer.start(update_interval)
 	_on_update_timer_timeout()
@@ -50,21 +42,6 @@ func reset() -> void:
 	update_timer.stop()
 	game_timer.stop()
 	hurry_up_timer.stop()
-
-
-## Start a game timer with a short duration.
-func start_short_timer() -> void:
-	_start_timers(short_time)
-
-
-## Start a game timer with a medium duration.
-func start_medium_timer() -> void:
-	_start_timers(medium_time)
-
-
-## Start a game timer with a long duration.
-func start_long_timer() -> void:
-	_start_timers(long_time)
 
 
 func _on_game_timer_timeout() -> void:
@@ -88,6 +65,10 @@ func _on_update_timer_timeout() -> void:
 	var proportion: float = game_timer.time_left / max(game_timer.wait_time, 0.01)
 	time_left.emit(seconds, proportion)
 
-func _on_game_state_change(state: Constants.GameState) -> void:
-	if state == Constants.GameState.FINISHED:
-		reset()
+
+func _on_game_state(state: Constants.GameState) -> void:
+	match state:
+		Constants.GameState.PERFECT, Constants.GameState.FINISHED:
+			reset()
+		_:
+			pass
