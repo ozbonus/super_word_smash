@@ -20,12 +20,6 @@ func _physics_process(_delta):
 			apply_central_force(force)
 
 
-func _stop() -> void:
-	linear_velocity = Vector2.ZERO
-	angular_velocity = 0.0
-	freeze = true
-
-
 func _on_game_state(state: Constants.GameState):
 	match state:
 		Constants.GameState.TITLE:
@@ -37,8 +31,10 @@ func _on_game_state(state: Constants.GameState):
 		Constants.GameState.SUCCESS:
 			freeze = false
 		Constants.GameState.TIMEUP:
-			_stop()
+			linear_velocity = Vector2.ZERO
+			angular_velocity = 0.0
+			freeze = true
 		Constants.GameState.PERFECT:
-			_stop()
+			pass
 		Constants.GameState.FINISHED:
 			pass
