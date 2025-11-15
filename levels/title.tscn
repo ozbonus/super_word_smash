@@ -25,21 +25,6 @@ layout_mode = 2
 layout_mode = 2
 text = "Super Word Smash!"
 
-[node name="ShortGameButton" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Short Game"
-
-[node name="MediumGameButton" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Medium Game"
-
-[node name="LongGameButton" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Long Game "
-
 [node name="StartButton" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -80,9 +65,6 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Mute"
 
-[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/ShortGameButton" to="." method="_on_short_game_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/MediumGameButton" to="." method="_on_medium_game_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/LongGameButton" to="." method="_on_long_game_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/LessTimeButton" to="." method="_on_less_time_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/MoreTimeButton" to="." method="_on_more_time_button_pressed"]
