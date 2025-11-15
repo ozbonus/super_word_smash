@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwmqdvpygwf8x"]
+[gd_scene load_steps=3 format=3 uid="uid://cwmqdvpygwf8x"]
 
 [ext_resource type="Script" uid="uid://pwej31m4i66s" path="res://levels/title.gd" id="1_gkh1h"]
+[ext_resource type="FontFile" uid="uid://dbfmpoiuf1824" path="res://fonts/Caveat_Brush/CaveatBrush-Regular.ttf" id="2_k86xs"]
 
 [node name="Level00" type="Node2D"]
 script = ExtResource("1_gkh1h")
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.9983564, 1.0009918)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
@@ -37,6 +39,35 @@ text = "Medium Game"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Long Game "
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="LessTimeButton" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+text = "-"
+
+[node name="GameTimeSeconds" type="RichTextLabel" parent="CanvasLayer/CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(33.19, 0)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_k86xs")
+theme_override_font_sizes/normal_font_size = 16
+text = "99"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoreTimeButton" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+text = "+"
 
 [node name="MuteToggle" type="CheckButton" parent="CanvasLayer/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true

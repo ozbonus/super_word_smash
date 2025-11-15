@@ -4,10 +4,13 @@ extends Node2D
 
 signal start_game(length: Constants.GameLength)
 
+@onready var less_time_button: Button = %LessTimeButton
+@onready var more_time_button: Button = %MoreTimeButton
+@onready var game_time_seconds: RichTextLabel = %GameTimeSeconds
 @onready var mute_toggle: CheckButton = %MuteToggle
 
 func _ready():
-	print_debug(SettingsService.mute_audio)
+	game_time_seconds.text = "%d" % SettingsService.game_length
 	mute_toggle.button_pressed = SettingsService.mute_audio
 
 func _on_short_game_button_pressed():
