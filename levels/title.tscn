@@ -5,37 +5,45 @@
 [node name="Level00" type="Node2D"]
 script = ExtResource("1_gkh1h")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 249.0
-offset_top = 47.0
-offset_right = 400.0
-offset_bottom = 70.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+layout_mode = 2
 text = "Super Word Smash!"
 
-[node name="ShortGameButton" type="Button" parent="."]
-offset_left = 208.0
-offset_top = 173.0
-offset_right = 262.0
-offset_bottom = 227.0
-text = "Short
-Game"
+[node name="ShortGameButton" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Short Game"
 
-[node name="MediumGameButton" type="Button" parent="."]
-offset_left = 292.0
-offset_top = 173.0
-offset_right = 364.0
-offset_bottom = 227.0
-text = "Medium
-Game"
+[node name="MediumGameButton" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Medium Game"
 
-[node name="LongGameButton" type="Button" parent="."]
-offset_left = 403.0
-offset_top = 173.0
-offset_right = 457.0
-offset_bottom = 227.0
-text = "Long
-Game"
+[node name="LongGameButton" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Long Game "
 
-[connection signal="pressed" from="ShortGameButton" to="." method="_on_short_game_button_pressed"]
-[connection signal="pressed" from="MediumGameButton" to="." method="_on_medium_game_button_pressed"]
-[connection signal="pressed" from="LongGameButton" to="." method="_on_long_game_button_pressed"]
+[node name="MuteToggle" type="CheckButton" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Mute"
+
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/ShortGameButton" to="." method="_on_short_game_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/MediumGameButton" to="." method="_on_medium_game_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/LongGameButton" to="." method="_on_long_game_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/CenterContainer/VBoxContainer/MuteToggle" to="." method="_on_mute_toggle_toggled"]

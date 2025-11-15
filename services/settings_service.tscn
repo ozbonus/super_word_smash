@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqok33dql6xix"]
+
+[ext_resource type="Script" uid="uid://dowyqlg81gehr" path="res://services/settings_service.gd" id="1_tiwdw"]
+
+[node name="SettingsService" type="Node"]
+script = ExtResource("1_tiwdw")

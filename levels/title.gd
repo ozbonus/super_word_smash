@@ -2,9 +2,13 @@
 class_name TitleScreen
 extends Node2D
 
-
 signal start_game(length: Constants.GameLength)
 
+@onready var mute_toggle: CheckButton = %MuteToggle
+
+func _ready():
+	print_debug(SettingsService.mute_audio)
+	mute_toggle.button_pressed = SettingsService.mute_audio
 
 func _on_short_game_button_pressed():
 	start_game.emit(Constants.GameLength.SHORT)
@@ -16,3 +20,8 @@ func _on_medium_game_button_pressed():
 
 func _on_long_game_button_pressed():
 	start_game.emit(Constants.GameLength.LONG)
+
+
+func _on_mute_toggle_toggled(toggled_on: bool):
+	SettingsService.mute_audio = toggled_on
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), toggled_on)
