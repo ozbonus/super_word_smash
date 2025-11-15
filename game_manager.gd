@@ -142,8 +142,6 @@ func _perfect_game() -> void:
 	await _transition_out()
 	Engine.time_scale = 1.0
 	game_over_message.visible = false
-	showing_score.emit()
-	# game_complete.emit()
 	_load_score_screen()
 	await _transition_in()
 
