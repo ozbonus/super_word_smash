@@ -27,7 +27,7 @@ var initial_position: Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready():
     initial_position = position
-    GameStateService.game_state.connect(_handle_game_state_changes)
+    GameStateService.game_state.connect(_on_game_state)
     # Enable accelerometer input.
     Input.set_accelerometer(Vector3.ZERO)
 
@@ -79,13 +79,13 @@ func reset() -> void:
     zoom = Vector2.ONE
 
 
-func _handle_game_state_changes(state) -> void:
+func _on_game_state(state) -> void:
     reset()
     match state:
-        Constants.GameState.TITLE, Constants.GameState.FINISHED, Constants.GameState.TIMEUP:
-            camera_state = CameraState.FIXED
         Constants.GameState.PLAYING:
             camera_state = CameraState.JUICY
-        Constants.GameState.SUCCESS:
+        Constants.GameState.SUCCESS, Constants.GameState.PERFECT:
             camera_state = CameraState.FIXED
             zoom_to_focus()
+        _:
+            camera_state = CameraState.FIXED

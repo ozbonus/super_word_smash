@@ -1,11 +1,13 @@
 extends Node
 
-signal showing_title
-signal starting_game
-signal success_began
-signal success_ended
-signal game_complete
-signal showing_score
+signal showing_title ## Emitted when the title screen is loaded.
+signal counting_down ## Emitted when counting down to starting the first level.
+signal word_smashing ## Emitted when normal game play has begun.
+signal success_began ## Emitted upon hitting a correct target (not last level).
+signal success_ended ## Emitted a short while after the success_began signal
+signal outta_time_gg ## Emitted when the game play timer completes.
+signal perfect_clear ## Emitted when successfully finishing the last level.
+signal showing_score ## Emitted when showing the score screen.
 
 # These just so happen to be the progress values that allow the shader-based
 # transition to complete fully.
@@ -31,17 +33,19 @@ var current_level_instance: Node2D
 
 
 func _ready():
-	showing_title.connect(GameStateService._on_showing_title)
-	starting_game.connect(GameStateService._on_starting_game)
-	success_began.connect(GameStateService._on_success_began)
-	success_ended.connect(GameStateService._on_success_ended)
-	showing_score.connect(GameStateService._on_showing_score)
-	game_complete.connect(GameStateService._on_game_complete)
+	showing_title.connect(GameStateService.emit_title_state)
+	counting_down.connect(GameStateService.emit_counting_state)
+	word_smashing.connect(GameStateService.emit_playing_state)
+	success_began.connect(GameStateService.emit_success_state)
+	success_ended.connect(GameStateService.emit_playing_state)
+	outta_time_gg.connect(GameStateService.emit_timeup_state)
+	perfect_clear.connect(GameStateService.emit_perfect_state)
+	showing_score.connect(GameStateService.emit_finished_state)
 	TimerService.time_up.connect(_on_timeup)
 	_load_title_screen()
 
 
-## Clear the currently loaded title, gameplay level, or summary screen.
+## Clear the currently loaded title, gameplay level, or score screen.
 func _clear_current_level() -> void:
 	for child in level.get_children():
 		child.queue_free()
@@ -53,8 +57,25 @@ func _load_title_screen() -> void:
 	current_level_instance = title_screen.instantiate()
 	level.add_child(current_level_instance)
 	var title_screen_instance := current_level_instance as TitleScreen
-	title_screen_instance.start_game.connect(start_game)
+	title_screen_instance.start_game.connect(_start_new_game)
 	showing_title.emit()
+
+
+func _start_new_game(game_length: Constants.GameLength) -> void:
+	await _transition_out()
+	counting_down.emit()
+	await _load_level(0)
+	await _transition_in()
+	#TODO: Create a big countdown display before starting normal game play.
+	await get_tree().create_timer(dramatic_pause_duration).timeout
+	match game_length:
+		Constants.GameLength.SHORT:
+			TimerService.start_short_timer()
+		Constants.GameLength.MEDIUM:
+			TimerService.start_medium_timer()
+		Constants.GameLength.LONG:
+			TimerService.start_long_timer()
+	word_smashing.emit()
 
 
 func _load_score_screen() -> void:
@@ -66,7 +87,7 @@ func _load_score_screen() -> void:
 	showing_score.emit()
 
 
-func load_level(index: int):
+func _load_level(index: int):
 	await _clear_current_level()
 	current_level_instance = levels[index].instantiate()
 	level.add_child(current_level_instance)
@@ -77,21 +98,9 @@ func load_level(index: int):
 func next_level():
 	current_level_index += 1
 	if current_level_index < levels.size():
-		load_level(current_level_index)
+		_load_level(current_level_index)
 	else:
 		_perfect_game()
-
-
-func start_game(game_length: Constants.GameLength):
-	starting_game.emit()
-	match game_length:
-		Constants.GameLength.SHORT:
-			TimerService.start_short_timer()
-		Constants.GameLength.MEDIUM:
-			TimerService.start_medium_timer()
-		Constants.GameLength.LONG:
-			TimerService.start_long_timer()
-	load_level(0)
 
 
 func play_again():
@@ -102,6 +111,7 @@ func play_again():
 
 func _on_timeup():
 	game_over_message.show_time_up()
+	outta_time_gg.emit()
 	await _dramatic_pause()
 	await _transition_out()
 	game_over_message.visible = false
@@ -124,7 +134,7 @@ func handle_success() -> void:
 
 
 func _perfect_game() -> void:
-	success_began.emit()
+	perfect_clear.emit()
 	SoundEffectsService.play_success()
 	Engine.time_scale = 0.05
 	await _dramatic_pause()
@@ -132,8 +142,6 @@ func _perfect_game() -> void:
 	await _transition_out()
 	Engine.time_scale = 1.0
 	game_over_message.visible = false
-	success_ended.emit()
-	game_complete.emit()
 	_load_score_screen()
 	await _transition_in()
 

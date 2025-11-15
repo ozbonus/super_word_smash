@@ -24,10 +24,20 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "_play_title_music()"
 
+[node name="StopTitleMusicButton" type="Button" parent="CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "_stop_title_music()"
+
 [node name="PlayGamePlayMusicButton" type="Button" parent="CenterContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "_play_game_play_music()"
+
+[node name="StopGamePlayMusicButton" type="Button" parent="CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "_stop_game_play_music()"
 
 [node name="StopButton" type="Button" parent="CenterContainer/GridContainer"]
 unique_name_in_owner = true
@@ -38,6 +48,11 @@ text = "_stop()"
 unique_name_in_owner = true
 layout_mode = 2
 text = "GameState.TITLE"
+
+[node name="GameStateCountingButton" type="Button" parent="CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "GameState.COUNTING"
 
 [node name="GameStatePlayingButton" type="Button" parent="CenterContainer/GridContainer"]
 unique_name_in_owner = true
@@ -53,6 +68,11 @@ text = "GameState.SUCCESS"
 unique_name_in_owner = true
 layout_mode = 2
 text = "GameState.TIMEUP"
+
+[node name="GameStatePerfectButton" type="Button" parent="CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "GameState.PERFECT"
 
 [node name="GameStateFinishedButton" type="Button" parent="CenterContainer/GridContainer"]
 unique_name_in_owner = true
