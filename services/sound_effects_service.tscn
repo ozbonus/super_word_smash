@@ -30,11 +30,9 @@ stream = ExtResource("5_ivh6t")
 
 [node name="Count" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_oo7fg")
-volume_db = -10.0
 
 [node name="Go" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_g5nlr")
-volume_db = -10.0
 
 [node name="Timeup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_e3l7x")
