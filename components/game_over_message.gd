@@ -14,7 +14,6 @@ func show_time_up() -> void:
 
 func show_perfect() -> void:
 	label.text = PERFECT_MESSAGE
-	SoundEffectsService.play_fanfare()
 	SoundEffectsService.play_applause()
 	_appear()
 
