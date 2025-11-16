@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://2uq74hb8sx7o"]
+
+[ext_resource type="Script" uid="uid://dyebupkhdjrlm" path="res://tests/test_count_down_message.gd" id="1_oojpo"]
+[ext_resource type="PackedScene" uid="uid://b2burrbtta6ca" path="res://components/count_down_message.tscn" id="2_iwtef"]
+
+[node name="TestCountDownMessage" type="Node"]
+script = ExtResource("1_oojpo")
+
+[node name="CountDownMessage" parent="." instance=ExtResource("2_iwtef")]
