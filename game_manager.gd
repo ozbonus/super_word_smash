@@ -100,7 +100,9 @@ func next_level():
 func play_again():
 	TimerService.reset()
 	current_level_index = 0
+	await _transition_out()
 	_load_title_screen()
+	await _transition_in()
 
 
 func _on_timeup():
