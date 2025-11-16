@@ -37,6 +37,7 @@ func play_go():
 
 func play_timeup():
 	timeup.play()
+	await timeup.finished
 
 
 func play_applause():
