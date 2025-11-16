@@ -26,6 +26,7 @@ const TRANSITION_PROGRESS_MAX := 6.0
 
 @onready var level: Node2D = $Level
 @onready var transition_screen: ColorRect = $CanvasLayer/TransitionScreen
+@onready var count_down_message: CanvasLayer = $CountDownMessage
 @onready var game_over_message: GameOverMessage = $CanvasLayer/GameOverMessage
 
 var current_level_index: int = 0
@@ -63,11 +64,10 @@ func _load_title_screen() -> void:
 
 func _start_new_game(game_length: float) -> void:
 	await _transition_out()
-	counting_down.emit()
 	await _load_level(0)
+	counting_down.emit()
 	await _transition_in()
-	#TODO: Create a big countdown display before starting normal game play.
-	await get_tree().create_timer(dramatic_pause_duration).timeout
+	await count_down_message.play()
 	TimerService.start(game_length)
 	word_smashing.emit()
 
@@ -100,7 +100,9 @@ func next_level():
 func play_again():
 	TimerService.reset()
 	current_level_index = 0
+	await _transition_out()
 	_load_title_screen()
+	await _transition_in()
 
 
 func _on_timeup():

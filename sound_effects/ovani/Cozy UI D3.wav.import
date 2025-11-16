@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://05gvs4myqkqm"
+path="res://.godot/imported/Cozy UI D3.wav-b9cf1b0c3dff567faef7d26c2e87b66a.sample"
+
+[deps]
+
+source_file="res://sound_effects/ovani/Cozy UI D3.wav"
+dest_files=["res://.godot/imported/Cozy UI D3.wav-b9cf1b0c3dff567faef7d26c2e87b66a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

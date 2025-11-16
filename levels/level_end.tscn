@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bhl8k7dgmo1mn" path="res://levels/level_end.gd" id="1_yht8h"]
 
 [node name="Level00" type="Node2D"]
+scale = Vector2(1, 1.0010515)
 script = ExtResource("1_yht8h")
 
 [node name="Label" type="Label" parent="."]

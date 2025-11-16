@@ -9,4 +9,5 @@ func _ready():
 
 
 func _on_button_pressed():
+	SoundEffectsService.play_success()
 	play_again.emit()
