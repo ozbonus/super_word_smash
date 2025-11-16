@@ -58,6 +58,7 @@ func _stop() -> void:
 func _on_game_state_changed(state: Constants.GameState) -> void:
 	match state:
 		Constants.GameState.TITLE:
+			_stop_game_play_music() ## In case of restart in the middle of the game.
 			_play_title_music()
 		Constants.GameState.COUNTING:
 			_stop_title_music()

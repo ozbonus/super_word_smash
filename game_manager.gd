@@ -87,6 +87,7 @@ func _load_level(index: int):
 	level.add_child(current_level_instance)
 	var game_level_instance := current_level_instance as GameLevel
 	game_level_instance.success.connect(handle_success)
+	game_level_instance.restart.connect(play_again)
 
 
 func next_level():

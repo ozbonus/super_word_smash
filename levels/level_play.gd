@@ -3,6 +3,7 @@ class_name GameLevel
 extends Node2D
 
 signal success
+signal restart
 
 @onready var operator_controls: OperatorControls = $OperatorControls
 
@@ -15,6 +16,7 @@ func _ready():
 					goal.real_goal_entered.connect(success.emit)
 		if operator_controls:
 			operator_controls.next_level.connect(func(): success.emit())
+			operator_controls.restart.connect(func(): restart.emit())
 
 func _get_configuration_warnings():
 	var real_goals_count: int = 0
