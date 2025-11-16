@@ -7,10 +7,12 @@ signal start_new_game(length: float)
 @onready var more_time_button: Button = %MoreTimeButton
 @onready var game_time_seconds: RichTextLabel = %GameTimeSeconds
 @onready var mute_toggle: CheckButton = %MuteToggle
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready():
 	game_time_seconds.text = "%d" % SettingsService.game_length
 	mute_toggle.button_pressed = SettingsService.mute_audio
+	animation_player.play("idle")
 
 
 func _on_mute_toggle_toggled(toggled_on: bool):

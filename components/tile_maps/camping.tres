@@ -1932,6 +1932,7 @@ texture_region_size = Vector2i(32, 32)
 11:163/0/physics_layer_0/polygon_0/points = PackedVector2Array(-112, -60, -68, -56, -24, -44, 56, -40, 80, -60, 112, -60, 112, 80, -112, 80)
 19:163/size_in_atlas = Vector2i(2, 5)
 19:163/0 = 0
+19:163/0/texture_origin = Vector2i(16, 0)
 19:163/0/z_index = 2
 4:52/0 = 0
 4:52/0/z_index = 2
