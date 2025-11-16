@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://mpyqn23y4p00"]
+[gd_scene load_steps=8 format=3 uid="uid://mpyqn23y4p00"]
 
 [ext_resource type="Script" uid="uid://cvv5h74dslar0" path="res://services/sound_effects_service.gd" id="1_81cxh"]
 [ext_resource type="AudioStream" uid="uid://pvdoyb86nda0" path="res://sound_effects/Popup3.wav" id="2_2wjln"]
 [ext_resource type="AudioStream" uid="uid://mjvtrr2fgkrv" path="res://sound_effects/Success7a.wav" id="3_ivh6t"]
 [ext_resource type="AudioStream" uid="uid://dkufxophurua6" path="res://sound_effects/Error5.wav" id="4_gp1xk"]
+[ext_resource type="AudioStream" uid="uid://uhw7v86ea3ml" path="res://sound_effects/ovani/Cozy UI G2.wav" id="5_ivh6t"]
+[ext_resource type="AudioStream" uid="uid://05gvs4myqkqm" path="res://sound_effects/ovani/Cozy UI D3.wav" id="6_oo7fg"]
+[ext_resource type="AudioStream" uid="uid://l6h2gf8cyuku" path="res://sound_effects/ovani/Cozy UI D2.wav" id="7_g5nlr"]
 
 [node name="SoundEffectsService" type="Node"]
 script = ExtResource("1_81cxh")
@@ -18,3 +21,12 @@ stream = ExtResource("3_ivh6t")
 [node name="Decoy" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_gp1xk")
 volume_db = 12.0
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ivh6t")
+
+[node name="Count" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_oo7fg")
+
+[node name="Go" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_g5nlr")
