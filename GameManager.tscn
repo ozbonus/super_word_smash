@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bd7optlxeqn7j"]
+[gd_scene load_steps=12 format=3 uid="uid://bd7optlxeqn7j"]
 
 [ext_resource type="Script" uid="uid://bt7hnmw6h3nsl" path="res://game_manager.gd" id="1_p13vs"]
 [ext_resource type="PackedScene" uid="uid://cwmqdvpygwf8x" path="res://levels/title.tscn" id="2_au0an"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c3jnqpoa4hb6y" path="res://levels/level_end.tscn" id="8_5me18"]
 [ext_resource type="PackedScene" uid="uid://b4cejfobcvbkl" path="res://components/game_over_message.tscn" id="8_0145d"]
 [ext_resource type="Shader" uid="uid://bchiik2bxt53l" path="res://shaders/transition.gdshader" id="8_k24m2"]
+[ext_resource type="PackedScene" uid="uid://b2burrbtta6ca" path="res://components/count_down_message.tscn" id="10_0q1rh"]
 [ext_resource type="Script" uid="uid://cb7rotq8xm3i" path="res://game_camera.gd" id="16_uyu88"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0145d"]
@@ -67,6 +68,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0.8860799, 0.43363965, 0.90340924, 1)
+
+[node name="CountDownMessage" parent="." instance=ExtResource("10_0q1rh")]
+visible = false
 
 [node name="GUI" type="Control" parent="."]
 layout_mode = 3

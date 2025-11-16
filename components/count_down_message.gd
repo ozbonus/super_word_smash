@@ -12,6 +12,7 @@ func play():
 	await animation_player.animation_finished
 	visible = false
 
+
 func play_count():
 	SoundEffectsService.play_count()
 
