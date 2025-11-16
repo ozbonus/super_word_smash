@@ -14,5 +14,5 @@ parameters/looping = true
 
 [node name="GamePlayMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_nnqh2")
-volume_db = -10.0
+volume_db = -5.0
 parameters/looping = true
