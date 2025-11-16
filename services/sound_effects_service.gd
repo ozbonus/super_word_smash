@@ -23,4 +23,4 @@ func play_count():
 	count.play()
 
 func play_go():
-	count.play()
+	go.play()
