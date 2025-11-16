@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckbakk07utnc8"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_q4hgt"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_jbkg3"]
+[ext_resource type="Texture2D" uid="uid://dka0i5sshmcuf" path="res://art/irasutoya/olympic03_swimming.png" id="3_duvqg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_jbkg3")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 6.0000000894072
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Swim" type="RigidBody2D"]
+script = ExtResource("1_q4hgt")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.11598361, 0.11456676)
+texture = ExtResource("3_duvqg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-50.357407, -55.726566, 26.45595, -46.991936, 68.073875, -20.017347, 90.42425, 23.398897, 92.47946, 38.55605, 88.62595, 50.88729, 51.889114, 57.566704, -54.98162, 56.282204, -83.49762, 51.914883, -90.69084, 43.43716, -89.66324, 22.885094, -79.90102, -19.246649, -61.661053, -46.991936)

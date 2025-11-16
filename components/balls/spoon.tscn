@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://betnpu6gu8l45"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_b82rv"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_2qcur"]
+[ext_resource type="Texture2D" uid="uid://ca8gh5kivo3gd" path="res://art/irasutoya/spoon.png" id="3_but5p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_2qcur")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 10.000000149012
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Spoon" type="RigidBody2D"]
+script = ExtResource("1_b82rv")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.12607838, 0.12453821)
+texture = ExtResource("3_but5p")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-3.9994812, -9.998703, 35.99533, -39.994812, 49.993515, -41.994553, 53.992996, -29.996109, 47.993774, -15.997925, 9.998703, 7.9989624, 3.9994812, 7.9989624, -5.999222, 19.997406, -7.9989624, 27.996368, -23.996887, 39.994812, -41.994553, 39.994812, -51.993256, 33.99559, -49.993515, 17.997665, -35.99533, 7.9989624, -17.997665, 5.999222, -5.999222, -3.9994812)

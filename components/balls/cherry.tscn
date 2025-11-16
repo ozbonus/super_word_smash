@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cupk4shun2wx4"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_27euy"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_ci0n2"]
+[ext_resource type="Texture2D" uid="uid://ccbyg0l5dllq4" path="res://art/irasutoya/fruit_cherry.png" id="3_gpttv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_ci0n2")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 4.70000007003564
+shader_parameter/alpha_threshold = 0.58999998681232
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Cherry" type="RigidBody2D"]
+script = ExtResource("1_27euy")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.15053919, 0.14870021)
+texture = ExtResource("3_gpttv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-5.1763153, -56.724243, 6.802142, -58.14542, 10.456591, -17.946516, 38.067955, 14.943496, 45.985916, 25.500782, 44.361725, 44.585106, 36.240738, 53.518196, 21.41992, 56.36054, -23.448542, 58.999863, -39.89355, 55.751472, -45.78127, 45.803253, -45.172195, 24.891706, -38.26936, 17.582817, -19.185026, -6.780157)

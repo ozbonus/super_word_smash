@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://drojso0ntenld"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_671xp"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_7nb0e"]
+[ext_resource type="Texture2D" uid="uid://cw6jkvnyjj0xq" path="res://art/irasutoya/bunbougu_keshigomu.png" id="3_ef6ue"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_7nb0e")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 6.0000000894072
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Eraser" type="RigidBody2D"]
+script = ExtResource("1_671xp")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.15302864, 0.15115923)
+texture = ExtResource("3_ef6ue")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-51.641922, -2.0342896, -19.529312, -57.011066, -9.5101795, -62.662888, 21.06102, -50.845448, 57.02715, -28.751978, 57.284042, -22.072554, 23.373127, 40.86814, 11.555691, 52.685593, -11.308485, 59.621906, -32.374355, 55.254597, -57.807533, 34.188725, -57.807533, 18.003983, -53.69712, 4.902028)

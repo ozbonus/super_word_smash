@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5hibk1cn6dkl"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_lb1gx"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_vctu3"]
+[ext_resource type="Texture2D" uid="uid://bss32sp44doq2" path="res://art/irasutoya/food_cheese_emmental.png" id="3_ynq8y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_vctu3")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 6.0000000894072
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Cheese" type="RigidBody2D"]
+script = ExtResource("1_lb1gx")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.21468478, 0.21206214)
+texture = ExtResource("3_ynq8y")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-61.14725, -12.567225, -3.6014616, -43.90913, 17.207516, -53.92826, 24.14384, -52.129955, 60.10994, -21.044954, 62.165154, -9.227517, 62.935867, 37.014637, 55.74265, 39.84055, -12.592986, 43.180252, -58.06443, 40.611248, -61.661053, 34.188725)

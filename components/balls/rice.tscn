@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c43b1cq3ir1vn"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_idej5"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_0qvpy"]
+[ext_resource type="Texture2D" uid="uid://4bx32tni6ol7" path="res://art/irasutoya/rice_white.png" id="3_e1bis"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_0qvpy")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 4.70000007003564
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Rice" type="RigidBody2D"]
+script = ExtResource("1_idej5")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.112678975, 0.111302495)
+texture = ExtResource("3_e1bis")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-6.2262125, -31.19129, 15.496227, -29.541483, 40.79324, -20.19259, 49.993515, -7.5440845, 51.51696, 4.8294516, 46.979996, 19.402733, 33.64408, 27.926722, 6.009848, 33.97601, -10.763176, 32.60117, -34.410378, 28.339174, -46.783916, 13.628412, -49.993515, 1.2548727, -46.50895, -11.668595, -35.37276, -22.392328, -15.575106, -28.579098, -10.488202, -31.053806)

@@ -7,7 +7,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_53su8"]
 shader = ExtResource("2_4pn84")
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 10.000000149012
+shader_parameter/outline_size = 6.0000000894072
 shader_parameter/alpha_threshold = 0.0999999977648
 shader_parameter/outline_samples = 8
 shader_parameter/shade_color = Color(1, 1, 1, 0)

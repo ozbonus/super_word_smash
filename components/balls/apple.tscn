@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b11434hpycut"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_sl8uw"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_xnaax"]
+[ext_resource type="Texture2D" uid="uid://cus41kumr4hak" path="res://art/irasutoya/apple_kajiru.png" id="3_ywb74"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_xnaax")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 4.70000007003564
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Apple" type="RigidBody2D"]
+script = ExtResource("1_sl8uw")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.15053919, 0.14870021)
+texture = ExtResource("3_ywb74")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-8.965908, -59.336517, 2.9801738, -57.283287, 34.15199, -38.430874, 56.924194, 16.633097, 56.364223, 26.339289, 42.73823, 47.61825, 21.272615, 57.697754, -11.205791, 57.5111, -39.951054, 45.1917, -53.390396, 22.419477, -57.68353, -7.6323795, -51.15051, -27.791397, -38.831116, -38.80419)

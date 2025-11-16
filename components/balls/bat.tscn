@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5ctgr7r3bnty"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_3xj11"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_trdgl"]
+[ext_resource type="Texture2D" uid="uid://bfi2430b8xnts" path="res://art/irasutoya/animal_koumori.png" id="3_7xcga"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_trdgl")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 10.000000149012
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Bat" type="RigidBody2D"]
+script = ExtResource("1_3xj11")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.13602573, 0.13436404)
+texture = ExtResource("3_7xcga")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-59.407562, -34.85323, -28.978045, -35.46182, 3.581536, -35.30967, 28.533728, -32.723164, 60.941162, -22.072836, 61.3976, -14.465454, 55.463844, 4.096545, 38.11902, 19.3113, 7.9938054, 34.830353, -4.78658, 37.721157, -13.61115, 33.46102, -42.51918, 13.225396, -55.90817, -6.249487, -57.733936, -18.269146, -60.92903, -26.180819)

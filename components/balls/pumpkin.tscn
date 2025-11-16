@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bg8ffi7wllr0w"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_77uvb"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_v71t0"]
+[ext_resource type="Texture2D" uid="uid://bv4qqga8ai84v" path="res://art/irasutoya/cut_vegetable_pumpkin.png" id="3_55rkt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_v71t0")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 6.0000000894072
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Pumpkin" type="RigidBody2D"]
+script = ExtResource("1_77uvb")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.1611803, 0.1592113)
+texture = ExtResource("3_55rkt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-56.009228, -34.9176, -37.255466, -44.16603, -10.023984, -50.845448, 9.757401, -50.331654, 32.878456, -47.248837, 47.778713, -39.02801, 58.31165, -27.467476, 66.01866, -2.2911913, 65.761765, 16.46257, 62.165154, 34.445637, 50.090824, 49.34588, 29.53874, 52.94249, 7.445293, 49.859684, -7.968769, 47.804466, -26.465637, 51.914883, -48.045296, 47.290665, -62.43175, 30.335222, -66.02836, 5.9296355, -61.404144, -22.843258)

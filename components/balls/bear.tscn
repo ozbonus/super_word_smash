@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdsup34plsifd"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_djyuw"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_vmixp"]
+[ext_resource type="Texture2D" uid="uid://o5g7ta0yptjh" path="res://art/irasutoya/jitensya_kuma.png" id="3_ggict"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_vmixp")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 4.70000007003564
+shader_parameter/alpha_threshold = 0.5999999865888
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Bear" type="RigidBody2D"]
+script = ExtResource("1_djyuw")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.10601892, 0.1047238)
+texture = ExtResource("3_ggict")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-43.04825, -83.76518, 3.7478964, -84.28514, 12.587173, -78.30564, 39.884903, -13.830947, 48.72418, 19.706284, 61.463127, 54.543423, 60.163246, 71.70201, 50.02409, 81.58119, 35.98523, 82.88109, -44.60812, 81.061226, -55.267246, 74.04181, -60.466812, 60.78291, -58.38699, 47.26402, -52.147503, 25.945768, -56.56714, 11.386973, -57.087093, 4.6275277, -53.4474, -9.931268, -52.667454, -26.049942, -57.34707, -39.828804, -54.227325, -55.94748, -49.54771, -72.326126, -46.427967, -81.425385)

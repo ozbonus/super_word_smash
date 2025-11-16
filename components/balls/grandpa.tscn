@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc1jxkmoydtv8"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_r0ptk"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_6ihyv"]
+[ext_resource type="Texture2D" uid="uid://crw0la3j8fpid" path="res://art/irasutoya/walking3_oldman.png" id="3_siceb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_6ihyv")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 10.000000149012
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Grandpa" type="RigidBody2D"]
+script = ExtResource("1_r0ptk")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.12583353, 0.12429634)
+texture = ExtResource("3_siceb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-25.694925, -41.853924, -14.648201, -52.900654, 3.5917583, -53.92826, 13.8678, -47.76264, 19.005804, -40.31252, 21.831732, -25.66917, 24.657629, -0.4928865, 23.630022, 46.776875, 18.492016, 51.401077, -13.877487, 50.63038, -19.786205, 45.749268, -17.731007, -1.2635843, -20.55692, -16.93454, -25.694925, -28.495075)

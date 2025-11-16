@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcrsij55hx8kw"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_2j4e3"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_uyrnr"]
+[ext_resource type="Texture2D" uid="uid://dffevifxjh6oo" path="res://art/irasutoya/frog_ushigaeru.png" id="3_hv1rt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_uyrnr")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 10.000000149012
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Frog" type="RigidBody2D"]
+script = ExtResource("1_2j4e3")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.12858388, 0.1270131)
+texture = ExtResource("3_hv1rt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-28.007032, -24.384663, -2.8307486, -42.110825, 27.997345, -45.19363, 41.869995, -43.90913, 51.375324, -27.210573, 51.11843, -15.136235, 49.063217, 25.711004, 44.952785, 34.70253, 33.392277, 36.757744, -2.31696, 43.950962, -15.161989, 43.43716, -43.164185, 39.069836, -52.15571, 31.10592, -50.357407, 22.885094, -43.67799, 2.0761237, -39.567577, -4.0894966)

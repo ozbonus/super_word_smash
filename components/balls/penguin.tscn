@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bl1jx6vpsxke1"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_p4pk2"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_f2q6y"]
+[ext_resource type="Texture2D" uid="uid://bo2l60nj047ln" path="res://art/irasutoya/penguin03_gentoo.png" id="3_w0vcm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_f2q6y")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 6.0000000894072
+shader_parameter/alpha_threshold = 0.82999998144784
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Penguin" type="RigidBody2D"]
+script = ExtResource("1_p4pk2")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.15302864, 0.15115923)
+texture = ExtResource("3_w0vcm")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-36.79166, -38.254833, -14.509439, -55.27945, -0.7395281, -56.78162, 10.026043, -52.77583, 22.043436, -26.487814, 31.056458, 1.052018, 32.558643, 32.59764, 37.5659, 39.858143, 36.56444, 45.366108, 14.532569, 60.137463, 2.5152073, 61.389282, -24.273554, 56.88276, -30.282236, 51.625156, -33.787304, 12.067954, -32.285133, -6.709205)

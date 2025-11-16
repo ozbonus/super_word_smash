@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3lkyqfxhgyml"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_i156b"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_8wghp"]
+[ext_resource type="Texture2D" uid="uid://b4vix3ugcojxh" path="res://art/irasutoya/school_bus.png" id="3_nualt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_8wghp")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 4.70000007003564
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Bus" type="RigidBody2D"]
+script = ExtResource("1_i156b")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.15053919, 0.14870021)
+texture = ExtResource("3_nualt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-38.809807, -40.540142, -22.311758, -39.852726, -15.1626, -34.62834, -4.7138357, -36.553112, 11.234283, -34.90331, 26.22001, -36.00318, 40.105858, -33.528473, 51.654503, -36.553112, 63.753075, -35.453243, 68.564995, -29.81641, 74.88925, -18.130293, 75.301704, 1.5298842, 74.61429, 31.638824, 60.315975, 32.876175, 51.379528, 39.750366, 38.868515, 38.650497, 34.469032, 33.838566, -30.148335, 33.976048, -35.922646, 40.16282, -45.546513, 40.712753, -51.458313, 33.976048, -74.55558, 33.838566, -77.44274, 22.427412, -74.968025, 4.142079, -73.45571, -0.119918525, -61.494625, -2.3196607, -56.40773, -31.191248, -48.57115, -32.70357, -44.446644, -38.61537)

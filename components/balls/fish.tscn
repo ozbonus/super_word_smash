@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://doh84faupo24e"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_3gpme"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_1es5t"]
+[ext_resource type="Texture2D" uid="uid://pwtl1b41p7rx" path="res://art/irasutoya/fish_yellow_perch.png" id="3_qjid7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_1es5t")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 6.0000000894072
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Fish" type="RigidBody2D"]
+script = ExtResource("1_3gpme")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.15302864, 0.15115923)
+texture = ExtResource("3_qjid7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-61.661053, -7.429212, -21.58451, -29.008879, -7.4549656, -31.577888, 62.678974, -14.622432, 58.568542, 22.628183, 16.179909, 23.398897, -12.8498955, 30.84901, -16.960295, 30.592115, -56.266125, 11.324551, -62.43175, 2.3330257)

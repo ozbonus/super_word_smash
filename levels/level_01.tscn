@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp4mujqw0io30"]
+
+[ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_mckh2"]
+[ext_resource type="PackedScene" uid="uid://cmqclu0oeqmpq" path="res://components/level_base_layers/camping_grass.tscn" id="1_ty3hu"]
+[ext_resource type="PackedScene" uid="uid://br6t6px7iknxx" path="res://components/operator_controls.tscn" id="2_81a5f"]
+
+[node name="Level01" type="Node2D"]
+script = ExtResource("1_mckh2")
+
+[node name="OperatorControls" parent="." instance=ExtResource("2_81a5f")]
+visible = false
+
+[node name="CampingGrass" parent="." instance=ExtResource("1_ty3hu")]

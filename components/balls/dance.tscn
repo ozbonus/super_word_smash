@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1bntwrmcof75"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_inrl5"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_qannd"]
+[ext_resource type="Texture2D" uid="uid://b4h4yloekxb2i" path="res://art/irasutoya/dance_youchien.png" id="3_u18ju"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_qannd")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 10.000000149012
+shader_parameter/alpha_threshold = 0.66999998502416
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Dance" type="RigidBody2D"]
+script = ExtResource("1_inrl5")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.060496338, 0.059757315)
+texture = ExtResource("3_u18ju")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-54.611828, -54.769516, 3.1637132, -58.96832, 33.059204, -55.441326, 53.0455, -43.012867, 64.2983, -15.972571, 66.98554, -3.5441113, 65.97783, 3.5098825, 40.785007, 45.83382, 34.57077, 50.536484, 10.721571, 59.773846, -11.784024, 62.12518, -55.955433, 51.37624, -56.62725, 45.83382, -64.520996, -15.972571, -63.849186, -20.171375, -61.329906, -45.196243)

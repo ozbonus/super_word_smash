@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://oc8yr7wdawmw"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_ha6c1"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_13xdk"]
+[ext_resource type="Texture2D" uid="uid://70r0g2jsrefv" path="res://art/irasutoya/pan_toast_kongari.png" id="3_f0mvn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_13xdk")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 6.0000000894072
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Toast" type="RigidBody2D"]
+script = ExtResource("1_ha6c1")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.15302864, 0.15115923)
+texture = ExtResource("3_f0mvn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-58.32134, 37.014637, -62.945557, 11.838354, -32.117447, -32.348587, -31.346748, -42.624622, -21.070723, -53.157555, -8.996376, -55.726566, 41.869995, -44.16603, 54.71504, -34.660694, 62.422047, -20.017347, 60.62376, -2.804995, 26.199055, 56.282204, 19.26273, 58.08051)

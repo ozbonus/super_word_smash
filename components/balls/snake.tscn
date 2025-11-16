@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://muge7hdtgi2a"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_imifw"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_i2ds4"]
+[ext_resource type="Texture2D" uid="uid://6qvw5cs5tvrf" path="res://art/irasutoya/hebi_aodaisyou.png" id="3_vhj8v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_i2ds4")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 10.000000149012
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Snake" type="RigidBody2D"]
+script = ExtResource("1_imifw")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.14143063, 0.13970293)
+texture = ExtResource("3_vhj8v")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-16.7034, -45.707436, 5.1331844, -54.18516, 27.483557, -53.157555, 47.008003, -34.403793, 55.48572, 11.0676565, 54.971935, 29.564508, 41.35618, 37.528442, -29.03464, 54.740795, -47.017704, 55.51149, -56.266125, 46.519966, -58.32134, 26.738598, -50.87121, 3.8744287, -42.136578, -6.401605, -26.465637, -22.329454)

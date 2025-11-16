@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dctd8ibgy0a8w"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_4sg8c"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_p0o6q"]
+[ext_resource type="Texture2D" uid="uid://bd1xoxkiaryo2" path="res://art/irasutoya/bunbougu_shappen.png" id="3_xfbej"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_p0o6q")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 6.0000000894072
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Pen" type="RigidBody2D"]
+script = ExtResource("1_4sg8c")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.13751368, 0.13583381)
+texture = ExtResource("3_xfbej")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-34.49806, 51.119606, -29.892378, 29.626413, -4.3691993, -16.81424, 22.11348, -55.770653, 30.55724, -55.578743, 36.890053, -49.054028, 34.587204, -43.488823, -16.651024, 45.93821, -28.165247, 54.38197)

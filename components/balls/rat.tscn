@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://fy7ljebdpa2w"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_kjk3w"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_1a7kq"]
+[ext_resource type="Texture2D" uid="uid://dy10ig7yll448" path="res://art/irasutoya/mouse_black.png" id="3_1mryk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_1a7kq")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 4.70000007003564
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Rat" type="RigidBody2D"]
+script = ExtResource("1_kjk3w")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.19661175, 0.19420995)
+texture = ExtResource("3_1mryk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-22.29795, -50.416954, -4.487119, -51.80032, 19.203014, -45.748093, 35.284637, -51.627396, 42.547306, -50.935715, 52.230865, -39.522945, 53.78715, -32.606117, 76.61268, -11.163954, 78.68773, -3.209598, 76.95853, 7.5114846, 64.68115, 13.044947, 42.028545, 19.27009, 33.72835, 25.322315, 18.165491, 30.337015, 1.910946, 29.991173, -22.643791, 40.712257, -28.523094, 52.643784, -38.033733, 54.54591, -60.686348, 43.306065, -72.617874, 24.976473, -75.903366, 7.338564, -72.617874, -8.224301, -61.032192, -21.539194, -48.23606, -28.2831, -41.319225, -35.027008, -29.90646, -47.477303)

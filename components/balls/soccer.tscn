@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://1bee40faph4c"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_kvl8n"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_ajxjm"]
+[ext_resource type="Texture2D" uid="uid://c8m7jfcan8ry1" path="res://art/irasutoya/sport_soccerball.png" id="3_rgbk2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_ajxjm")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 6.0000000894072
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Soccer" type="RigidBody2D"]
+script = ExtResource("1_kvl8n")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.15302864, 0.15115923)
+texture = ExtResource("3_rgbk2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-1.0324589, -64.20429, 16.693697, -62.91979, 34.162956, -55.212765, 50.090824, -44.16603, 61.39444, -26.953672, 64.99108, -1.2635843, 63.963474, 21.086788, 52.91672, 42.409554, 38.787174, 56.282204, 18.235123, 64.246124, -6.170464, 64.759926, -34.94336, 57.8236, -57.036835, 38.812943, -66.54217, 12.0952635, -63.45936, -21.558758, -51.898815, -41.083218, -36.22786, -55.983467, -18.24481, -62.40599)

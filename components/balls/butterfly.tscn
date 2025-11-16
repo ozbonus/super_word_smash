@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bayh5s8olrwlt"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_26atv"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_3ki1a"]
+[ext_resource type="Texture2D" uid="uid://cqs6gjjtsqojs" path="res://art/irasutoya/bug_morpho_chou.png" id="3_l4ulf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_3ki1a")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 10.000000149012
+shader_parameter/alpha_threshold = 0.6499999854712
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Butterfly" type="RigidBody2D"]
+script = ExtResource("1_26atv")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.135849, 0.13418946)
+texture = ExtResource("3_l4ulf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-52.669514, -41.083218, -39.31068, -42.367718, 51.889114, -41.597023, 55.48572, -39.02801, 55.48572, -28.751978, 47.008003, 21.600592, 40.84239, 36.757744, 29.53874, 43.950962, 10.784978, 44.72166, -30.319141, 44.20786, -38.79688, 39.069836, -45.733204, 26.224808, -51.128117, -3.3187985, -55.238533, -32.091694)

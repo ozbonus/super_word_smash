@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://brm3unnjaa07s"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_xx488"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_3waik"]
+[ext_resource type="Texture2D" uid="uid://cfdl0i8l65o7o" path="res://art/irasutoya/animal_pony.png" id="3_6xutt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_3waik")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 4.70000007003564
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Horse" type="RigidBody2D"]
+script = ExtResource("1_xx488")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.15053919, 0.14870021)
+texture = ExtResource("3_6xutt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-28.593794, -60.773952, -16.42687, -58.90212, -10.436985, -57.030285, -3.3240166, -43.178696, 11.837866, -16.224253, 25.876633, -16.03707, 35.423, -16.411438, 46.092472, -7.6138043, 54.89008, 9.232719, 61.44151, 15.222596, 59.944054, 26.453615, 53.205456, 35.25124, 47.402756, 39.1821, 45.530914, 56.59017, 33.92553, 58.274826, 17.640549, 55.841442, 14.271251, 58.6492, 0.4196538, 58.462013, -15.678126, 57.713284, -15.30377, 41.989853, -22.978296, 15.222596, -26.53478, -1.0623775, -42.258205, 1.9325572, -55.548244, -1.811113, -59.4791, -12.10621, -57.794445, -19.967926, -48.43526, -31.011759, -41.883835, -41.68123, -42.632576, -49.35576, -38.514534, -51.97633, -37.017063, -59.83804)

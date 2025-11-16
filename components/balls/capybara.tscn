@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy7ena0mnrlj2"]
+
+[ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_ncjil"]
+[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_agg3v"]
+[ext_resource type="Texture2D" uid="uid://b7xdaj5agy38b" path="res://art/irasutoya/capybara.png" id="3_aau55"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
+shader = ExtResource("2_agg3v")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_size = 10.000000149012
+shader_parameter/alpha_threshold = 0.0999999977648
+shader_parameter/outline_samples = 8
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[node name="Capybara" type="RigidBody2D"]
+script = ExtResource("1_ncjil")
+metadata/_custom_type_script = "uid://bs1skkkypsyrc"
+metadata/_edit_vertical_guides_ = [-50.0, 50.0, -25.0, 25.0]
+metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o5ji")
+scale = Vector2(0.12607838, 0.12453821)
+texture = ExtResource("3_aau55")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.50006485, 0.50006485)
+polygon = PackedVector2Array(-11.998444, -37.99507, 7.9989624, -35.99533, 9.998703, -31.99585, 33.99559, -29.996109, 47.993774, -19.997406, 51.993256, -1.9997406, 49.993515, 15.997925, 41.994553, 29.996109, 39.994812, 37.99507, -19.997406, 35.99533, -19.997406, 25.996628, -21.997147, 13.998184, -47.993774, 13.998184, -51.993256, -3.9994812, -49.993515, -23.996887, -39.994812, -31.99585, -15.997925, -33.99559)
