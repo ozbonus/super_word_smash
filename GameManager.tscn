@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c3jnqpoa4hb6y" path="res://levels/level_end.tscn" id="8_5me18"]
 [ext_resource type="PackedScene" uid="uid://b4cejfobcvbkl" path="res://components/game_over_message.tscn" id="8_0145d"]
 [ext_resource type="Shader" uid="uid://bchiik2bxt53l" path="res://shaders/transition.gdshader" id="8_k24m2"]
-[ext_resource type="PackedScene" uid="uid://b2burrbtta6ca" path="res://components/count_down_message.tscn" id="10_0q1rh"]
+[ext_resource type="PackedScene" path="res://components/count_down_message.tscn" id="10_0q1rh"]
 [ext_resource type="Script" uid="uid://cb7rotq8xm3i" path="res://game_camera.gd" id="16_uyu88"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0145d"]

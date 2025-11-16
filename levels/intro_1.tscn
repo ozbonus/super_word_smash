@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://63xyumvsc0c8"]
+[gd_scene load_steps=7 format=4 uid="uid://63xyumvsc0c8"]
 
 [ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_gg43x"]
 [ext_resource type="PackedScene" uid="uid://cmqclu0oeqmpq" path="res://components/level_base_layers/camping_grass.tscn" id="5_k74dq"]
 [ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="5_l1eo3"]
+[ext_resource type="PackedScene" uid="uid://c7k8x62jmyhfw" path="res://components/on_screen_timer.tscn" id="6_5mdax"]
 [ext_resource type="PackedScene" uid="uid://d24f5pl4mh7jv" path="res://components/balls/cat1.tscn" id="6_imeec"]
 [ext_resource type="TileSet" uid="uid://b1aj11yqv45ok" path="res://components/tile_maps/camping.tres" id="6_k74dq"]
 
@@ -28,6 +29,9 @@ tile_set = ExtResource("6_k74dq")
 [node name="Trees" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAKAP//AQALAJcAAAASAP//AQALAJcAAAACAP//AQALAJcAAAANAA0AAQALAJcAAAAVAA0AAQALAJcAAAAFAA0AAQALAJcAAAD9/w0AAQALAJcAAAAaAP//AQALAJcAAAD6////AQALAJcAAAATAAMAAQAHAJcAAAASAAgAAQAHAJcAAAAUAA0AAQAHAJcAAAAUAAkAAQAHAJcAAAA=")
 tile_set = ExtResource("6_k74dq")
+
+[node name="OnScreenTimer" parent="." instance=ExtResource("6_5mdax")]
+position = Vector2(184, 162)
 
 [node name="Cat1" parent="." instance=ExtResource("6_imeec")]
 position = Vector2(482, 206)

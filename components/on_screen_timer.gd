@@ -1,3 +1,4 @@
+class_name OnScreenTimer
 extends Node
 
 
@@ -5,7 +6,7 @@ extends Node
 ## the game and then count down to zero. 
 @export_range(60, 200, 1, "suffix:unit", "slider") var label_start: int = 60
 
-@onready var label: Label = $Label
+@onready var label: RichTextLabel = %Label
 
 
 # Called when the node enters the scene tree for the first time.
