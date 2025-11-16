@@ -1,3 +1,4 @@
+class_name OperatorControls
 extends CanvasLayer
 
 signal next_level
