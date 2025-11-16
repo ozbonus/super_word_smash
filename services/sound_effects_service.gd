@@ -8,6 +8,7 @@ extends Node
 @onready var go: AudioStreamPlayer = $Go
 @onready var timeup: AudioStreamPlayer = $Timeup
 @onready var applause: AudioStreamPlayer = $Applause
+@onready var fanfare: AudioStreamPlayer = $Fanfare
 
 
 func play_hit():
@@ -40,3 +41,7 @@ func play_timeup():
 
 func play_applause():
 	applause.play()
+
+
+func play_fanfare():
+	fanfare.play()

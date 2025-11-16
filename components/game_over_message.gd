@@ -9,10 +9,13 @@ const PERFECT_MESSAGE = "PERFECT!"
 
 func show_time_up() -> void:
 	label.text = TIME_UP_MESSAGE
+	SoundEffectsService.play_timeup()
 	_appear()
 
 func show_perfect() -> void:
 	label.text = PERFECT_MESSAGE
+	SoundEffectsService.play_fanfare()
+	SoundEffectsService.play_applause()
 	_appear()
 
 func _appear() -> void:
