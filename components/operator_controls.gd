@@ -1,3 +1,4 @@
+## A hidden control menu in case a restart or level skip is necessary.
 class_name OperatorControls
 extends CanvasLayer
 
