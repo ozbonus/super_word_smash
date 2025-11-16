@@ -20,15 +20,18 @@ func _on_mute_toggle_toggled(toggled_on: bool):
 
 func _on_more_time_button_pressed():
 	if SettingsService.game_length < SettingsService.LENGTH_MAX:
+		SoundEffectsService.play_click()
 		SettingsService.game_length += SettingsService.LENGTH_STEP
 		game_time_seconds.text = "%d" % SettingsService.game_length
 
 
 func _on_less_time_button_pressed():
 	if SettingsService.game_length > SettingsService.LENGTH_MIN:
+		SoundEffectsService.play_click()
 		SettingsService.game_length -= SettingsService.LENGTH_STEP
 		game_time_seconds.text = "%d" % SettingsService.game_length
 
 
 func _on_start_button_pressed():
+	SoundEffectsService.play_success()
 	start_new_game.emit(SettingsService.game_length)
