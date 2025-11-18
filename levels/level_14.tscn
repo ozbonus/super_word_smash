@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3hdxjsjxjce5"]
+
+[ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_1nydt"]
+[ext_resource type="PackedScene" uid="uid://lqykvxod20gh" path="res://components/level_base_layers/city_street.tscn" id="2_5t2fk"]
+[ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="3_bqnp1"]
+[ext_resource type="PackedScene" uid="uid://m71kd8amme5s" path="res://components/balls/chris.tscn" id="4_1nydt"]
+[ext_resource type="PackedScene" uid="uid://br6t6px7iknxx" path="res://components/operator_controls.tscn" id="4_msn6e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1vqp"]
+resource_local_to_scene = true
+size = Vector2(97, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eoivg"]
+resource_local_to_scene = true
+size = Vector2(68, 55)
+
+[node name="Level14" type="Node2D"]
+script = ExtResource("1_1nydt")
+
+[node name="CityStreet" parent="." instance=ExtResource("2_5t2fk")]
+
+[node name="Goal" parent="." instance=ExtResource("3_bqnp1")]
+position = Vector2(104, 302)
+rotation = 1.5707964
+goal_type = 1
+word = "Chris"
+
+[node name="CollisionShape2D" parent="Goal/Area2D" index="0"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_b1vqp")
+
+[node name="Particles" parent="Goal" index="1"]
+amount = 120
+emission_rect_extents = Vector2(60, 18)
+
+[node name="RichTextLabel" parent="Goal/Control" index="0"]
+text = "Chris"
+
+[node name="Goal2" parent="." instance=ExtResource("3_bqnp1")]
+position = Vector2(567, 307)
+rotation = -1.5707964
+goal_type = 2
+word = "pig"
+
+[node name="CollisionShape2D" parent="Goal2/Area2D" index="0"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_eoivg")
+
+[node name="Particles" parent="Goal2" index="1"]
+amount = 72
+emission_rect_extents = Vector2(36, 18)
+
+[node name="RichTextLabel" parent="Goal2/Control" index="0"]
+text = "pig"
+
+[node name="Chris" parent="." instance=ExtResource("4_1nydt")]
+position = Vector2(326, 111)
+
+[node name="Focus" type="Node2D" parent="."]
+position = Vector2(102.00014, 301.86243)
+
+[node name="OperatorControls" parent="." instance=ExtResource("4_msn6e")]
+
+[editable path="Goal"]
+[editable path="Goal2"]

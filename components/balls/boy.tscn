@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://my5tkp7mi0vh"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_acsgf"]
-[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_acsgf"]
+[ext_resource type="Shader" path="res://shaders/outline.gdshader" id="2_acsgf"]
 [ext_resource type="Texture2D" uid="uid://dmpq6oerw68e8" path="res://art/irasutoya/walking1_boy.png" id="3_xr0vt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
@@ -18,9 +18,9 @@ metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_0o5ji")
-scale = Vector2(0.15053919, 0.14870021)
+scale = Vector2(0.17380539, 0.1716822)
 texture = ExtResource("3_xr0vt")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2(0.50006485, 0.50006485)
+scale = Vector2(0.5773511, 0.5773511)
 polygon = PackedVector2Array(-2.5833592, -61.48553, 10.839766, -59.47206, 21.074896, -50.91482, 26.611935, -39.337376, 38.189373, 22.073416, 32.652344, 52.9466, 24.766258, 60.83269, -24.731514, 59.490368, -33.624336, 51.10092, -38.993584, 19.221003, -26.912773, -46.216724, -16.174274, -56.955227)

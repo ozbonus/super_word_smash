@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cr3nee13a0kcp"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_850rv"]
-[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_850rv"]
+[ext_resource type="Shader" path="res://shaders/outline.gdshader" id="2_850rv"]
 [ext_resource type="Texture2D" uid="uid://qs0l0ecjpde1" path="res://art/irasutoya/animal_shimauma.png" id="3_jx1br"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
@@ -18,9 +18,9 @@ metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_0o5ji")
-scale = Vector2(0.1424828, 0.14074224)
+scale = Vector2(0.16433677, 0.16232924)
 texture = ExtResource("3_jx1br")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2(0.50006485, 0.50006485)
+scale = Vector2(0.57676464, 0.57676464)
 polygon = PackedVector2Array(-55.95338, -33.210075, -20.885475, -56.70054, -1.0863612, -55.35823, 41.196484, 6.3881407, 53.78065, 9.911709, 58.14317, 20.146847, 38.51185, 55.71813, -15.012854, 53.70466, -26.422506, 3.8713088, -57.127903, -17.102327)

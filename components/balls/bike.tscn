@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cn48iachfrffm"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_7q7q4"]
-[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_7q7q4"]
+[ext_resource type="Shader" path="res://shaders/outline.gdshader" id="2_7q7q4"]
 [ext_resource type="Texture2D" uid="uid://djw3hefaugmho" path="res://art/irasutoya/bicycle_mamachari2.png" id="3_bbeju"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
@@ -18,9 +18,9 @@ metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_0o5ji")
-scale = Vector2(0.15302864, 0.15115923)
+scale = Vector2(0.18235962, 0.18013191)
 texture = ExtResource("3_bbeju")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2(0.50006485, 0.50006485)
+scale = Vector2(0.5959123, 0.5959123)
 polygon = PackedVector2Array(-58.54878, -14.523171, -30.49445, -28.91947, 18.785198, -44.42318, 51.45372, -34.64108, 69.725975, 6.7021413, 72.12535, 20.360167, 67.32658, 34.202763, 57.54448, 44.538563, 40.37966, 48.59907, -48.76667, 48.414513, -73.49877, 26.450922, -70.17655, 8.732395)

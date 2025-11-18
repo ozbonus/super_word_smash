@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://tjbv6ugp6s3s"]
+
+[ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_4jwqm"]
+[ext_resource type="PackedScene" uid="uid://lqykvxod20gh" path="res://components/level_base_layers/city_street.tscn" id="2_0p6yj"]
+[ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="3_mb5ji"]
+[ext_resource type="PackedScene" uid="uid://maiy6kuvg3bw" path="res://components/balls/toilet.tscn" id="5_4jwqm"]
+[ext_resource type="PackedScene" uid="uid://br6t6px7iknxx" path="res://components/operator_controls.tscn" id="5_v27dr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1vqp"]
+resource_local_to_scene = true
+size = Vector2(81, 57.000004)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eoivg"]
+resource_local_to_scene = true
+size = Vector2(82, 54)
+
+[node name="Level13" type="Node2D"]
+script = ExtResource("1_4jwqm")
+
+[node name="CityStreet" parent="." instance=ExtResource("2_0p6yj")]
+
+[node name="Goal" parent="." instance=ExtResource("3_mb5ji")]
+position = Vector2(104, 302)
+rotation = 1.5707964
+goal_type = 2
+word = "table"
+
+[node name="CollisionShape2D" parent="Goal/Area2D" index="0"]
+position = Vector2(3.5, 4.5)
+shape = SubResource("RectangleShape2D_b1vqp")
+
+[node name="Particles" parent="Goal" index="1"]
+amount = 120
+emission_rect_extents = Vector2(60, 18)
+
+[node name="RichTextLabel" parent="Goal/Control" index="0"]
+text = "table"
+
+[node name="Goal2" parent="." instance=ExtResource("3_mb5ji")]
+position = Vector2(563, 302)
+rotation = -1.5707964
+goal_type = 1
+word = "toilet"
+
+[node name="CollisionShape2D" parent="Goal2/Area2D" index="0"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_eoivg")
+
+[node name="Particles" parent="Goal2" index="1"]
+amount = 144
+emission_rect_extents = Vector2(72, 18)
+
+[node name="RichTextLabel" parent="Goal2/Control" index="0"]
+text = "toilet"
+
+[node name="Focus" type="Node2D" parent="."]
+position = Vector2(566.5184, 301.20953)
+
+[node name="OperatorControls" parent="." instance=ExtResource("5_v27dr")]
+
+[node name="Toilet" parent="." instance=ExtResource("5_4jwqm")]
+position = Vector2(324, 109)
+
+[editable path="Goal"]
+[editable path="Goal2"]
