@@ -9,6 +9,7 @@ signal outta_time_gg ## Emitted when the game play timer completes.
 signal perfect_clear ## Emitted when successfully finishing the last level.
 signal showing_score ## Emitted when showing the score screen.
 
+const SUCCESS_TIME_SCALE: float = 0.05
 # These just so happen to be the progress values that allow the shader-based
 # transition to complete fully.
 const TRANSITION_PROGRESS_MIN := 0.0
@@ -122,7 +123,7 @@ func handle_success() -> void:
 	else:
 		success_began.emit()
 		SoundEffectsService.play_success()
-		Engine.time_scale = 0.05
+		Engine.time_scale = SUCCESS_TIME_SCALE
 		await _transition_out()
 		next_level()
 		success_ended.emit()
@@ -133,7 +134,7 @@ func handle_success() -> void:
 func _perfect_game() -> void:
 	perfect_clear.emit()
 	SoundEffectsService.play_success()
-	Engine.time_scale = 0.05
+	Engine.time_scale = SUCCESS_TIME_SCALE
 	await _dramatic_pause()
 	game_over_message.show_perfect()
 	await _transition_out()
