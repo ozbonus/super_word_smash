@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cmqclu0oeqmpq" path="res://components/level_base_layers/camping_grass.tscn" id="3_d4dcw"]
 [ext_resource type="TileSet" uid="uid://b1aj11yqv45ok" path="res://components/tile_maps/camping.tres" id="4_ci23s"]
 [ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="4_oayul"]
-[ext_resource type="PackedScene" uid="uid://bbpnhxblurnl1" path="res://components/balls/big_banana.tscn" id="5_d4dcw"]
+[ext_resource type="PackedScene" uid="uid://bbpnhxblurnl1" path="res://components/balls/banana.tscn" id="5_d4dcw"]
 [ext_resource type="PackedScene" uid="uid://br6t6px7iknxx" path="res://components/operator_controls.tscn" id="6_d4dcw"]
 
 [node name="Intro2" type="Node2D"]
@@ -36,7 +36,7 @@ rotation = 1.5707964
 goal_type = 1
 word = "banana"
 
-[node name="BigBanana" parent="." instance=ExtResource("5_d4dcw")]
+[node name="Banana" parent="." instance=ExtResource("5_d4dcw")]
 position = Vector2(136, 207)
 
 [node name="Focus" type="Node2D" parent="."]
