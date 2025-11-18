@@ -49,7 +49,7 @@ shader_parameter/progress_bias = Vector2(1.3, 0)
 [node name="GameManager" type="Node"]
 script = ExtResource("1_p13vs")
 title_screen = ExtResource("2_au0an")
-levels = Array[PackedScene]([ExtResource("3_0145d"), ExtResource("3_108xg"), ExtResource("4_dxunw"), ExtResource("3_5me18"), ExtResource("7_lhkyk"), ExtResource("8_lk78y"), ExtResource("9_lk78y"), ExtResource("11_uyu88"), ExtResource("11_l3fct"), ExtResource("10_3ky0o"), ExtResource("13_jjrwh"), ExtResource("14_u176x"), ExtResource("16_rdn20"), ExtResource("15_u176x"), ExtResource("17_m1q6j"), ExtResource("18_rtg1x")])
+levels = Array[PackedScene]([ExtResource("3_0145d"), ExtResource("3_108xg"), ExtResource("4_dxunw"), ExtResource("3_5me18"), ExtResource("11_uyu88"), ExtResource("7_lhkyk"), ExtResource("8_lk78y"), ExtResource("14_u176x"), ExtResource("11_l3fct"), ExtResource("16_rdn20"), ExtResource("10_3ky0o"), ExtResource("15_u176x"), ExtResource("9_lk78y"), ExtResource("17_m1q6j"), ExtResource("13_jjrwh"), ExtResource("18_rtg1x")])
 summary_screen = ExtResource("8_5me18")
 transition_duration = 1.0
 
