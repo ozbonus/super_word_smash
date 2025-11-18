@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c43b1cq3ir1vn"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_idej5"]
-[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_idej5"]
+[ext_resource type="Shader" path="res://shaders/outline.gdshader" id="2_idej5"]
 [ext_resource type="Texture2D" uid="uid://4bx32tni6ol7" path="res://art/irasutoya/rice_white.png" id="3_e1bis"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
@@ -18,9 +18,9 @@ metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_0o5ji")
-scale = Vector2(0.112678975, 0.111302495)
+scale = Vector2(0.16322432, 0.16123039)
 texture = ExtResource("3_e1bis")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2(0.50006485, 0.50006485)
+scale = Vector2(0.7243831, 0.7243831)
 polygon = PackedVector2Array(-5.8137636, -31.878721, 16.046152, -30.503883, 41.343163, -20.88002, 51.791927, -7.26913, 53.166763, 6.341764, 46.979996, 19.402733, 33.506588, 29.16406, 6.14732, 34.93838, -13.650336, 34.113476, -34.410378, 28.339174, -48.29624, 14.31582, -49.993515, 1.2548727, -47.60882, -11.943576, -36.19767, -22.804792, -16.949945, -29.129045, -10.488202, -31.053806)

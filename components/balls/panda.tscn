@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://1mnx1hmibwjt"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_c64na"]
-[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_c64na"]
+[ext_resource type="Shader" path="res://shaders/outline.gdshader" id="2_c64na"]
 [ext_resource type="Texture2D" uid="uid://c00m7e032hyx2" path="res://art/irasutoya/animal_panda.png" id="3_ryhxj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
@@ -18,9 +18,9 @@ metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_0o5ji")
-scale = Vector2(0.15053919, 0.14870021)
+scale = Vector2(0.18297872, 0.18074346)
 texture = ExtResource("3_ryhxj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-27.268513, -61.46701, 28.728756, -61.46701, 38.99491, -14.615971, 30.222017, 3.4898121, 35.075115, 16.742495, 31.901913, 36.341515, 37.315, 41.75461, 36.38171, 52.20744, 27.235497, 60.793682, -26.895193, 61.913624, -37.161354, 55.007294, -39.214592, 43.9945, -35.668102, 38.954716, -37.907986, 19.729015, -33.24155, 6.849652, -40.894505, -12.562732, -35.108124, -51.3875)
+scale = Vector2(0.60782325, 0.60782325)
+polygon = PackedVector2Array(-27.268513, -61.46701, 29.317495, -61.780094, 38.838573, -17.553135, 37.610046, 50.01583, 29.471056, 60.458298, -33.03023, 61.22613, -40.09426, 48.173035, -40.708527, -16.171043, -35.108124, -51.3875)

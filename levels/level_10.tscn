@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://cn0nmiq1ts20e"]
+
+[ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_eoivg"]
+[ext_resource type="PackedScene" uid="uid://lqykvxod20gh" path="res://components/level_base_layers/city_street.tscn" id="1_tghxx"]
+[ext_resource type="PackedScene" uid="uid://skd2yfexd80c" path="res://components/balls/red_car.tscn" id="2_s4rsi"]
+[ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="3_b1vqp"]
+[ext_resource type="PackedScene" uid="uid://br6t6px7iknxx" path="res://components/operator_controls.tscn" id="5_tu44s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1vqp"]
+resource_local_to_scene = true
+size = Vector2(76, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eoivg"]
+resource_local_to_scene = true
+size = Vector2(71, 48)
+
+[node name="Level10" type="Node2D"]
+script = ExtResource("1_eoivg")
+
+[node name="CityStreet" parent="." instance=ExtResource("1_tghxx")]
+
+[node name="Goal" parent="." instance=ExtResource("3_b1vqp")]
+position = Vector2(105, 306)
+rotation = 1.5707964
+goal_type = 1
+word = "car"
+
+[node name="CollisionShape2D" parent="Goal/Area2D" index="0"]
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_b1vqp")
+
+[node name="Particles" parent="Goal" index="1"]
+amount = 72
+emission_rect_extents = Vector2(36, 18)
+
+[node name="RichTextLabel" parent="Goal/Control" index="0"]
+text = "car"
+
+[node name="Goal2" parent="." instance=ExtResource("3_b1vqp")]
+position = Vector2(566, 305)
+rotation = -1.5707964
+goal_type = 2
+word = "cap"
+
+[node name="CollisionShape2D" parent="Goal2/Area2D" index="0"]
+position = Vector2(-0.5, 7)
+shape = SubResource("RectangleShape2D_eoivg")
+
+[node name="Particles" parent="Goal2" index="1"]
+amount = 72
+emission_rect_extents = Vector2(36, 18)
+
+[node name="RichTextLabel" parent="Goal2/Control" index="0"]
+text = "cap"
+
+[node name="Focus" type="Node2D" parent="."]
+position = Vector2(90.20201, 336.29642)
+
+[node name="RedCar" parent="." instance=ExtResource("2_s4rsi")]
+position = Vector2(323, 110)
+
+[node name="OperatorControls" parent="." instance=ExtResource("5_tu44s")]
+
+[editable path="Goal"]
+[editable path="Goal2"]

@@ -1,90 +1,88 @@
-[gd_scene load_steps=9 format=4 uid="uid://bp4mujqw0io30"]
+[gd_scene load_steps=9 format=4 uid="uid://c4htyah55wmnw"]
 
-[ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_mckh2"]
-[ext_resource type="PackedScene" uid="uid://br6t6px7iknxx" path="res://components/operator_controls.tscn" id="2_81a5f"]
-[ext_resource type="PackedScene" uid="uid://dnfj1y0e2b2uv" path="res://components/level_base_layers/forest_level.tscn" id="2_mllcm"]
-[ext_resource type="PackedScene" uid="uid://cbpttgcldmaxn" path="res://components/balls/hen.tscn" id="3_q7ibo"]
-[ext_resource type="TileSet" uid="uid://b1aj11yqv45ok" path="res://components/tile_maps/camping.tres" id="4_cg8v6"]
-[ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="5_j0sdw"]
+[ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_g3bu7"]
+[ext_resource type="PackedScene" uid="uid://dnfj1y0e2b2uv" path="res://components/level_base_layers/forest_level.tscn" id="2_n8w53"]
+[ext_resource type="TileSet" uid="uid://b1aj11yqv45ok" path="res://components/tile_maps/camping.tres" id="3_a6hey"]
+[ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="4_kdo1k"]
+[ext_resource type="PackedScene" uid="uid://br6t6px7iknxx" path="res://components/operator_controls.tscn" id="6_7wg3r"]
+[ext_resource type="PackedScene" uid="uid://c4pwkwm6g42xy" path="res://components/balls/book.tscn" id="6_g3bu7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jy02f"]
 resource_local_to_scene = true
-size = Vector2(77, 48.99999)
+size = Vector2(108, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5dxk1"]
 resource_local_to_scene = true
-size = Vector2(76, 46)
+size = Vector2(106, 60)
 
 [node name="Level01" type="Node2D"]
-script = ExtResource("1_mckh2")
+script = ExtResource("1_g3bu7")
 
-[node name="ForestLevel" parent="." instance=ExtResource("2_mllcm")]
+[node name="ForestLevel" parent="." instance=ExtResource("2_n8w53")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAHAAgAAQAdAAQAAAAHAAkAAQAWAAMAAAAHAAoAAQAaAAMAAAAIAAgAAQAdAAEAAAAIAAkAAQAbAAMAAAAIAAoAAQAXAAMAAAAJAAgAAQAbAAEAAAAJAAkAAQAYAAIAAAAJAAoAAQAXAAMAAAAKAAgAAQAYAAEAAAAKAAkAAQAdAAIAAAAKAAoAAQAXAAMAAAALAAgAAQAeAAQAAAALAAkAAQAdAAIAAAALAAoAAQAeAAUAAAAMAAgAAQAZAAEAAAAMAAkAAQAZAAIAAAAMAAoAAQAZAAMAAAAHAAsAAQAWAAQAAAAIAAsAAQAXAAQAAAAJAAsAAQAYAAQAAAAKAAsAAQAYAAQAAAALAAsAAQAbAAQAAAAMAAsAAQAcAAQAAAABAAQAAQAdAAQAAAABAAUAAQAaAAMAAAABAAYAAQAaAAIAAAABAAcAAQAaAAMAAAABAAgAAQAdAAUAAAACAAQAAQAYAAEAAAACAAUAAQAbAAMAAAACAAYAAQAYAAMAAAACAAcAAQAdAAIAAAACAAgAAQAdAAIAAAADAAQAAQAbAAEAAAADAAUAAQAYAAIAAAADAAYAAQAYAAMAAAADAAcAAQAYAAMAAAADAAgAAQAYAAIAAAAEAAQAAQAZAAEAAAAEAAUAAQAZAAIAAAAEAAYAAQAZAAIAAAAEAAcAAQAZAAMAAAAEAAgAAQAcAAIAAAABAAkAAQAaAAQAAAACAAkAAQAbAAQAAAADAAkAAQAbAAQAAAAEAAkAAQAZAAQAAAAPAAQAAQAWAAEAAAAPAAUAAQAaAAIAAAAPAAYAAQAWAAMAAAAPAAcAAQAWAAIAAAAPAAgAAQAWAAIAAAAQAAQAAQAXAAEAAAAQAAUAAQAYAAIAAAAQAAYAAQAeAAUAAAAQAAcAAQAdAAIAAAAQAAgAAQAYAAMAAAARAAQAAQAdAAEAAAARAAUAAQAYAAMAAAARAAYAAQAdAAIAAAARAAcAAQAYAAMAAAARAAgAAQAYAAMAAAASAAQAAQAeAAEAAAASAAUAAQAZAAMAAAASAAYAAQAcAAIAAAASAAcAAQAcAAIAAAASAAgAAQAcAAIAAAAPAAkAAQAaAAQAAAAQAAkAAQAbAAQAAAARAAkAAQAdAAMAAAASAAkAAQAZAAQAAAA=")
-tile_set = ExtResource("4_cg8v6")
+tile_set = ExtResource("3_a6hey")
 
-[node name="Goal" parent="." instance=ExtResource("5_j0sdw")]
-position = Vector2(97, 222)
+[node name="Goal" parent="." instance=ExtResource("4_kdo1k")]
+position = Vector2(97, 224)
 rotation = 1.5707964
 goal_type = 1
-word = "hen"
+word = "book"
 
 [node name="CollisionShape2D" parent="Goal/Area2D" index="0"]
-position = Vector2(1.5, 0.49999237)
 shape = SubResource("RectangleShape2D_jy02f")
 
 [node name="Particles" parent="Goal" index="1"]
-amount = 72
-emission_rect_extents = Vector2(36, 18)
+amount = 96
+emission_rect_extents = Vector2(48, 18)
 
 [node name="RichTextLabel" parent="Goal/Control" index="0"]
-text = "hen"
+text = "book"
 
-[node name="Goal2" parent="." instance=ExtResource("5_j0sdw")]
-position = Vector2(316, 314)
+[node name="Goal2" parent="." instance=ExtResource("4_kdo1k")]
+position = Vector2(319, 320)
 goal_type = 2
-word = "pen"
+word = "bike"
 
 [node name="CollisionShape2D" parent="Goal2/Area2D" index="0"]
-position = Vector2(-1, 7)
 shape = SubResource("RectangleShape2D_5dxk1")
 
 [node name="Particles" parent="Goal2" index="1"]
-amount = 72
-emission_rect_extents = Vector2(36, 18)
+amount = 96
+emission_rect_extents = Vector2(48, 18)
 
 [node name="RichTextLabel" parent="Goal2/Control" index="0"]
-text = "pen"
+text = "bike"
 
-[node name="Goal3" parent="." instance=ExtResource("5_j0sdw")]
-position = Vector2(542, 225)
+[node name="Goal3" parent="." instance=ExtResource("4_kdo1k")]
+position = Vector2(545, 224)
 rotation = -1.5707964
 goal_type = 2
-word = "red"
+word = "bake"
 
 [node name="CollisionShape2D" parent="Goal3/Area2D" index="0"]
-position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_5dxk1")
 
 [node name="Particles" parent="Goal3" index="1"]
-amount = 72
-emission_rect_extents = Vector2(36, 18)
+amount = 96
+emission_rect_extents = Vector2(48, 18)
 
 [node name="RichTextLabel" parent="Goal3/Control" index="0"]
-text = "red"
-
-[node name="Hen" parent="." instance=ExtResource("3_q7ibo")]
-position = Vector2(323, 114)
+text = "bake"
 
 [node name="Obstacles" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAJAAgAAQAUACcAAAAKAAgAAQATACUAAAALAAgAAQAVACYAAAAIAAgAAQAVACUAAAACAAQAAQAUACUAAAADAAQAAQAVACUAAAAEAAQAAQATACYAAAARAAQAAQATACUAAAAQAAQAAQATACUAAAAPAAQAAQATACcAAAAFAAUAAQATACYAAAAOAAUAAQATACYAAAAFAAQAAQAWACcAAAA=")
-tile_set = ExtResource("4_cg8v6")
+tile_set = ExtResource("3_a6hey")
 
 [node name="Focus" type="Node2D" parent="."]
-position = Vector2(97, 224)
+position = Vector2(96.635956, 223.54674)
+rotation = -1.5707964
 
-[node name="OperatorControls" parent="." instance=ExtResource("2_81a5f")]
+[node name="Book" parent="." instance=ExtResource("6_g3bu7")]
+position = Vector2(321, 119)
+
+[node name="OperatorControls" parent="." instance=ExtResource("6_7wg3r")]
 
 [editable path="Goal"]
 [editable path="Goal2"]

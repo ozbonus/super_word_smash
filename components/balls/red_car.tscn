@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://skd2yfexd80c"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_27wb2"]
-[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_27wb2"]
+[ext_resource type="Shader" path="res://shaders/outline.gdshader" id="2_27wb2"]
 [ext_resource type="Texture2D" uid="uid://dg0n7mk2c4fgo" path="res://art/car_red.png" id="3_27wb2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_53su8"]
@@ -16,9 +16,9 @@ metadata/_custom_type_script = "uid://bs1skkkypsyrc"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_53su8")
-scale = Vector2(0.11427092, 0.11427092)
+scale = Vector2(0.13356188, 0.13356188)
 texture = ExtResource("3_27wb2")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2(0.11427092, 0.11427092)
+scale = Vector2(0.13356188, 0.13356188)
 polygon = PackedVector2Array(67.995804, -249.5173, 245.03172, -218.77832, 297.5385, -113.764725, 315.04077, -26.253399, 358.79645, 17.502266, 358.79645, 122.51586, 289.13177, 227.04837, -226.4579, 227.04837, -358.79645, 148.76926, -358.79645, 0, -274.94226, -82.778465, -166.27153, -218.77832, -59.719044, -242.42204)

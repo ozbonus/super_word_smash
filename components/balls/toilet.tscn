@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://maiy6kuvg3bw"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_cndjf"]
-[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_cndjf"]
+[ext_resource type="Shader" path="res://shaders/outline.gdshader" id="2_cndjf"]
 [ext_resource type="Texture2D" uid="uid://dowqwdkbrtsjs" path="res://art/irasutoya/toilet_benki.png" id="3_wbbl0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
@@ -18,9 +18,9 @@ metadata/_edit_horizontal_guides_ = [-50.0, 50.0, -25.0, 25.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_0o5ji")
-scale = Vector2(0.15053919, 0.14870021)
+scale = Vector2(0.17681392, 0.17465396)
 texture = ExtResource("3_wbbl0")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2(0.50006485, 0.50006485)
+scale = Vector2(0.5873449, 0.5873449)
 polygon = PackedVector2Array(-15.83187, -56.180687, 7.423704, -63.0097, 27.72617, -59.50291, 51.904583, -52.120193, 56.70334, -38.8313, 53.565685, 6.2032814, 42.122482, 13.216867, 28.279886, 17.831068, 25.511354, 32.411934, 14.621852, 53.637245, 2.6249342, 60.281693, -17.49297, 61.94281, -30.781866, 56.2212, -49.79237, 38.68725, -55.14484, 22.8144, -53.48373, 11.002052, -45.547306, 1.2199498, -27.45965, -9.484991, -22.66088, -26.28068)

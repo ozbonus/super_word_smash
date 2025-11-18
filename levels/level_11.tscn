@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnqp52fo2juy8"]
+
+[ext_resource type="Script" uid="uid://d1hswg1nop14b" path="res://levels/level_play.gd" id="1_j745c"]
+[ext_resource type="PackedScene" uid="uid://lqykvxod20gh" path="res://components/level_base_layers/city_street.tscn" id="2_a7ruh"]
+[ext_resource type="PackedScene" uid="uid://bkln4hex2ine1" path="res://components/goal.tscn" id="3_lnjaj"]
+[ext_resource type="PackedScene" uid="uid://d3lkyqfxhgyml" path="res://components/balls/bus.tscn" id="4_j745c"]
+[ext_resource type="PackedScene" uid="uid://br6t6px7iknxx" path="res://components/operator_controls.tscn" id="5_eiryh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1vqp"]
+resource_local_to_scene = true
+size = Vector2(81, 57.000004)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eoivg"]
+resource_local_to_scene = true
+size = Vector2(82, 54)
+
+[node name="Level11" type="Node2D"]
+script = ExtResource("1_j745c")
+
+[node name="CityStreet" parent="." instance=ExtResource("2_a7ruh")]
+
+[node name="Goal" parent="." instance=ExtResource("3_lnjaj")]
+position = Vector2(104, 302)
+rotation = 1.5707964
+goal_type = 2
+word = "bug"
+
+[node name="CollisionShape2D" parent="Goal/Area2D" index="0"]
+position = Vector2(3.5, 4.5)
+shape = SubResource("RectangleShape2D_b1vqp")
+
+[node name="Particles" parent="Goal" index="1"]
+amount = 72
+emission_rect_extents = Vector2(36, 18)
+
+[node name="RichTextLabel" parent="Goal/Control" index="0"]
+text = "bug"
+
+[node name="Goal2" parent="." instance=ExtResource("3_lnjaj")]
+position = Vector2(563, 302)
+rotation = -1.5707964
+goal_type = 1
+word = "bus"
+
+[node name="CollisionShape2D" parent="Goal2/Area2D" index="0"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_eoivg")
+
+[node name="Particles" parent="Goal2" index="1"]
+amount = 72
+emission_rect_extents = Vector2(36, 18)
+
+[node name="RichTextLabel" parent="Goal2/Control" index="0"]
+text = "bus"
+
+[node name="Bus" parent="." instance=ExtResource("4_j745c")]
+position = Vector2(330, 124)
+
+[node name="Focus" type="Node2D" parent="."]
+position = Vector2(565.78094, 300.77332)
+
+[node name="OperatorControls" parent="." instance=ExtResource("5_eiryh")]
+
+[editable path="Goal"]
+[editable path="Goal2"]

@@ -7,7 +7,7 @@ signal real_goal_entered()
 const TYPE_UNSET = 0
 const TYPE_REAL = 1
 const TYPE_DECOY = 2
-const EMISSION_RECT_EXTENTS := Vector2(12, 21)
+const EMISSION_RECT_EXTENTS := Vector2(12, 18)
 
 ## Whether this is a real goal (which can trigger the next level) or a decoy
 ## goal. This setting is required or else and error will be thrown.
