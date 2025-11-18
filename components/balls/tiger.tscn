@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://dedemewci5bnp"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_6yuqb"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_5wmaa"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_6yuqb"]
 [ext_resource type="Texture2D" uid="uid://iy27tsdf2jgr" path="res://art/irasutoya/animal_tora.png" id="3_q71q4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_5wmaa")
+shader = ExtResource("2_6yuqb")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 4.70000007003564
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Tiger" type="RigidBody2D"]
 script = ExtResource("1_6yuqb")
@@ -25,4 +23,4 @@ texture = ExtResource("3_q71q4")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-60.807266, -43.977264, -54.483013, -44.93965, -45.959026, -41.090107, -38.534904, -41.22759, -30.973293, -46.86442, -20.38705, -48.101776, -8.013517, -44.664684, -0.03945411, -42.464943, 16.871042, -45.21462, 27.732258, -44.664684, 36.256252, -37.515526, 43.130436, -26.24186, 46.567535, -12.081033, 51.1045, 4.0045657, 55.91644, 8.953978, 67.465065, 10.191336, 67.87752, 19.265263, 64.990364, 26.001968, 54.67908, 26.551899, 42.443027, 31.088863, 34.331486, 46.21208, 24.020199, 46.349556, -39.084835, 45.387173, -41.422062, 41.26266, -39.634773, 34.113503, -39.22232, 28.064222, -43.759285, 15.965649, -58.607533, 9.36643, -66.306625, -2.1822045, -70.7061, -11.531101, -67.68146, -21.42993, -63.694427, -28.991535, -63.41946, -40.12772)
+polygon = PackedVector2Array(-62.59456, -46.314487, -55.032955, -47.41436, -45.959026, -43.427326, -39.634773, -43.83978, -32.623104, -48.926678, -21.349434, -49.75158, -8.975902, -45.902035, -1.1393175, -44.664684, 11.784146, -47.55184, 25.257557, -47.55184, 36.531227, -39.852753, 43.54289, -29.54147, 49.45469, -17.16793, 52.341858, 0.5674694, 56.32889, 7.029209, 66.50268, 7.7166276, 70.352234, 18.577845, 64.990364, 26.001968, 55.641464, 29.026608, 44.50529, 31.363829, 35.8438, 47.861877, 22.370405, 49.374203, -39.35981, 48.136845, -43.209354, 41.81259, -42.38445, 34.113503, -41.284576, 27.514284, -47.0589, 19.95268, -59.707397, 9.091464, -68.506355, 0.017533889, -72.21842, -10.293747, -70.018684, -21.42993, -65.48172, -29.266504, -66.306625, -40.54017)

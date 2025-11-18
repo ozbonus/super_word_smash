@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://ctob11hsanwdb"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_dy2fn"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_vxc2g"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_dy2fn"]
 [ext_resource type="Texture2D" uid="uid://cp2waueirdggw" path="res://art/irasutoya/food_pizza_cut_salami.png" id="3_e8hy5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_vxc2g")
+shader = ExtResource("2_dy2fn")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 6.0000000894072
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Pizza" type="RigidBody2D"]
 script = ExtResource("1_dy2fn")
@@ -25,4 +23,4 @@ texture = ExtResource("3_e8hy5")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-41.879684, -57.26797, -21.070723, -55.983467, 6.9314737, -48.79024, 32.621563, -34.660694, 45.209713, -20.274248, 43.668285, -13.081029, -30.319141, 57.052902, -36.998573, 56.79601, -42.90729, 54.740795)
+polygon = PackedVector2Array(-46.760788, -54.442066, -37.25546, -60.607685, -6.4273586, -55.726566, 30.566362, -39.02802, 47.00802, -24.127768, 47.00802, -15.136235, -29.034632, 59.621906, -42.13657, 60.135708, -47.788395, 52.17179)

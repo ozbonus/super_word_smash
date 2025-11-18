@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://buo3v3rfh1iot"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_f5cqg"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_n0w3e"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_f5cqg"]
 [ext_resource type="Texture2D" uid="uid://djtx2ft7syvc7" path="res://art/irasutoya/animal_zou.png" id="3_uhu0x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_n0w3e")
+shader = ExtResource("2_f5cqg")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 4.70000007003564
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Elephant" type="RigidBody2D"]
 script = ExtResource("1_f5cqg")
@@ -25,4 +23,4 @@ texture = ExtResource("3_uhu0x")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-13.998184, -45.994034, 3.8101366, -47.001915, 18.108444, -39.16534, 31.169403, -35.45328, 44.36784, -18.817749, 51.379505, -0.11995667, 62.515694, 7.579133, 58.941116, 13.7659, 49.72971, 14.86577, 46.29261, 37.688072, 41.755646, 44.012325, 16.871088, 42.362522, 1.0604551, 45.799618, -25.473907, 45.66213, -44.72163, 38.100525, -52.145756, 23.114792, -55.03291, 5.654357, -61.9071, -1.6322803, -60.807228, -7.681567, -49.12111, -33.80348, -38.80983, -45.489594, -20.249525, -46.726948)
+polygon = PackedVector2Array(4.059456, -48.6769, 30.318844, -37.540703, 44.2047, -23.929815, 51.90379, -2.2073858, 63.039963, 5.6291757, 62.352547, 12.640847, 41.31753, 46.32439, -22.47493, 49.07407, -48.046906, 40.137623, -63.3076, 0.9547559, -62.345215, -8.256658, -52.171387, -34.378605, -39.522884, -48.26446, -23.162317, -49.226845)

@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://k85qg31jk2yi"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_4776d"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_ubwn0"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_4776d"]
 [ext_resource type="Texture2D" uid="uid://djnfvcfi7v3gm" path="res://art/irasutoya/animal_lion.png" id="3_u2i2d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_ubwn0")
+shader = ExtResource("2_4776d")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 4.70000007003564
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Lion" type="RigidBody2D"]
 script = ExtResource("1_4776d")
@@ -25,4 +23,4 @@ texture = ExtResource("3_u2i2d")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-31.496387, -56.28704, -16.563175, -54.273567, 0.047952153, -48.400955, 6.7595143, -36.152355, 17.6658, -20.883553, 37.129322, -17.35998, 45.35099, -8.802737, 51.559185, 2.942497, 54.2438, 16.03004, 64.47894, 27.439693, 57.935173, 33.480103, 45.35099, 30.963268, 42.330784, 45.89649, 36.458176, 52.60805, 16.659063, 50.762375, 5.2494106, 51.265743, -9.851612, 52.440258, -12.536231, 51.097946, -26.29493, 53.614788, -32.670918, 49.084484, -32.83871, 42.540707, -30.489666, 36.5003, -39.046898, 29.117584, -55.825806, 14.184363, -61.195057, -9.473891, -61.86621, -29.273, -57.503696, -40.0115, -49.785397, -48.400955, -40.892582, -53.937996)
+polygon = PackedVector2Array(-31.496387, -56.28704, -18.006144, -57.3075, 0.28286126, -49.589207, 8.00116, -37.676186, 8.672314, -27.27326, 31.156046, -21.232857, 45.753693, -11.668881, 52.968624, -1.7693247, 55.653244, 15.177368, 63.035965, 22.72787, 63.035965, 31.285118, 36.458176, 52.60805, 11.35694, 53.265484, -26.563387, 55.9501, -34.28168, 51.4198, -33.610527, 41.855824, -32.10042, 35.983208, -41.999977, 29.942802, -57.60436, 13.331691, -62.805817, -8.480886, -63.644768, -27.94442, -58.611095, -40.864174, -51.396164, -49.08584, -40.892582, -53.937996)

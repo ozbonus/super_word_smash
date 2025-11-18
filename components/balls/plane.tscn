@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://djuuyl8rc3v0g"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_tlsct"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_j4fka"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_tlsct"]
 [ext_resource type="Texture2D" uid="uid://bbeuit1b6njf0" path="res://art/irasutoya/airplane5_skyblue.png" id="3_e7np2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_j4fka")
+shader = ExtResource("2_tlsct")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 6.0000000894072
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Plane" type="RigidBody2D"]
 script = ExtResource("1_tlsct")
@@ -25,4 +23,4 @@ texture = ExtResource("3_e7np2")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-83.75452, -5.3739977, -52.15571, -28.238174, -22.098314, -40.826317, -0.51864, -51.873055, 5.6469727, -51.359253, 82.46031, -28.495075, 84.00174, -25.41227, 79.89131, 18.51777, 53.173615, 45.749268, 14.638513, 50.88729, 3.0779698, 48.31827, -77.0751, 13.379765, -84.26832, 5.672734)
+polygon = PackedVector2Array(-85.55279, -6.9153934, -52.15571, -28.238174, -22.098314, -40.826317, -2.830718, -54.698944, 7.1884136, -53.15754, 82.46031, -28.495075, 84.00174, -25.41227, 79.89131, 18.51777, 53.68746, 47.290695, 13.867838, 52.685608, 3.0779698, 48.31827, -77.0751, 13.379765, -84.26832, 5.672734)

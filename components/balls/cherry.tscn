@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://cupk4shun2wx4"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_27euy"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_ci0n2"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_27euy"]
 [ext_resource type="Texture2D" uid="uid://ccbyg0l5dllq4" path="res://art/irasutoya/fruit_cherry.png" id="3_gpttv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_ci0n2")
+shader = ExtResource("2_27euy")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 4.70000007003564
-shader_parameter/alpha_threshold = 0.58999998681232
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Cherry" type="RigidBody2D"]
 script = ExtResource("1_27euy")
@@ -25,4 +23,4 @@ texture = ExtResource("3_gpttv")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-5.1763153, -56.724243, 6.802142, -58.14542, 10.456591, -17.946516, 38.067955, 14.943496, 45.985916, 25.500782, 44.361725, 44.585106, 36.240738, 53.518196, 21.41992, 56.36054, -23.448542, 58.999863, -39.89355, 55.751472, -45.78127, 45.803253, -45.172195, 24.891706, -38.26936, 17.582817, -19.185026, -6.780157)
+polygon = PackedVector2Array(-7.6652274, -57.922417, 7.3586035, -60.358715, 13.449344, -18.129568, 38.01534, 10.902974, 47.760536, 22.881432, 46.948433, 42.168785, 39.030468, 55.16237, 21.77336, 60.441013, -21.87696, 63.080334, -38.728016, 58.613796, -48.473206, 50.69583, -52.330677, 31.002426, -44.209686, 17.805819, -23.501156, -6.760178)

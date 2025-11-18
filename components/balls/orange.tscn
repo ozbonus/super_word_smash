@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://cxw8c4e4jbm6i"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_d4nvm"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_khara"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_d4nvm"]
 [ext_resource type="Texture2D" uid="uid://c0fm1h7k28g38" path="res://art/irasutoya/fruit_slice10_orange.png" id="3_27g18"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_khara")
+shader = ExtResource("2_d4nvm")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 6.0000000894072
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Orange" type="RigidBody2D"]
 script = ExtResource("1_d4nvm")
@@ -25,4 +23,4 @@ texture = ExtResource("3_27g18")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-45.733204, -44.16603, -19.786205, -57.52487, 9.757401, -59.83698, 33.13535, -51.10235, 51.11843, -39.798717, 59.082363, -20.274248, 61.137547, 3.3606253, 56.770256, 27.252401, 48.03561, 40.354355, 25.171448, 54.997704, -8.225678, 57.309795, -35.714058, 51.401077, -59.862747, 21.343681, -61.661053, -7.943008, -54.724728, -31.577888)
+polygon = PackedVector2Array(-45.733204, -44.16603, -19.786205, -57.52487, 9.757401, -59.83698, 33.13535, -51.10235, 51.11843, -39.798717, 59.567024, -22.55132, 64.191246, -0.9716528, 59.823936, 24.461533, 48.03561, 40.354355, 28.225128, 55.032734, -7.740985, 60.427647, -39.08289, 49.38091, -59.862747, 21.343681, -61.661053, -7.943008, -54.724728, -31.577888)

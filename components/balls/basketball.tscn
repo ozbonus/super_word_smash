@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://ck8gdkv578gm0"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_6dj3b"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_s0lck"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_6dj3b"]
 [ext_resource type="Texture2D" uid="uid://cvaun3way6nkf" path="res://art/irasutoya/sport_basketball.png" id="3_5adl2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_s0lck")
+shader = ExtResource("2_6dj3b")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 6.0000000894072
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Basketball" type="RigidBody2D"]
 script = ExtResource("1_6dj3b")
@@ -25,4 +23,4 @@ texture = ExtResource("3_5adl2")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-0.51864, -63.947395, 16.693697, -61.635284, 32.878456, -55.726566, 48.292503, -44.67983, 57.797832, -34.9176, 64.73415, -11.539625, 66.01866, 13.122855, 57.797832, 37.271534, 47.264896, 48.31827, 31.85085, 60.392616, 9.757401, 63.989227, -12.8498955, 64.246124, -37.512375, 54.740795, -50.87121, 43.950962, -63.20245, 20.829878, -63.45936, -10.512018, -55.752335, -32.862392, -42.136578, -49.560947, -25.18112, -59.323177, -10.794682, -62.91979)
+polygon = PackedVector2Array(-2.3460703, -65.19687, 13.58178, -64.16926, 31.82174, -57.232937, 48.0065, -46.443104, 57.797832, -34.9176, 65.47576, -17.156404, 67.53096, 8.790577, 60.337738, 32.42545, 49.034107, 49.124016, 32.33554, 61.96906, 9.214465, 65.82256, -13.649703, 64.53806, -37.79839, 56.574142, -52.184834, 45.270496, -64.77297, 20.864923, -66.05748, -8.678677, -56.552147, -31.799753, -42.136578, -49.560947, -25.18112, -59.323177, -12.365202, -63.655453)

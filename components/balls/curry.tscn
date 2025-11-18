@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://ducxfj0qliwe1"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_xfw8p"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_jqi88"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_xfw8p"]
 [ext_resource type="Texture2D" uid="uid://bo4qmy1vsma82" path="res://art/irasutoya/food_curryrice_white.png" id="3_tlicw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_jqi88")
+shader = ExtResource("2_xfw8p")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 6.0000000894072
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Curry" type="RigidBody2D"]
 script = ExtResource("1_xfw8p")
@@ -25,4 +23,4 @@ texture = ExtResource("3_tlicw")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-68.34047, -13.851727, -53.440228, -29.779585, -29.805338, -36.972805, -1.5462471, -39.02801, 10.528084, -43.90913, 34.162956, -38.77111, 55.22883, -29.265781, 68.330765, -14.622432, 71.41359, 0.53472066, 69.358376, 20.829878, 54.971935, 33.41803, 30.309454, 41.89575, -1.0324589, 43.43716, -39.31068, 39.069836, -60.633446, 28.793812, -68.85427, 14.407356, -70.13877, -4.3463984)
+polygon = PackedVector2Array(-70.4248, -13.559795, -56.29525, -29.744547, -31.118965, -39.249874, -1.5462471, -39.02801, 10.528084, -43.90913, 34.162956, -38.77111, 55.22883, -29.265781, 68.330765, -14.622432, 72.668976, -0.20094745, 69.358376, 20.829878, 54.971935, 33.41803, 32.33554, 42.701492, -1.0615689, 45.784298, -38.569084, 42.187687, -60.633446, 28.793812, -69.65409, 15.983797, -72.48, -2.256154)

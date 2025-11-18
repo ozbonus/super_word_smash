@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://bwwjyma75f77h"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_lf1ve"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_mdqkr"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_lf1ve"]
 [ext_resource type="Texture2D" uid="uid://cvvvogoxevcqn" path="res://art/irasutoya/animal_nyugyu.png" id="3_mu8cq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_mdqkr")
+shader = ExtResource("2_lf1ve")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 4.70000007003564
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Cow" type="RigidBody2D"]
 script = ExtResource("1_lf1ve")
@@ -25,4 +23,4 @@ texture = ExtResource("3_mu8cq")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-56.796497, -44.601814, -42.19885, -44.937397, -8.137677, -40.239304, 38.675465, -29.66859, 44.212513, -24.80271, 50.420704, -3.829078, 60.823624, 10.936356, 58.642372, 13.956564, 42.366833, 44.158592, 29.111488, 45.16533, -31.292564, 41.47396, -30.621408, 34.762405, -49.078205, 1.7079617, -58.809967, -4.3324456, -57.971027, -13.225266)
+polygon = PackedVector2Array(-60.074482, -44.026756, -51.685028, -49.731586, -7.053139, -43.858967, 36.572006, -33.456047, 45.80041, -27.080063, 51.169662, -7.784322, 62.075947, 6.1421704, 61.06921, 15.370564, 43.28357, 47.250484, -31.88592, 44.56586, -32.724865, 35.505253, -51.51724, 3.2897573, -60.745636, -5.26749)

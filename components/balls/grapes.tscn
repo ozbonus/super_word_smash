@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://du8wb8msbhva8"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_gjoxr"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_p5bll"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_gjoxr"]
 [ext_resource type="Texture2D" uid="uid://j0wdvifoglfc" path="res://art/irasutoya/fruit_grape_gorby.png" id="3_6twfb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_p5bll")
+shader = ExtResource("2_gjoxr")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 6.0000000894072
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Grapes" type="RigidBody2D"]
 script = ExtResource("1_gjoxr")
@@ -25,4 +23,4 @@ texture = ExtResource("3_6twfb")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-59.348946, 10.810747, -28.520836, -37.229706, -0.77553415, -51.10235, 41.613102, -59.066277, 50.861504, -57.52487, 60.366863, -11.282723, 60.366863, 3.8744287, 39.044067, 29.307615, 3.0779698, 47.804466, -15.161989, 49.08897, -38.79688, 51.914883, -53.440228, 48.31827, -59.092037, 36.757744)
+polygon = PackedVector2Array(-63.23157, 11.102686, -32.660366, -39.50678, 2.7919505, -56.462234, 41.07017, -61.08645, 52.116913, -59.031242, 63.67744, -10.476981, 62.392937, 5.450869, 39.044067, 29.307615, 2.021245, 51.436123, -17.760117, 51.436123, -39.33979, 54.775837, -55.267643, 49.637817, -61.43326, 37.563473)

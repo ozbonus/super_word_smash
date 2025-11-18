@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://7nqvd88dm0eu"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_affw5"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_k6h6u"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_affw5"]
 [ext_resource type="Texture2D" uid="uid://dudqwn1fqdipi" path="res://art/irasutoya/jitensya_buta.png" id="3_tbl42"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_k6h6u")
+shader = ExtResource("2_affw5")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 4.70000007003564
-shader_parameter/alpha_threshold = 0.66999998502416
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Pig" type="RigidBody2D"]
 script = ExtResource("1_affw5")
@@ -25,4 +23,4 @@ texture = ExtResource("3_tbl42")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-28.693659, -54.569378, -3.5252995, -53.89822, 8.219927, -44.837612, 15.938225, -27.555344, 37.247425, 3.6534185, 45.301315, 32.680927, 47.65036, 45.936264, 42.11331, 56.50697, 30.032513, 59.862747, -32.88839, 58.01707, -42.62015, 54.493496, -47.150455, 43.083843, -43.626884, 29.9963, -42.62015, -0.20573045, -40.271107, -11.447597, -42.284576, -19.669258, -43.12352, -35.44143, -37.08311, -45.508774)
+polygon = PackedVector2Array(-31.713896, -56.918438, -0.33734334, -56.41507, 12.7502, -41.81742, 41.106552, 3.8211977, 51.84505, 46.104042, 40.603184, 60.366116, 26.676693, 62.044, -34.398518, 60.366116, -46.143753, 52.64781, -50.002903, 41.909313, -45.64039, 29.325138, -45.4726, 1.3043658, -40.271107, -11.447597, -46.47933, -20.340422, -44.80144, -37.454903, -38.761036, -46.17994)

@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxc44cdxtcqb1"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_p1ipe"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_aexry"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_p1ipe"]
 [ext_resource type="Texture2D" uid="uid://csik2kc53od02" path="res://art/irasutoya/chibikko_gang_baby.png" id="3_kva1m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_aexry")
+shader = ExtResource("2_p1ipe")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 6.0000000894072
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Baby" type="RigidBody2D"]
 script = ExtResource("1_p1ipe")
@@ -25,4 +23,4 @@ texture = ExtResource("3_kva1m")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-39.82447, -26.953672, -31.603643, -41.853924, -17.474098, -54.442066, -4.1152654, -59.83698, 12.326404, -58.809376, 28.254238, -47.76264, 38.01649, -37.229706, 45.209713, -15.136235, 43.411392, 0.2778189, 33.64917, 13.636659, 34.676777, 24.169594, 32.364666, 33.161118, 31.080166, 52.685593, 30.823242, 61.163315, 12.069479, 60.392616, -28.263943, 60.90642, -30.319141, 53.199398, -31.860552, 23.141987, -41.36588, -1.2635843, -42.136578, -19.503551)
+polygon = PackedVector2Array(-34.20177, -42.589584, -19.301527, -55.17773, -5.1719823, -62.370953, 19.747408, -58.00364, 38.758064, -39.50678, 48.5203, -12.789089, 32.592453, 63.767365, -31.118965, 64.024254, -46.276115, -14.844296)

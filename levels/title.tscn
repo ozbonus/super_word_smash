@@ -5,25 +5,21 @@
 [ext_resource type="FontFile" uid="uid://dbfmpoiuf1824" path="res://fonts/Caveat_Brush/CaveatBrush-Regular.ttf" id="2_k86xs"]
 [ext_resource type="Texture2D" uid="uid://bm0m64frftog5" path="res://art/title_super.png" id="3_7tqo7"]
 [ext_resource type="Texture2D" uid="uid://dgvs7y1gu1xom" path="res://art/title_word.png" id="4_l43rt"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="7_7tqo7"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="6_7gau0"]
 [ext_resource type="Texture2D" uid="uid://d0e7xky2vt6ae" path="res://art/banana_kawa_muke.png" id="8_l43rt"]
 [ext_resource type="Texture2D" uid="uid://40q3ac4ax0w" path="res://art/cat14_moyou_buchi.png" id="9_qovr3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tmshm"]
-shader = ExtResource("7_7tqo7")
+shader = ExtResource("6_7gau0")
+shader_parameter/allow_out_of_bounds = false
+shader_parameter/outline_thickness = 10.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 10.000000149012
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eho3l"]
-shader = ExtResource("7_7tqo7")
+shader = ExtResource("6_7gau0")
+shader_parameter/allow_out_of_bounds = false
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 10.000000149012
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [sub_resource type="Animation" id="Animation_l43rt"]
 length = 0.001
@@ -169,7 +165,7 @@ text = "Mute"
 
 [node name="BananaKawaMuke" type="Sprite2D" parent="CanvasLayer2"]
 material = SubResource("ShaderMaterial_tmshm")
-position = Vector2(121, 313.99997)
+position = Vector2(117.00001, 311)
 rotation = -0.15164092
 scale = Vector2(0.40516302, 0.40516302)
 texture = ExtResource("8_l43rt")

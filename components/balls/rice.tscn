@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://c43b1cq3ir1vn"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_idej5"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_0qvpy"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_idej5"]
 [ext_resource type="Texture2D" uid="uid://4bx32tni6ol7" path="res://art/irasutoya/rice_white.png" id="3_e1bis"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_0qvpy")
+shader = ExtResource("2_idej5")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 4.70000007003564
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Rice" type="RigidBody2D"]
 script = ExtResource("1_idej5")
@@ -25,4 +23,4 @@ texture = ExtResource("3_e1bis")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-6.2262125, -31.19129, 15.496227, -29.541483, 40.79324, -20.19259, 49.993515, -7.5440845, 51.51696, 4.8294516, 46.979996, 19.402733, 33.64408, 27.926722, 6.009848, 33.97601, -10.763176, 32.60117, -34.410378, 28.339174, -46.783916, 13.628412, -49.993515, 1.2548727, -46.50895, -11.668595, -35.37276, -22.392328, -15.575106, -28.579098, -10.488202, -31.053806)
+polygon = PackedVector2Array(-5.8137636, -31.878721, 16.046152, -30.503883, 41.343163, -20.88002, 51.791927, -7.26913, 53.166763, 6.341764, 46.979996, 19.402733, 33.506588, 29.16406, 6.14732, 34.93838, -13.650336, 34.113476, -34.410378, 28.339174, -48.29624, 14.31582, -49.993515, 1.2548727, -47.60882, -11.943576, -36.19767, -22.804792, -16.949945, -29.129045, -10.488202, -31.053806)

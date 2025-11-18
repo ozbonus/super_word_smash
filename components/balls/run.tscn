@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://c1tcdv8j4h3y"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_njs3n"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_2yhbd"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_njs3n"]
 [ext_resource type="Texture2D" uid="uid://cgkdvpqj8w0p1" path="res://art/irasutoya/run_sagyouin_man_aseru.png" id="3_kfw8i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_2yhbd")
+shader = ExtResource("2_njs3n")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 6.0000000894072
-shader_parameter/alpha_threshold = 0.68999998457712
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Run" type="RigidBody2D"]
 script = ExtResource("1_njs3n")
@@ -25,4 +23,4 @@ texture = ExtResource("3_kfw8i")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-22.098314, -56.24037, 18.74891, -58.295578, 24.14384, -54.95586, 26.712843, -43.138424, 38.787174, -9.998215, 45.7235, 37.271534, 24.400736, 59.36501, -23.382816, 60.90642, -35.970966, 45.235466, -41.108986, 33.41803, -44.96249, -27.724377)
+polygon = PackedVector2Array(-23.639763, -58.552456, 19.262676, -60.09386, 26.9697, -55.726543, 31.850811, -42.367702, 41.356155, -10.511995, 48.035572, 37.528458, 23.373089, 62.190937, -23.382862, 61.42024, -37.255505, 46.26309, -42.90733, 35.47326, -48.816048, -27.467453)

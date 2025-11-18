@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://b11g5348652ct"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_cskdc"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_kby7x"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_cskdc"]
 [ext_resource type="Texture2D" uid="uid://d4jhtg2ppaiwo" path="res://art/irasutoya/food_yakiniku_sara_kirimi.png" id="3_6w4wl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_kby7x")
+shader = ExtResource("2_cskdc")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 6.0000000894072
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Meat" type="RigidBody2D"]
 script = ExtResource("1_cskdc")
@@ -25,4 +23,4 @@ texture = ExtResource("3_6w4wl")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-63.20245, -31.320988, -45.733204, -46.991936, -30.576052, -55.469666, 3.3348641, -59.066277, 39.81478, -52.38686, 59.339256, -36.202106, 69.10148, -11.796519, 68.84458, 9.269351, 60.10994, 31.10592, 44.182106, 46.006165, 15.152301, 56.539097, -14.134397, 55.51149, -49.072903, 42.923355, -64.74386, 22.628183, -70.39568, -2.804995)
+polygon = PackedVector2Array(-65.02988, -30.258343, -45.733204, -46.991936, -29.834463, -57.489834, 3.3348641, -59.066277, 39.81478, -52.38686, 59.053238, -39.249874, 69.84307, -14.844296, 71.12757, 8.276781, 63.67744, 30.113358, 45.180588, 47.582603, 15.893888, 58.11554, -17.760117, 56.317234, -51.41413, 43.985992, -66.828186, 23.433926, -72.2231, -2.7699578)

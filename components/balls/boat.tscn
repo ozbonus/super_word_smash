@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://dryfljhw1gryr"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_0o4m5"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_o57nm"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_0o4m5"]
 [ext_resource type="Texture2D" uid="uid://dpfnco51of2qt" path="res://art/irasutoya/norimono_character2_fune.png" id="3_nxo8x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_o57nm")
+shader = ExtResource("2_0o4m5")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 6.0000000894072
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Boat" type="RigidBody2D"]
 script = ExtResource("1_0o4m5")
@@ -25,4 +23,4 @@ texture = ExtResource("3_nxo8x")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-14.134397, -40.826317, 1.2796497, -52.64376, 22.34552, -58.809376, 37.245777, -54.95586, 40.84239, -47.50574, 55.74265, 23.141987, 60.880653, 40.611248, 60.62376, 47.290665, 55.48572, 51.657986, -12.079183, 53.45629, -52.41262, 51.914883, -60.89034, 46.006165, -61.404144, 38.812943, -58.06443, 21.857485, -32.374355, -12.053422)
+polygon = PackedVector2Array(-15.961812, -41.561985, 0.9936379, -53.636322, 21.03191, -61.08645, 41.84087, -53.37942, 64.96196, 43.215294, 55.71352, 53.23443, -53.72624, 54.51893, -64.516075, 44.756706, -59.891857, 21.378727)

@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://d2semlla8hoxj"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_nad3q"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_a78an"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_nad3q"]
 [ext_resource type="Texture2D" uid="uid://cx543qhtbycyx" path="res://art/irasutoya/pen_enpitsu_mark.png" id="3_vfrj4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_a78an")
+shader = ExtResource("2_nad3q")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 6.0000000894072
-shader_parameter/alpha_threshold = 0.77999998256544
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Pencil" type="RigidBody2D"]
 script = ExtResource("1_nad3q")
@@ -25,4 +23,4 @@ texture = ExtResource("3_vfrj4")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-59.092037, 36.243942, -58.57823, 28.793812, 21.06102, -49.560947, 51.11843, -59.066277, 57.284042, -58.038673, 58.568542, -51.873055, 49.32011, -21.301855, -28.263943, 56.539097, -39.053772, 57.052902)
+polygon = PackedVector2Array(-61.66104, 37.014645, -61.917942, 28.79382, 20.547224, -51.873047, 50.604633, -61.12148, 59.596157, -59.58007, 61.137554, -52.129948, 50.604633, -18.98974, -28.77773, 59.108124, -40.85207, 59.108124)
