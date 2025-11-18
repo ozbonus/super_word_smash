@@ -3,9 +3,10 @@ extends Node2D
 
 signal play_again
 
-# Called when the node enters the scene tree for the first time.
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 func _ready():
-	pass # Replace with function body.
+	animation_player.play("idle")
 
 
 func _on_button_pressed():
