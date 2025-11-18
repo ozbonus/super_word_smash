@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://by6df8d6js72b"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_jn6pb"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_ujfgv"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_jn6pb"]
 [ext_resource type="Texture2D" uid="uid://ccyxfiiolf73q" path="res://art/irasutoya/tamago_egg_kimi.png" id="3_gwc4q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_ujfgv")
+shader = ExtResource("2_jn6pb")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 10.000000149012
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Egg" type="RigidBody2D"]
 script = ExtResource("1_jn6pb")

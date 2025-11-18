@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://y5kc1ncctt27"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_cg3bo"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_rnk4h"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_cg3bo"]
 [ext_resource type="Texture2D" uid="uid://b64dw4ujhl01p" path="res://art/irasutoya/fork.png" id="3_rs16w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_rnk4h")
+shader = ExtResource("2_cg3bo")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 10.000000149012
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Fork" type="RigidBody2D"]
 script = ExtResource("1_cg3bo")
@@ -25,4 +23,4 @@ texture = ExtResource("3_rs16w")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-1.9997406, -13.998184, 35.99533, -41.994553, 49.993515, -41.994553, 53.992996, -33.99559, 49.993515, -19.997406, 5.999222, 7.9989624, -7.9989624, 17.997665, -7.9989624, 31.99585, -37.99507, 43.994293, -43.994293, 39.994812, -53.992996, 17.997665, -51.993256, 11.998444, -25.996628, 1.9997406, -15.997925, 1.9997406, -7.9989624, -3.9994812, -5.999222, -11.998444)
+polygon = PackedVector2Array(-6.3868136, -11.356563, 35.99533, -41.994553, 44.12638, -44.533882, 53.392105, -38.705437, 52.495464, -21.220102, -7.7318463, 16.440624, -8.180186, 25.70636, -21.032658, 37.213802, -35.97739, 42.145565, -45.243126, 38.409378, -53.992996, 19.997406, -49.993515, 13.750574, -25.665525, 2.840917)

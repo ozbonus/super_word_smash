@@ -1,0 +1,138 @@
+[gd_scene load_steps=14 format=3 uid="uid://c3jnqpoa4hb6y"]
+
+[ext_resource type="Script" uid="uid://bhl8k7dgmo1mn" path="res://levels/score_screen.gd" id="1_np10t"]
+[ext_resource type="Texture2D" uid="uid://b08lhuyln2ash" path="res://art/score_thanks.png" id="2_p2quj"]
+[ext_resource type="Texture2D" uid="uid://c3rodikoe88p1" path="res://art/score_playing.png" id="3_xote1"]
+[ext_resource type="Texture2D" uid="uid://c2q23spgglgr3" path="res://art/score_for.png" id="4_0ogvh"]
+[ext_resource type="FontFile" uid="uid://dbfmpoiuf1824" path="res://fonts/Caveat_Brush/CaveatBrush-Regular.ttf" id="5_xote1"]
+[ext_resource type="Texture2D" uid="uid://d0e7xky2vt6ae" path="res://art/banana_kawa_muke.png" id="6_0ogvh"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="6_i3r2u"]
+[ext_resource type="Texture2D" uid="uid://o5g7ta0yptjh" path="res://art/irasutoya/jitensya_kuma.png" id="8_i3r2u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_63pcp"]
+shader = ExtResource("6_i3r2u")
+shader_parameter/allow_out_of_bounds = false
+shader_parameter/outline_thickness = 6.0
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3xtsa"]
+shader = ExtResource("6_i3r2u")
+shader_parameter/allow_out_of_bounds = false
+shader_parameter/outline_thickness = 11.0
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_xote1"]
+resource_name = "idle"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/ScoreThanks:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(319, 144), Vector2(319, 121)]
+}
+
+[sub_resource type="Animation" id="Animation_0ogvh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/ScoreThanks:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(319, 144)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cwu8n"]
+_data = {
+&"RESET": SubResource("Animation_0ogvh"),
+&"idle": SubResource("Animation_xote1")
+}
+
+[node name="ScoreScreen" type="Node2D"]
+position = Vector2(-1, -1)
+scale = Vector2(1, 1.0010515)
+script = ExtResource("1_np10t")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14901961, 0.8, 0.9490196, 1)
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="ScoreThanks" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(319, 144)
+scale = Vector2(0.4986733, 0.4991977)
+texture = ExtResource("2_p2quj")
+
+[node name="ScorePlaying" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(404.70047, 251.46861)
+scale = Vector2(0.59288937, 0.59351283)
+texture = ExtResource("3_xote1")
+
+[node name="ScoreFor" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(186.70049, 253.46857)
+scale = Vector2(0.5928932, 0.59351665)
+texture = ExtResource("4_0ogvh")
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_top = 0.712
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.19998169
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="CanvasLayer/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_xote1")
+theme_override_font_sizes/font_size = 36
+text = " PLAY AGAIN "
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="BananaKawaMuke" type="Sprite2D" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_63pcp")
+position = Vector2(548.00006, 312)
+rotation = 0.016400907
+scale = Vector2(0.4332616, 0.43371716)
+texture = ExtResource("6_0ogvh")
+
+[node name="JitensyaKuma" type="Sprite2D" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_3xtsa")
+position = Vector2(69, 306)
+scale = Vector2(0.19395277, 0.19395278)
+texture = ExtResource("8_i3r2u")
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cwu8n")
+}
+
+[connection signal="pressed" from="CanvasLayer/CenterContainer/Button" to="." method="_on_button_pressed"]

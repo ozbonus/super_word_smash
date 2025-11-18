@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://rl4qq6w2u8jh"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_b6pon"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_pgxf6"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_b6pon"]
 [ext_resource type="Texture2D" uid="uid://dyytv82o6bfe8" path="res://art/irasutoya/coffee07_cafe_macchiato.png" id="3_mes5j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_pgxf6")
+shader = ExtResource("2_b6pon")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 3.90000005811468
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Coffee" type="RigidBody2D"]
 script = ExtResource("1_b6pon")
@@ -25,4 +23,4 @@ texture = ExtResource("3_mes5j")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-49.072903, -37.229706, -30.319141, -46.991936, -6.170464, -48.533348, 11.041903, -46.478134, 26.969738, -40.05562, 44.952785, -24.384663, 51.375324, -13.337931, 51.632217, 2.5899274, 44.439, 15.434964, 31.85085, 35.21633, 25.685236, 43.180252, -3.344552, 50.373486, -33.145054, 47.290665, -49.8436, 37.528442, -51.128117, 25.454096)
+polygon = PackedVector2Array(-57.065952, -37.194668, -36.000084, -51.581116, -15.448016, -53.893223, 6.3885603, -53.122524, 27.711325, -46.1862, 53.91522, -23.322025, 58.282524, -4.5682626, 51.089306, 14.699296, 30.537237, 46.55501, 0.9936379, 56.06034, -32.403465, 51.949924, -51.671032, 44.242905, -57.57975, 27.801249)

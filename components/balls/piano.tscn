@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://cu7gt8gni8ybj"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_medli"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_w5nld"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_medli"]
 [ext_resource type="Texture2D" uid="uid://csq4h3lefm0dq" path="res://art/irasutoya/piano_girl.png" id="3_tc5hm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_w5nld")
+shader = ExtResource("2_medli")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 10.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 4.70000007003564
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Piano" type="RigidBody2D"]
 script = ExtResource("1_medli")
@@ -25,4 +23,4 @@ texture = ExtResource("3_tc5hm")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-49.993515, -21.997147, -35.99533, -23.996887, 9.034549, -47.139393, 27.044924, -44.5272, 28.694735, -34.765854, 47.667492, -28.304117, 60.178505, -20.605028, 59.62857, -10.156264, 58.941162, 20.227646, 53.16684, 46.62453, -20.661932, 47.17446, -55.03287, 48.549297, -57.645065, 36.725697, -60.669704, 34.938408, -59.56983, 8.129072, -56.82016, -17.030449)
+polygon = PackedVector2Array(-49.993515, -24.029518, -37.10375, -25.03625, 9.038241, -48.02335, 27.49503, -45.674305, 59.710533, -20.673737, 59.542736, 19.427847, 54.173485, 47.7842, -55.728336, 49.993515, -57.645065, 36.725697, -60.76201, 33.186554, -58.748535, -13.794384)

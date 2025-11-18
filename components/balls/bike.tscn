@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://cn48iachfrffm"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_7q7q4"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_fd3t0"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_7q7q4"]
 [ext_resource type="Texture2D" uid="uid://djw3hefaugmho" path="res://art/irasutoya/bicycle_mamachari2.png" id="3_bbeju"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_fd3t0")
+shader = ExtResource("2_7q7q4")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 6.0000000894072
-shader_parameter/alpha_threshold = 0.749999983236
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Bike" type="RigidBody2D"]
 script = ExtResource("1_7q7q4")
@@ -25,4 +23,4 @@ texture = ExtResource("3_bbeju")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-56.963314, -13.20351, -30.462708, -26.793568, 5.3810616, -38.005363, 18.461502, -41.233, 49.71863, -32.229588, 66.70619, 5.31294, 69.25434, 18.05362, 68.06521, 32.323177, 57.872665, 42.515717, 42.41398, 46.592743, -48.46953, 45.40361, -60.021076, 37.929077, -69.19437, 25.018522, -69.703995, 10.748964, -61.889706, -5.2193546)
+polygon = PackedVector2Array(-58.54878, -14.523171, -30.49445, -28.91947, 18.785198, -44.42318, 51.45372, -34.64108, 69.725975, 6.7021413, 72.12535, 20.360167, 67.32658, 34.202763, 57.54448, 44.538563, 40.37966, 48.59907, -48.76667, 48.414513, -73.49877, 26.450922, -70.17655, 8.732395)

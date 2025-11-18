@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://cxdwk6iquuauk"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_qm88s"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_q6spi"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_qm88s"]
 [ext_resource type="Texture2D" uid="uid://ctud2qa0kn1xt" path="res://art/irasutoya/bird_okameinkogray.png" id="3_hi6tu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_q6spi")
+shader = ExtResource("2_qm88s")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 6.0000000894072
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Bird" type="RigidBody2D"]
 script = ExtResource("1_qm88s")
@@ -25,4 +23,4 @@ texture = ExtResource("3_hi6tu")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(5.6469727, -60.60768, 44.695892, 21.343681, 49.32011, 41.125053, 47.778713, 50.63038, 36.21817, 55.51149, -12.592986, 60.90642, -31.860552, 57.052902, -42.90729, 17.747072, -43.164185, -10.255116, -41.108986, -33.376194, -29.29155, -44.16603, -8.996376, -55.212765, -2.8307486, -60.093884)
+polygon = PackedVector2Array(6.645462, -63.655453, 53.144505, 36.27897, 47.235786, 54.775837, -11.594504, 62.739758, -32.91727, 59.143147, -44.477814, 18.295906, -47.56062, -10.733883, -42.9364, -34.62566, -4.658179, -62.884754)

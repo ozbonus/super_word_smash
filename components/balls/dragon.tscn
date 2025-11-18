@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://bbohaie0gy0h4"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_j0t8a"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_2f3ex"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_j0t8a"]
 [ext_resource type="Texture2D" uid="uid://dyatu1eugyu7o" path="res://art/irasutoya/dragon_hane.png" id="3_0oyxe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_2f3ex")
+shader = ExtResource("2_j0t8a")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 4.70000007003564
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Dragon" type="RigidBody2D"]
 script = ExtResource("1_j0t8a")
@@ -25,4 +23,4 @@ texture = ExtResource("3_0oyxe")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-33.623524, -48.578453, -20.526955, -47.772514, -16.295753, -38.30269, -4.4081044, -29.034346, 22.38949, -27.623945, 29.441479, -23.79572, 31.65782, -9.087269, 45.157364, 0.98701644, 57.649475, 1.9944389, 61.47771, 13.479125, 66.11188, 17.911808, 65.10444, 22.94895, 51.40341, 25.769743, 43.343987, 37.6574, 40.926163, 48.73911, 30.448915, 49.74653, 12.113724, 45.716824, 5.4646993, 43.903446, -0.9828437, 45.716824, -15.892775, 47.933167, -29.593801, 45.515343, -33.019062, 31.814316, -42.89185, 25.769743, -50.951275, 21.94152, -62.23448, 15.896948, -65.05528, 4.4122696, -62.435963, 0.5840383, -54.376537, -3.0426962, -46.317112, -19.363035, -44.90671, -35.88486)
+polygon = PackedVector2Array(-35.230587, -50.764565, -19.11174, -49.55565, -4.4081044, -29.034346, 21.789845, -31.421942, 32.2671, -23.765488, 60.878067, 3.0321002, 68.73599, 17.539068, 65.10925, 26.001465, 53.826065, 26.807405, 44.960697, 37.68763, 41.73692, 51.99311, -29.58899, 49.37379, -51.349438, 23.986605, -65.05046, 18.345009, -68.07275, -0.7961232, -53.767265, -5.6317844, -47.319725, -37.869484)

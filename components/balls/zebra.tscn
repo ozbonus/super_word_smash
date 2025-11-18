@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://cr3nee13a0kcp"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_850rv"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_hvv4b"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_850rv"]
 [ext_resource type="Texture2D" uid="uid://qs0l0ecjpde1" path="res://art/irasutoya/animal_shimauma.png" id="3_jx1br"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_hvv4b")
+shader = ExtResource("2_850rv")
+shader_parameter/allow_out_of_bounds = false
+shader_parameter/outline_thickness = 8.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 10.000000149012
-shader_parameter/alpha_threshold = 0.76999998278896
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Zebra" type="RigidBody2D"]
 script = ExtResource("1_850rv")
@@ -25,4 +23,4 @@ texture = ExtResource("3_jx1br")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-57.807533, -34.660694, -21.327618, -57.781773, -1.0324589, -58.038673, 6.6745796, -42.624622, 43.411392, 7.4710464, 55.74265, 9.526245, 60.10994, 23.398897, 39.044067, 56.025295, -15.675793, 55.51149, -31.860552, 21.343681, -57.55064, -14.8793335)
+polygon = PackedVector2Array(-55.95338, -33.210075, -20.885475, -56.70054, -1.0863612, -55.35823, 41.196484, 6.3881407, 53.78065, 9.911709, 58.14317, 20.146847, 38.51185, 55.71813, -15.012854, 53.70466, -26.422506, 3.8713088, -57.127903, -17.102327)

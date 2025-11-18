@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://b1acf6j4205ih"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_0ggy7"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_h1242"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_0ggy7"]
 [ext_resource type="Texture2D" uid="uid://c4nvgmg1qen5w" path="res://art/irasutoya/juice_apple.png" id="3_7f2ec"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_h1242")
+shader = ExtResource("2_0ggy7")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 4.70000007003564
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Juice" type="RigidBody2D"]
 script = ExtResource("1_0ggy7")
@@ -25,4 +23,4 @@ texture = ExtResource("3_7f2ec")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-40.834698, -33.960506, -13.582696, -44.786648, -11.342813, -61.399166, 0.41661772, -62.145798, 2.0965297, -43.6667, 41.667934, -29.480726, 42.227905, 49.102097, 7.8829193, 61.421482, -41.58132, 46.115578)
+polygon = PackedVector2Array(-45.72189, -34.147167, -21.643066, -42.92007, -13.430135, -62.892426, 4.302329, -63.265743, 11.022, -41.986782, 44.247036, -31.160646, 44.620358, 50.59536, 7.2888494, 63.47473, -44.601944, 47.048866)

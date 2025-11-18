@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://b875cb11xf0fy"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_7dw86"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_5lsw3"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_7dw86"]
 [ext_resource type="Texture2D" uid="uid://bid7do5t4evgs" path="res://art/irasutoya/petbottle_water_full.png" id="3_7fw7w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_5lsw3")
+shader = ExtResource("2_7dw86")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 6.0000000894072
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Water" type="RigidBody2D"]
 script = ExtResource("1_7dw86")
@@ -25,4 +23,4 @@ texture = ExtResource("3_7fw7w")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-11.8222885, -61.378384, 12.069479, -61.121487, 12.326404, -47.50574, 22.34552, -35.6883, 26.45595, -15.650039, 25.171448, 56.282204, 20.547232, 58.851208, -14.648201, 61.420223, -24.667332, 54.997704, -26.465637, 0.53472066, -26.465637, -21.301855, -22.098314, -38.514206, -14.905095, -45.707436)
+polygon = PackedVector2Array(-16.189596, -63.176693, 15.66612, -63.176693, 14.638513, -47.76264, 24.657629, -36.202106, 28.768059, -16.677639, 26.45595, 56.79601, 18.235123, 61.420223, -16.7034, 62.96162, -28.007032, 54.4839, -26.465637, 0.53472066, -30.062248, -21.044954, -24.410423, -38.77111, -14.905095, -45.707436)

@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4pwkwm6g42xy"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_yjrhv"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_014fw"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_yjrhv"]
 [ext_resource type="Texture2D" uid="uid://df05vuqa2ggu3" path="res://art/irasutoya/book1_green.png" id="3_2suq7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_014fw")
+shader = ExtResource("2_yjrhv")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 4.70000007003564
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Book" type="RigidBody2D"]
 script = ExtResource("1_yjrhv")
@@ -25,4 +23,4 @@ texture = ExtResource("3_2suq7")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-30.145504, -39.76078, 5.794567, -63.000214, 28.763756, -58.676594, 28.763756, 30.227753, -4.2038, 61.033512, -17.715109, 62.11441, -27.17302, 57.7908, -29.334818, 53.196957)
+polygon = PackedVector2Array(-33.220665, -41.814087, 5.6918736, -67.75578, 31.633562, -61.270355, 32.17402, 31.14693, -5.1171646, 63.844273, -19.709373, 65.46563, -29.977953, 60.061104, -34.031345, 52.22455)

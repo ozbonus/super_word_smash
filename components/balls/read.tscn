@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://divssh6so7rlj"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_0yigw"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_gfiaf"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_0yigw"]
 [ext_resource type="Texture2D" uid="uid://cx0piwq41qeh5" path="res://art/irasutoya/reading_girl.png" id="3_vf8hp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_gfiaf")
+shader = ExtResource("2_0yigw")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 4.70000007003564
-shader_parameter/alpha_threshold = 0.0999999977648
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Read" type="RigidBody2D"]
 script = ExtResource("1_0yigw")
@@ -25,4 +23,4 @@ texture = ExtResource("3_vf8hp")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-3.645935, -60.021633, 14.2571535, -58.175957, 25.884949, -49.87039, 34.559635, -34.551254, 38.989265, -16.094458, 54.12384, -2.9901364, 54.67754, 5.684558, 52.27816, 20.449999, 44.526314, 45.182106, 3.9213512, 59.578407, -4.7533355, 58.84013, -42.77434, 45.920376, -50.15706, 22.849384, -54.586693, -0.7753206, -43.143475, -10.188284, -37.237297, -25.691992, -30.777426, -43.77965, -19.149647, -56.145706)
+polygon = PackedVector2Array(-3.6459808, -62.421017, 16.287361, -60.021633, 28.284279, -50.79324, 36.774406, -34.366688, 41.019466, -17.201866, 56.338615, -3.5438366, 57.630577, 5.684558, 54.123802, 22.664816, 45.26453, 48.31976, 6.1361213, 61.608654, -5.6762276, 61.793217, -45.17377, 47.027782, -54.40217, 21.188269, -58.27809, -2.0672977, -44.250927, -10.741992, -39.083027, -27.168537, -32.62315, -45.07163, -20.072527, -58.175957)

@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://my5tkp7mi0vh"]
 
 [ext_resource type="Script" uid="uid://bs1skkkypsyrc" path="res://components/balls/ball.gd" id="1_acsgf"]
-[ext_resource type="Shader" uid="uid://ytwa82ixw60x" path="res://shaders/ball_outline.gdshader" id="2_r1jbm"]
+[ext_resource type="Shader" uid="uid://cerog158olh2l" path="res://shaders/outline.gdshader" id="2_acsgf"]
 [ext_resource type="Texture2D" uid="uid://dmpq6oerw68e8" path="res://art/irasutoya/walking1_boy.png" id="3_xr0vt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5ji"]
-shader = ExtResource("2_r1jbm")
+shader = ExtResource("2_acsgf")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 16.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/outline_size = 4.70000007003564
-shader_parameter/alpha_threshold = 0.58999998681232
-shader_parameter/outline_samples = 8
-shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [node name="Boy" type="RigidBody2D"]
 script = ExtResource("1_acsgf")
@@ -25,4 +23,4 @@ texture = ExtResource("3_xr0vt")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.50006485, 0.50006485)
-polygon = PackedVector2Array(-3.4589171, -57.389954, 7.615162, -56.551006, 18.353653, -50.84618, 24.226273, -40.10768, 23.722906, -27.691294, 22.045008, -10.073439, 32.11235, 12.745867, 34.964764, 20.799746, 29.427732, 30.53151, 30.098894, 51.67293, 26.57532, 57.881126, 18.01808, 59.05564, -23.761398, 56.538815, -30.640747, 51.33734, -30.808535, 46.303677, -33.660946, 23.652159, -36.681156, 19.289642, -34.667683, 12.913662, -22.92245, -2.6907215, -23.25803, -11.919124, -25.942657, -24.838877, -25.43929, -44.134617, -15.707526, -54.537537)
+polygon = PackedVector2Array(-2.5833592, -61.48553, 10.839766, -59.47206, 21.074896, -50.91482, 26.611935, -39.337376, 38.189373, 22.073416, 32.652344, 52.9466, 24.766258, 60.83269, -24.731514, 59.490368, -33.624336, 51.10092, -38.993584, 19.221003, -26.912773, -46.216724, -16.174274, -56.955227)
