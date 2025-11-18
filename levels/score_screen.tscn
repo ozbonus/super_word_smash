@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://c3jnqpoa4hb6y"]
 
-[ext_resource type="Script" uid="uid://bhl8k7dgmo1mn" path="res://levels/level_end.gd" id="1_yht8h"]
+[ext_resource type="Script" uid="uid://bhl8k7dgmo1mn" path="res://levels/score_screen.gd" id="1_np10t"]
 
-[node name="Level00" type="Node2D"]
+[node name="ScoreScreen" type="Node2D"]
 scale = Vector2(1, 1.0010515)
-script = ExtResource("1_yht8h")
+script = ExtResource("1_np10t")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 249.0
