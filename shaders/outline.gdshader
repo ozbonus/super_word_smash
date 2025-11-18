@@ -4,7 +4,7 @@ shader_type canvas_item;
 // https://godotshaders.com/author/alfroids/
 // https://godotshaders.com/shader/2d-circular-outline-shader/
 
-uniform bool allow_out_of_bounds = false;
+uniform bool allow_out_of_bounds = true;
 uniform float outline_thickness: hint_range(0.0, 16.0, 1.0) = 16.0;
 uniform vec4 outline_color: source_color = vec4(0.0, 0.0, 0.0, 1.0);
 
