@@ -1,24 +1,54 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3jnqpoa4hb6y"]
+[gd_scene load_steps=5 format=3 uid="uid://c3jnqpoa4hb6y"]
 
 [ext_resource type="Script" uid="uid://bhl8k7dgmo1mn" path="res://levels/score_screen.gd" id="1_np10t"]
+[ext_resource type="Texture2D" uid="uid://b08lhuyln2ash" path="res://art/score_thanks.png" id="2_p2quj"]
+[ext_resource type="Texture2D" uid="uid://c3rodikoe88p1" path="res://art/score_playing.png" id="3_xote1"]
+[ext_resource type="Texture2D" uid="uid://c2q23spgglgr3" path="res://art/score_for.png" id="4_0ogvh"]
 
 [node name="ScoreScreen" type="Node2D"]
 scale = Vector2(1, 1.0010515)
 script = ExtResource("1_np10t")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 249.0
-offset_top = 47.0
-offset_right = 400.0
-offset_bottom = 70.0
-text = "A winner is you!"
-horizontal_alignment = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Button" type="Button" parent="."]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14901961, 0.8, 0.9490196, 1)
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreThanks" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(319, 133)
+scale = Vector2(0.4986733, 0.4991977)
+texture = ExtResource("2_p2quj")
+
+[node name="ScorePlaying" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(414, 258.00003)
+scale = Vector2(0.59288937, 0.59351283)
+texture = ExtResource("3_xote1")
+
+[node name="ScoreFor" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(187.00002, 260)
+scale = Vector2(0.5928932, 0.59351665)
+texture = ExtResource("4_0ogvh")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+visible = false
 offset_left = 267.0
-offset_top = 184.0
+offset_top = 184.19348
 offset_right = 368.0
-offset_bottom = 215.0
+offset_bottom = 215.19348
 text = "PLAY AGAIN"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
