@@ -1,7 +1,6 @@
 extends Node
 
 
-enum GameLength {SHORT, MEDIUM, LONG}
 enum GameState {
   TITLE, # Only when the title screen is being shown.
   COUNTING, # During the countdown before play begins.
