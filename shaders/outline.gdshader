@@ -5,7 +5,7 @@ shader_type canvas_item;
 // https://godotshaders.com/shader/2d-circular-outline-shader/
 
 uniform bool allow_out_of_bounds = false;
-uniform float outline_thickness: hint_range(0.0, 16.0, 1.0) = 8.0;
+uniform float outline_thickness: hint_range(0.0, 16.0, 1.0) = 16.0;
 uniform vec4 outline_color: source_color = vec4(0.0, 0.0, 0.0, 1.0);
 
 bool is_inside_usquare(vec2 x) {
