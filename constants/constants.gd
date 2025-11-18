@@ -10,5 +10,4 @@ enum GameState {
   PERFECT, # When all levels are complete and game play must stop.
   FINISHED, # When showing the score after finishing the game.
 }
-const TRANSITION_DURATION_SECONDS: float = 2.0
 const SUCCESS_TIME_SCALE: float = 0.05
