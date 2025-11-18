@@ -1,9 +1,18 @@
-[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://b1aj11yqv45ok"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://b1aj11yqv45ok"]
 
 [ext_resource type="Texture2D" uid="uid://dij0a7aqlvwer" path="res://art/11_Camping_32x32.png" id="1_0p35e"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_0p35e"]
 tile_data = PackedInt32Array(0, 1048577, 114, 131072, 1048577, 116)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_qxf87"]
+tile_data = PackedInt32Array(0, 458753, 151, 6, 720897, 151, 10, 1310721, 151)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_13qor"]
+tile_data = PackedInt32Array(0, 458753, 158, 5, 720897, 158, 9, 1310721, 158)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_y11j2"]
+tile_data = PackedInt32Array(0, 458753, 163, 4, 720897, 163, 8, 1245185, 163)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxf87"]
 texture = ExtResource("1_0p35e")
@@ -1904,36 +1913,41 @@ texture_region_size = Vector2i(32, 32)
 7:151/size_in_atlas = Vector2i(3, 7)
 7:151/0 = 0
 7:151/0/z_index = 2
-7:151/0/physics_layer_0/polygon_0/points = PackedVector2Array(24, -92, 48, -92, 48, 112, 24, 112, -8, 96, -12, 40, 16, 4)
+7:151/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, 84, -28, 52, 8, 16, 0, -68, 24, -100, 48, -92, 48, 112, -24, 108)
 11:151/size_in_atlas = Vector2i(8, 7)
 11:151/0 = 0
+11:151/0/texture_origin = Vector2i(16, 0)
 11:151/0/z_index = 2
-11:151/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -84, -84, -76, -32, -84, 20, -68, 84, -72, 128, -88, 128, 112, -128, 112)
-20:151/size_in_atlas = Vector2i(1, 7)
-20:151/0 = 0
-20:151/0/z_index = 2
-20:151/0/physics_layer_0/polygon_0/points = PackedVector2Array(24, -92, 48, -92, 48, 112, 24, 112, -8, 96, -12, 40, 16, 4)
+11:151/0/physics_layer_0/polygon_0/points = PackedVector2Array(-144, -84, -84, -76, -32, -84, 20, -68, 84, -72, 112, -92, 112, 112, -144, 112)
 7:158/size_in_atlas = Vector2i(3, 5)
 7:158/0 = 0
+7:158/0/texture_origin = Vector2i(32, 0)
 7:158/0/z_index = 2
+7:158/0/physics_layer_0/polygon_0/points = PackedVector2Array(-36, -44, -4, -48, 16, -40, 16, 80, 4, 60, -24, 44, -44, -12)
 11:158/size_in_atlas = Vector2i(8, 5)
 11:158/0 = 0
+11:158/0/texture_origin = Vector2i(16, 0)
 11:158/0/z_index = 2
-11:158/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -40, -64, -52, 12, -36, 84, -52, 128, -40, 128, 80, -128, 80)
+11:158/0/physics_layer_0/polygon_0/points = PackedVector2Array(-144, -40, -84, -60, -32, -36, 8, -52, 44, -44, 84, -56, 112, -40, 112, 80, -144, 80)
 20:158/size_in_atlas = Vector2i(2, 5)
 20:158/0 = 0
+20:158/0/texture_origin = Vector2i(-16, 0)
 20:158/0/z_index = 2
+20:158/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -40, 16, -8, 28, 12, 8, 44, -16, 80)
 7:163/size_in_atlas = Vector2i(3, 5)
 7:163/0 = 0
+7:163/0/texture_origin = Vector2i(32, 0)
 7:163/0/z_index = 2
+7:163/0/physics_layer_0/polygon_0/points = PackedVector2Array(-28, 12, -36, -24, -12, -60, 16, -60, 16, 80, -12, 76, -20, 52, -48, 40, -52, 28)
 11:163/size_in_atlas = Vector2i(7, 5)
 11:163/0 = 0
 11:163/0/z_index = 2
-11:163/0/physics_layer_0/polygon_0/points = PackedVector2Array(-112, -60, -68, -56, -24, -44, 56, -40, 80, -60, 112, -60, 112, 80, -112, 80)
+11:163/0/physics_layer_0/polygon_0/points = PackedVector2Array(-112, -60, -68, -60, -28, -48, 48, -40, 84, -60, 112, -60, 112, 80, -112, 80)
 19:163/size_in_atlas = Vector2i(2, 5)
 19:163/0 = 0
-19:163/0/texture_origin = Vector2i(16, 0)
+19:163/0/texture_origin = Vector2i(-16, 0)
 19:163/0/z_index = 2
+19:163/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -60, 16, -44, 24, -20, 16, 44, 24, 72, 16, 80, -16, 80)
 4:52/0 = 0
 4:52/0/z_index = 2
 5:52/0 = 0
@@ -1962,6 +1976,11 @@ texture_region_size = Vector2i(32, 32)
 16:116/0 = 0
 16:116/0/texture_origin = Vector2i(-16, 0)
 16:116/0/z_index = 2
+20:151/size_in_atlas = Vector2i(2, 7)
+20:151/0 = 0
+20:151/0/texture_origin = Vector2i(-16, 0)
+20:151/0/z_index = 2
+20:151/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -84, 12, -60, 0, -20, -8, 12, 16, 32, -16.054321, 112)
 
 [resource]
 tile_size = Vector2i(32, 32)
@@ -1973,3 +1992,6 @@ terrain_set_0/terrain_1/name = "Island"
 terrain_set_0/terrain_1/color = Color(0.37290755, 0.50082, 0.83648944, 1)
 sources/1 = SubResource("TileSetAtlasSource_qxf87")
 pattern_0 = SubResource("TileMapPattern_0p35e")
+pattern_1 = SubResource("TileMapPattern_qxf87")
+pattern_2 = SubResource("TileMapPattern_13qor")
+pattern_3 = SubResource("TileMapPattern_y11j2")
