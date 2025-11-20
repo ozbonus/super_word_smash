@@ -16,6 +16,9 @@ const TRANSITION_PROGRESS_MIN := 0.0
 const TRANSITION_PROGRESS_MAX := 6.0
 
 @export_group("Levels")
+@export var final_tutorial_index: int = 0
+@export var coda_index: int = 0
+@export var shuffle_levels: bool = true
 @export var title_screen: PackedScene
 @export var levels: Array[PackedScene]
 @export var summary_screen: PackedScene
