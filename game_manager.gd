@@ -16,8 +16,8 @@ const TRANSITION_PROGRESS_MIN := 0.0
 const TRANSITION_PROGRESS_MAX := 6.0
 
 @export_group("Levels")
-@export var final_tutorial_index: int = 0
-@export var coda_index: int = 0
+@export var final_tutorial_index: int = 0 ## The index of the last tutorial.
+@export var begin_coda_index: int = 0 ## The index of the first ending level.
 @export var shuffle_levels: bool = true
 @export var title_screen: PackedScene
 @export var levels: Array[PackedScene]
@@ -68,6 +68,8 @@ func _load_title_screen() -> void:
 
 func _start_new_game(game_length: float) -> void:
 	await _transition_out()
+	if shuffle_levels:
+		_shuffle_levels()
 	await _load_level(0)
 	counting_down.emit()
 	await _transition_in()
@@ -145,6 +147,17 @@ func _perfect_game() -> void:
 	game_over_message.visible = false
 	_load_score_screen()
 	await _transition_in()
+
+
+func _shuffle_levels() -> void:
+	var tutorial_levels: Array[PackedScene] = levels.slice(0, final_tutorial_index + 1)
+	var normal_levels: Array[PackedScene] = levels.slice(final_tutorial_index + 1, begin_coda_index)
+	var coda_levels:Array[PackedScene] = levels.slice(begin_coda_index)
+
+	normal_levels.shuffle()
+
+	var new_levels_array := tutorial_levels + normal_levels + coda_levels
+	levels = new_levels_array
 
 
 func _dramatic_pause() -> void:
