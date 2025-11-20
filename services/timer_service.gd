@@ -16,6 +16,9 @@ signal time_left(seconds: float, proportion: float)
 @onready var hurry_up_timer: Timer = $HurryUpTimer
 @onready var update_timer: Timer = $UpdateTimer
 
+var start_time: int = 0
+var finish_time: int = 0
+
 
 func _ready() -> void:
 	update_timer.timeout.connect(_on_update_timer_timeout)
@@ -25,6 +28,7 @@ func _ready() -> void:
 
 
 func start(seconds: float) -> void:
+	start_time = Time.get_ticks_msec()
 	game_timer.start(seconds)
 	update_timer.start(update_interval)
 	_on_update_timer_timeout()
@@ -35,6 +39,23 @@ func start(seconds: float) -> void:
 		push_warning("Hurry up threshold is larger than game timer duration!\n
 			Hurry up threshold: %.1fs\n
 			Game duration: %.1fs" % [hurry_up_threshold, seconds])
+
+
+## Return a string that gives the minutes and seconds that have elapsed since
+## the [start_time] variable was last set in the [start] function, i.e., since
+## the current game began.
+func get_elapsed_time_string() -> String:
+	var elapsed_msec = finish_time - start_time
+	@warning_ignore_start("integer_division")
+	var elapsed_seconds = elapsed_msec / 1000
+	var minutes = elapsed_seconds / 60
+	var seconds = elapsed_seconds % 60
+	@warning_ignore_restore("integer_division")
+	return "%d:%02d" % [minutes, seconds]
+
+
+func _finish_counting() -> void:
+	finish_time = Time.get_ticks_msec()
 
 
 ## Stop all timers.
@@ -68,7 +89,9 @@ func _on_update_timer_timeout() -> void:
 
 func _on_game_state(state: Constants.GameState) -> void:
 	match state:
-		Constants.GameState.PERFECT, Constants.GameState.FINISHED:
+		Constants.GameState.PERFECT, Constants.GameState.TIMEUP:
+			_finish_counting()
+		Constants.GameState.TITLE:
 			reset()
 		_:
 			pass
