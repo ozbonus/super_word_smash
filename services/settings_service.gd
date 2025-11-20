@@ -8,4 +8,4 @@ const LENGTH_STEP = 10.0
 
 @export_group("Default settings")
 @export var mute_audio := false
-@export_range(LENGTH_MIN, LENGTH_MAX, LENGTH_STEP, "suffix:seconds") var game_length := 60.0
+@export_range(LENGTH_MIN, LENGTH_MAX, LENGTH_STEP, "suffix:seconds") var game_length := 300.0
