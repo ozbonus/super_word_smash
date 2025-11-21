@@ -1,7 +1,13 @@
-# This is the Ball! It's the main thing you control in the game by tilting your
-# device. You can win the game by moving the ball onto words that describe what
-# the ball looks like. This code tells the ball how to move and when it's
-# allowed to move.
+# Balls are the main thing you control in the game by tilting your device. You
+# can beat a level by moving a ball onto the word that describes what it looks
+# like. This code tells the ball how to move and when it's allowed to move.
+#
+# In the game the balls don't look like balls -- they look like animals, food,
+# and other things. When I started making this game I wanted everything to be
+# just a ball and so this script is called ball.gd. After a while I changed my
+# mind when I had a better idea, but you can still see lots of code that still
+# talks about balls. Things like this happen all the time when making video
+# games.
 class_name Ball
 extends RigidBody2D
 
@@ -25,11 +31,12 @@ func _ready():
 # tablet) is being tilted. First it takes some information from the device about
 # it's being tilted, then it uses the number to push the ball a little bit. That
 # sounds like a lot of work, but actually this function has to run 60 times
-# every second! That's once every 0.016 seconds,
-# which is so fast that the ball looks like it's moving smoothly.
+# every second! That's once every 0.016 seconds, which is so fast that the ball
+# looks like it's moving smoothly.
 func _physics_process(_delta):
 	# Only allow the ball to move by tilting the device if the ball is not frozen.
-	# ("freeze" is a special variable that tells the ball whether it can move or not)
+	# ("freeze" is a special variable that tells the ball whether it can move or
+	# not)
 	if !freeze:
 		# Gravity is a number the device can give to the game. It tells the game
 		# which way is down in relation to the device. We can know how much the
