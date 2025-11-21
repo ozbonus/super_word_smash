@@ -35,8 +35,8 @@ func _ready():
 # looks like it's moving smoothly.
 func _physics_process(_delta):
 	# Only allow the ball to move by tilting the device if the ball is not frozen.
-	# ("freeze" is a special variable that tells the ball whether it can move or
-	# not)
+	# "freeze" is a special variable that tells the ball whether it can move or
+	# not.
 	if !freeze:
 		# Gravity is a number the device can give to the game. It tells the game
 		# which way is down in relation to the device. We can know how much the
