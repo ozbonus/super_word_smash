@@ -4,7 +4,7 @@ Hello, I'm Teacher Chris!
 
 *Super Word Smash* is a short and simple game I made for playing with kids and families at school festivals and other similar public events. It's a very simple game. The players work together to move a picture onto a word by moving a tablet. It looks like this:
 
-<video src="readme_media/gameplay.mp4" autoplay loop muted controls></video>
+![Gameplay demonstration](readme_media/gameplay.gif)
 
 ## How I made the game
 
